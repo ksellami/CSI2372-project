@@ -1,8 +1,10 @@
 #pragma once
-class RollOfDice
+#include "Dice.h"
+#include <stdio.h>
+
+class RollOfDice 
 {
 public:
 	RollOfDice();
-	
 };
 
