@@ -5,8 +5,3 @@
 Dice::Dice()
 {
 }
-
-
-Dice::~Dice()
-{
-}
