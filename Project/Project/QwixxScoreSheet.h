@@ -5,6 +5,10 @@ class QwixxScoreSheet :
 {
 public:
 	QwixxScoreSheet();
+	void print() = 0;
+	void calcTotal() = 0;
+	bool operator ~ () = 0;
+
 
 };
 

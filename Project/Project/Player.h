@@ -1,5 +1,7 @@
 #pragma once
 #include "RollOfDice.h"
+
+
 class Player
 {
 	bool isActive = false; 
