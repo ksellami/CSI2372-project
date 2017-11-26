@@ -4,4 +4,5 @@
 
 Dice::Dice()
 {
+	std::cout << "hello world " ; 
 }
