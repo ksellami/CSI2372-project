@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Dice.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="QwintoPlayer.h" />
     <ClInclude Include="QwintoScoreSheet.h" />
@@ -120,6 +121,7 @@
     <ClInclude Include="scoresheet.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="QwintoPlayer.cpp" />
     <ClCompile Include="QwintoScoreSheet.cpp" />
