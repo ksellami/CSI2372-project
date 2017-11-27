@@ -5,5 +5,4 @@ class GameLoop
 public:
 
 	GameLoop();
-	~GameLoop();
 };

@@ -17,10 +17,6 @@ GameLoop::GameLoop()
 }
 
 
-GameLoop::~GameLoop()
-{
-}
-
 
 int main(){
 
