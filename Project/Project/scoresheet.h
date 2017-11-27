@@ -16,6 +16,8 @@ class ScoreSheet
 	int overallScore=0;
 
 public:	
+	
+	ScoreSheet();
 	ScoreSheet(string pName);
 	bool score(RollOfDice roll, Colour uColor, int uPostion=-1);
 	void setTotal(); 

@@ -1,6 +1,5 @@
 #include "Dice.h"
 
-
 string Dice::colourToStr(const Colour& _col)
 {
 	switch (_col) {
@@ -29,4 +28,3 @@ ostream & Dice::operator<<(ostream & os)
 	
 	os << "the colour is :" << Dice::colourToStr(colour) << ", the number is: " << face << std::endl ;
 	return os; 
-}

@@ -1,4 +1,4 @@
-#pragma 
+
 #include "Colour.h"
 #include <iostream>
 #include <vector> 

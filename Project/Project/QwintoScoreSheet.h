@@ -8,13 +8,15 @@ public:
 	QwintoRow<Colour::YELLOW> yellow;
 	QwintoRow<Colour::BLUE> blue;
 	
-	QwintoScoreSheet(string playerName);
+	QwintoScoreSheet(string NewName);
 	void print();
 	void calcTotal();
 	bool operator ~ ();
+	string playerName;
 	
 protected:	
 	bool validate(Colour&, int&);
+	
 	
 };
 

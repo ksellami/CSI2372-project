@@ -2,7 +2,7 @@
 
 
 
-QwintoScoreSheet::QwintoScoreSheet()
+QwintoScoreSheet::QwintoScoreSheet(string NewName) :playerName(NewName)
 {
 }
 
