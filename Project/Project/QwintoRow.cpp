@@ -11,7 +11,8 @@ template <Colour col> int& QwintoRow<col>::operator[](int& entry)
 
 }
 
-template <Colour col> ostream& QwintoRow<col>::operator<<(ostream &os, QwintoRow<col> pRow)
+template <Colour col> 
+ostream & operator<<(ostream & os, QwintoRow<col> pRow)
 {
 
 	if (col == Colour::RED)
@@ -49,5 +50,3 @@ template <Colour col> bool QwintoRow<col>::validateEntry(int& indexEntry)
 }
 template <Colour col> QwintoRow<col>::QwintoRow()
 {}
-
-

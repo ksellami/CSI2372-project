@@ -19,7 +19,7 @@ void QwixxScoreSheet::calcTotal()
 bool QwixxScoreSheet::operator ~ ()
 {
 
-
+	return true; 
 
 }
 

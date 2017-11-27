@@ -20,8 +20,9 @@ bool QwintoScoreSheet::operator ~ ()
 {
 
 
-
+	return true; 
 }
+
 
 
 

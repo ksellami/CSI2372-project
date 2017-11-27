@@ -10,7 +10,7 @@ public:
 	bool operator ~ ();
 
 protected:
-	virtual bool validate(Colour&, int&);
+	//virtual bool validate(Colour&, int&);
 
 
 };

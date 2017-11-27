@@ -49,6 +49,8 @@ ostream & RollOfDice::operator<<(ostream & os)
 {
 	for (Dice d : theRoll)
 		d.Dice::operator<<(os); 
+
+	return os; 
 } 
 
 RollOfDice::operator int()

@@ -15,7 +15,7 @@ public:
 	string playerName;
 	
 protected:	
-	bool validate(Colour&, int&);
+	//bool validate(Colour&, int&);
 	
 	
 };

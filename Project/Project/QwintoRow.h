@@ -6,7 +6,7 @@
 #include "RollOfDice.h"
 using namespace std;
 
-template<Color col>
+template<Colour col>
 class QwintoRow
 {
 public:

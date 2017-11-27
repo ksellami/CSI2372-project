@@ -2,20 +2,8 @@
 
 
 
-QwintoPlayer::QwintoPlayer()
-{
-}
-
-
-QwintoPlayer::~QwintoPlayer()
-{
-}
-
-
 void QwintoPlayer::inputAfterRoll(RollOfDice& rod)
 {
-
-
 
 }
 
