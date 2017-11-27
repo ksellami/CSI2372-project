@@ -3,6 +3,7 @@
 #pragma once
 
 #include "RollOfDice.h"
+#include "GameLo"
 #include <string>
 
 using namespace std; 

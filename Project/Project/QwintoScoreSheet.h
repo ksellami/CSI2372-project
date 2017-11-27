@@ -5,6 +5,9 @@ class QwintoScoreSheet :
 {
 public:
 	QwintoScoreSheet();
+	void print();
+	void calcTotal();
+	bool operator ~ ();
 	
 };
 

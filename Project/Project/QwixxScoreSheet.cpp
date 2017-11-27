@@ -6,3 +6,20 @@ QwixxScoreSheet::QwixxScoreSheet()
 {
 }
 
+
+void QwixxScoreSheet::print(){
+
+
+}
+void QwixxScoreSheet::calcTotal()
+{
+}
+
+
+bool QwixxScoreSheet::operator ~ ()
+{
+
+
+
+}
+

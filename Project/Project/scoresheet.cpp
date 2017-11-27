@@ -2,4 +2,15 @@
 
 
 
-std::cout << "hello world " ; 
+bool ScoreSheet::score(RollOfDice roll){
+
+
+
+
+}
+void ScoreSheet::setTotal()
+{
+
+
+
+}
