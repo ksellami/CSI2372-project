@@ -1,5 +1,6 @@
 #include "Dice.h"
 
+
 string Dice::colourToStr(const Colour& _col)
 {
 	switch (_col) {
@@ -14,7 +15,7 @@ string Dice::colourToStr(const Colour& _col)
 
 int Dice::roll()
 {
-	this->face = 1 + rand() % 6; 
+	this->face = rand.DrawNumber(1, 6); 
 	return this->face; 
 }
 

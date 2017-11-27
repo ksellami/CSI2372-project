@@ -5,9 +5,10 @@
 RollOfDice::RollOfDice()
 {
 }
+
 void RollOfDice::roll()
 {
-	for (Dice d : theRoll)
+	for (auto d : theRoll)
 		d.roll(); 
 
 }
@@ -55,8 +56,8 @@ RollOfDice::operator int()
 {
 
 	int somme = 0;
-	for (Dice dc : theRoll) {
-		somme += dc.face;
+	for (auto d : theRoll) {
+		somme += d.face;
 	}
 	return somme;
 }

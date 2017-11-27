@@ -120,6 +120,7 @@
     <ClInclude Include="QwintoScoreSheet.h" />
     <ClInclude Include="QwixxPlayer.h" />
     <ClInclude Include="QwixxScoreSheet.h" />
+    <ClInclude Include="RandomDice.h" />
     <ClInclude Include="RollOfDice.h" />
     <ClInclude Include="scoresheet.h" />
   </ItemGroup>
@@ -132,6 +133,7 @@
     <ClCompile Include="QwintoScoreSheet.cpp" />
     <ClCompile Include="QwixxPlayer.cpp" />
     <ClCompile Include="QwixxScoreSheet.cpp" />
+    <ClCompile Include="RandomDice.cpp" />
     <ClCompile Include="RollOfDice.cpp" />
     <ClCompile Include="scoresheet.cpp" />
   </ItemGroup>

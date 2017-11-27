@@ -1,0 +1,46 @@
+﻿  scoresheet.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(5): error C2061: erreur de syntaxe : identificateur 'Color'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(11): error C2913: spécialisation explicite ; 'QwintoRow' n'est pas une spécialisation d'un modèle de classe
+  RollOfDice.cpp
+  RandomDice.cpp
+  QwixxScoreSheet.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(5): error C2061: erreur de syntaxe : identificateur 'Color'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(11): error C2913: spécialisation explicite ; 'QwintoRow' n'est pas une spécialisation d'un modèle de classe
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxscoresheet.cpp(6): error C2512: 'ScoreSheet' : aucun constructeur par défaut approprié disponible
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\scoresheet.h(13): note: voir la déclaration de 'ScoreSheet'
+  QwixxPlayer.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(5): error C2061: erreur de syntaxe : identificateur 'Color'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(11): error C2913: spécialisation explicite ; 'QwintoRow' n'est pas une spécialisation d'un modèle de classe
+  QwintoScoreSheet.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(5): error C2061: erreur de syntaxe : identificateur 'Color'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(11): error C2913: spécialisation explicite ; 'QwintoRow' n'est pas une spécialisation d'un modèle de classe
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(7): error C2079: 'QwintoScoreSheet::red' utilise une class de 'QwintoRow' non défini
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(8): error C2079: 'QwintoScoreSheet::yellow' utilise une class de 'QwintoRow' non défini
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(9): error C2079: 'QwintoScoreSheet::blue' utilise une class de 'QwintoRow' non défini
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(6): error C2511: 'QwintoScoreSheet::QwintoScoreSheet(void)' : impossible de trouver la fonction membre surchargée dans 'QwintoScoreSheet'
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(3): note: voir la déclaration de 'QwintoScoreSheet'
+  QwintoRow.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(5): error C2061: erreur de syntaxe : identificateur 'Color'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(11): error C2913: spécialisation explicite ; 'QwintoRow' n'est pas une spécialisation d'un modèle de classe
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.cpp(5): error C2027: utilisation du type non défini 'QwintoRow'
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(7): note: voir la déclaration de 'QwintoRow'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.cpp(6): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.cpp(7): warning C4508: '{ctor}' : la fonction doit retourner une valeur ; type de retour 'void' pris par défaut
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.cpp(10): error C2027: utilisation du type non défini 'QwintoRow'
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(7): note: voir la déclaration de 'QwintoRow'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.cpp(11): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.cpp(12): warning C4508: '{dtor}' : la fonction doit retourner une valeur ; type de retour 'void' pris par défaut
+  QwintoPlayer.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(5): error C2061: erreur de syntaxe : identificateur 'Color'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintorow.h(11): error C2913: spécialisation explicite ; 'QwintoRow' n'est pas une spécialisation d'un modèle de classe
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(7): error C2079: 'QwintoScoreSheet::red' utilise une class de 'QwintoRow' non défini
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(8): error C2079: 'QwintoScoreSheet::yellow' utilise une class de 'QwintoRow' non défini
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(9): error C2079: 'QwintoScoreSheet::blue' utilise une class de 'QwintoRow' non défini
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoplayer.cpp(6): error C2512: 'QwintoScoreSheet' : aucun constructeur par défaut approprié disponible
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.h(3): note: voir la déclaration de 'QwintoScoreSheet'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoplayer.cpp(11): error C2600: 'QwintoPlayer::~QwintoPlayer' : impossible de définir une fonction membre spéciale générée par le compilateur (doit être déclarée d'abord dans la classe)
+  Player.cpp
+  GameLoop.cpp
+  Dice.cpp
+  Génération de code en cours...
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\rollofdice.cpp(53): error C4716: 'RollOfDice::operator<<' : doit retourner une valeur

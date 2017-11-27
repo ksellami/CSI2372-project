@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector> 
 #include <string>
+#include "RandomDice.h"
 
 
 using namespace std;
@@ -10,7 +11,7 @@ using namespace std;
 class Dice
 {
 	const Colour colour; 
-	 
+	RandomDice rand; 
 public:
 	int face;
 	string colourToStr(const Colour& _col); 
