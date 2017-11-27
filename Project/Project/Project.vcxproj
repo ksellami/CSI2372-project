@@ -111,10 +111,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Colour.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="QwintoPlayer.h" />
+    <ClInclude Include="QwintoRow.h" />
     <ClInclude Include="QwintoScoreSheet.h" />
     <ClInclude Include="QwixxPlayer.h" />
     <ClInclude Include="QwixxScoreSheet.h" />
@@ -126,6 +128,7 @@
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="QwintoPlayer.cpp" />
+    <ClCompile Include="QwintoRow.cpp" />
     <ClCompile Include="QwintoScoreSheet.cpp" />
     <ClCompile Include="QwixxPlayer.cpp" />
     <ClCompile Include="QwixxScoreSheet.cpp" />
