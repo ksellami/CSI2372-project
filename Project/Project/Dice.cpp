@@ -25,8 +25,7 @@ Dice::Dice(const Colour& _col) :
 
 ostream & Dice::operator<<(ostream & os)
 {
-	string tmp = "the colour is :" + colourToStr(colour);
-	os << face;
+	
+	os << "the colour is :" << Dice::colourToStr(colour) << ", the number is: " << face << std::endl ;
 	return os; 
 }
-

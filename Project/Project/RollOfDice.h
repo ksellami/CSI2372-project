@@ -4,7 +4,17 @@
 
 class RollOfDice 
 {
+	std::vector<Dice> theRoll;
 public:
 	RollOfDice();
+	void roll(); 
+	RollOfDice pair(Dice& first, Dice & Second); 
+	void add(Dice & d); 
+	operator int(); 
+	std::vector<Dice>::iterator begin();
+	std::vector<Dice>::const_iterator begin() const;
+	std::vector<Dice>::iterator end();
+	std::vector<Dice>::const_iterator end() const;
+	ostream& operator<<(ostream& os);
 };
 
