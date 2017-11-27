@@ -9,6 +9,9 @@ public:
 	void calcTotal();
 	bool operator ~ ();
 
+protected:
+	virtual bool validate(Colour&, int&);
+
 
 };
 
