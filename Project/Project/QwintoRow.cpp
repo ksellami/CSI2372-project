@@ -43,8 +43,9 @@ ostream & operator<<(ostream & os, QwintoRow<col> pRow)
 template <Colour col> bool QwintoRow<col>::validateEntry(int& indexEntry)
 {
 
-	if (indexEntry >= 0 && indexEntry < Ro.max_size())
+	if (indexEntry >= 0 && indexEntry < Row.max_size())
 		return true;
+
 
 	return false;
 }

@@ -4,18 +4,28 @@ class QwintoScoreSheet :
 	public ScoreSheet
 {
 public:
-	QwintoRow<Colour::RED> red;
-	QwintoRow<Colour::YELLOW> yellow;
-	QwintoRow<Colour::BLUE> blue;
+	QwintoRow<Colour::RED> redRow;
+	QwintoRow<Colour::YELLOW> yellowRow;
+	QwintoRow<Colour::BLUE> blueRow;
 	
 	QwintoScoreSheet(string NewName);
 	void print();
-	void calcTotal();
-	bool operator ~ ();
+	int calcTotal();
+	
+	bool operator!();
 	string playerName;
 	
 protected:	
-	//bool validate(Colour&, int&);
+	bool validate(Colour&, int&);
+	int totalRowsCompleted = 0;
+	
+	//Saves the total of entries in the corresponding color row
+	int redEntriesTotal=0;
+	int yellowEntriesTotal=0;
+	int blueEntriesTotal=0;
+
+
+	
 	
 	
 };
