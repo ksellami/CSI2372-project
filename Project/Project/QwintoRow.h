@@ -3,7 +3,6 @@
 #include "RollOfDice.h"
 #include <array>
 #include<iostream>
-#include "RollOfDice.h"
 using namespace std;
 
 template<Colour col>
@@ -13,7 +12,7 @@ public:
 
 	QwintoRow<col>();
 	bool validateEntry(int&);
-	int& operator[](int&);
+	int& operator[](int);
 	friend ostream& operator<<(ostream &os, QwintoRow<col> pRow);
 
 private:

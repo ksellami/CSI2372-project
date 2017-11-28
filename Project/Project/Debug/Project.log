@@ -1,13 +1,4 @@
-﻿  QwintoPlayer.cpp
-  Génération de code en cours...
-  Compilation en cours...
-  QwixxPlayer.cpp
-  Génération de code en cours...
-  Ignoré... (aucune modification pertinente détectée)
-  scoresheet.cpp
-  QwixxScoreSheet.cpp
-  QwintoScoreSheet.cpp
-  QwintoRow.cpp
+﻿  QwixxRow.cpp
 QwintoScoreSheet.obj : error LNK2019: symbole externe non résolu "public: __thiscall ScoreSheet::ScoreSheet(void)" (??0ScoreSheet@@QAE@XZ) référencé dans la fonction "public: __thiscall QwintoScoreSheet::QwintoScoreSheet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0QwintoScoreSheet@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 QwixxScoreSheet.obj : error LNK2001: symbole externe non résolu "public: __thiscall ScoreSheet::ScoreSheet(void)" (??0ScoreSheet@@QAE@XZ)
 QwintoScoreSheet.obj : error LNK2019: symbole externe non résolu "public: __thiscall QwintoRow<0>::QwintoRow<0>(void)" (??0?$QwintoRow@$0A@@@QAE@XZ) référencé dans la fonction "public: __thiscall QwintoScoreSheet::QwintoScoreSheet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0QwintoScoreSheet@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
