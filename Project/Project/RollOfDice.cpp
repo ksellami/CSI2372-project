@@ -1,9 +1,6 @@
 #include "RollOfDice.h"
 
 
-RollOfDice::RollOfDice()
-{
-}
 
 void RollOfDice::roll()
 {
@@ -45,14 +42,6 @@ std::vector<Dice>::const_iterator RollOfDice::end() const
 	return theRoll.end();
 }
 
-ostream & RollOfDice::operator<<(ostream & os)
-{
-	for (Dice d : theRoll)
-		d.Dice::operator<<(os); 
-
-	return os; 
-} 
-
 RollOfDice::operator int()
 {
 
@@ -61,4 +50,13 @@ RollOfDice::operator int()
 		somme += d.face;
 	}
 	return somme;
+}
+
+ostream & operator<<(ostream & os, const RollOfDice & rod)
+{
+	for (Dice d : rod)
+		os << d;
+
+	return os;
+
 }

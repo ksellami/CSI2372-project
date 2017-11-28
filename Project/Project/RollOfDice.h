@@ -5,8 +5,9 @@
 class RollOfDice 
 {
 	std::vector<Dice> theRoll;
+
 public:
-	RollOfDice();
+	
 	void roll(); 
 	RollOfDice pair(Dice& first, Dice & Second); 
 	void add(Dice & d); 
@@ -15,6 +16,6 @@ public:
 	std::vector<Dice>::const_iterator begin() const;
 	std::vector<Dice>::iterator end();
 	std::vector<Dice>::const_iterator end() const;
-	ostream& operator<<(ostream& os);
+	friend ostream& operator<<(ostream& os, const RollOfDice& rod);
 };
 

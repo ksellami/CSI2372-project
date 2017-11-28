@@ -47,6 +47,6 @@ ostream & operator<<(ostream & os, const QwixxRow<T, col>& pRow)
 template<class T, Colour col>
 QwixxRow<T, col>::QwixxRow()
 {
-	for (int i = 0, i < Row.size(), i++)
+	for (int i = 0, i < Row.max_size(), i++)
 		Row[i] = i + 2;
 }
