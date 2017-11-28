@@ -11,9 +11,9 @@ ScoreSheet::ScoreSheet(string pName) :playerName(pName)
 
 int ScoreSheet::setTotal()
 {
-
+	overallScore = calcTotal();
 	//returns the final score 
-	return calcTotal();
+	return overallScore;
 
 	
 }

@@ -1,5 +1,7 @@
 #pragma once
 #include "scoresheet.h"
+#include "QwintoRow.h"
+
 class QwintoScoreSheet :
 	public ScoreSheet
 {
@@ -8,10 +10,13 @@ public:
 	QwintoRow<Colour::YELLOW> yellowRow;
 	QwintoRow<Colour::BLUE> blueRow;
 	
+	bool score(RollOfDice roll, Colour uColor, int uPostion);
 	QwintoScoreSheet(string NewName);
 	void print();
 	int calcTotal();
 	
+	friend ostream& operator<<(ostream& os, const QwintoScoreSheet& qwinto);
+
 	bool operator!();
 	string playerName;
 	
@@ -23,6 +28,7 @@ protected:
 	int redEntriesTotal=0;
 	int yellowEntriesTotal=0;
 	int blueEntriesTotal=0;
+
 
 
 	

@@ -18,9 +18,9 @@ public:
 
 	ScoreSheet();
 	ScoreSheet(string pName);
-	bool score(RollOfDice roll, Colour uColor, int uPostion=-1);
+	virtual bool score(RollOfDice roll, Colour uColor, int uPostion=-1);
 	int setTotal(); 
-	virtual friend ostream& operator<<(ostream& os,const ScoreSheet& dt);
+	virtual friend ostream& operator<<(ostream& ,const ScoreSheet& );
 
 private : 
 	virtual void print() = 0;

@@ -13,11 +13,9 @@ public:
 	int Size {return Row.size}
 	QwintoRow<col>();
 	bool validateEntry(int&);
-	int& operator[](int);
-	friend ostream& operator<<(ostream &os, QwintoRow<col> pRow);
-
-
-	array<int, 9> Row;
+	int& operator[] (int);
+	friend ostream& operator<<(ostream &os,const QwintoRow<col> &pRow);
+	array<int, 10> Row;
 
 
 

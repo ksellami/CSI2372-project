@@ -64,11 +64,28 @@ bool QwintoScoreSheet::operator ! (){
 
 		return true;
 	}
-
+	
 	return false;
 }
 
 
+
+ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
+	os << "Player Name :" << _qwinto.playerName << '\t' << '\t' << "Points: "<<_qwinto.overallScore <<endl ;
+	
+	os <<"Red"<<"   "<< _qwinto.redRow;
+
+	os << "Yellow" << "   " << _qwinto.yellowRow;
+
+
+
+	os << "Blue" << "   " << _qwinto.blueRow;
+
+	os << "-------------------------------------" << endl;
+
+	os << "Failed Throw";
+	for (int i = 0;)
+}
 
 
 
