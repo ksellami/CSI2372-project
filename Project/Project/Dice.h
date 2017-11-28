@@ -10,13 +10,13 @@ using namespace std;
 
 class Dice
 {
-	const Colour colour; 
 	RandomDice rand; 
 public:
+	const Colour colour;
 	int face;
 	string colourToStr(const Colour& _col); 
 	int roll();
 	Dice(const Colour& _col);
-	ostream& operator<<(ostream& os);
+	friend ostream& operator<<(ostream& os, const Dice& d);
 };
 

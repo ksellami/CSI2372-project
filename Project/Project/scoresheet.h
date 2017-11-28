@@ -15,15 +15,12 @@ class ScoreSheet
 
 public:	
 	
-
-	ScoreSheet();
 	ScoreSheet(string pName);
 	bool score(RollOfDice roll, Colour uColor, int uPostion=-1);
 	int setTotal(); 
 	virtual friend ostream& operator<<(ostream& os,const ScoreSheet& dt);
 
 private : 
-	virtual void print() = 0;
 	virtual int calcTotal() = 0; 
 	virtual bool operator ! () = 0; 
 
