@@ -11,6 +11,7 @@ class QwixxRow
 public:
 	QwixxRow<T, col>();
 	friend QwixxRow<T,col> &operator+=(QwixxRow& ,const RollOfDice &); 
+	bool validateEntry(int&); 
 	int& operator[](int param);
     friend ostream& operator<<(ostream &os, const QwixxRow<T,col>& pRow);
 	

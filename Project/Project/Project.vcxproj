@@ -113,7 +113,6 @@
   <ItemGroup>
     <ClInclude Include="Colour.h" />
     <ClInclude Include="Dice.h" />
-    <ClInclude Include="GameLoop.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="QwintoPlayer.h" />
     <ClInclude Include="QwintoRow.h" />

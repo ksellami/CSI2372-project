@@ -5,9 +5,11 @@
 class RollOfDice 
 {
 	std::vector<Dice> theRoll;
+	
 
 public:
-	
+	Colour SelectedColor;
+	int selectedPosition; 
 	void roll(); 
 	RollOfDice pair(Dice& first, Dice & Second); 
 	void add(Dice & d); 

@@ -12,8 +12,8 @@ class QwixxScoreSheet : public ScoreSheet
 	QwixxRow<std::list<int>, Colour::BLUE> blueRow;
 
 public:
-	
 
+	QwixxScoreSheet(string name); 
 	int calcTotal();
 	bool operator ! ();
 	friend ostream& operator<<(ostream& os, const QwixxScoreSheet& dt);

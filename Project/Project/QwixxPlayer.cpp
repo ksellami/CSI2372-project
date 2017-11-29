@@ -2,10 +2,16 @@
 
 
 
-QwixxPlayer::QwixxPlayer()
+QwixxPlayer::QwixxPlayer(string name) : sheet(name)
 {
 }
 
+void QwixxPlayer::inputBeforeRoll(RollOfDice& rod)
+{
+
+
+
+}
 
 void QwixxPlayer::inputAfterRoll(RollOfDice& rod)
 {
@@ -15,10 +21,5 @@ void QwixxPlayer::inputAfterRoll(RollOfDice& rod)
 }
 
 
-void QwixxPlayer::inputBeforeRoll(RollOfDice& rod)
-{
 
-
-
-}
 

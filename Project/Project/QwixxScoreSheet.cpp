@@ -1,5 +1,9 @@
 #include "QwixxScoreSheet.h"
 
+QwixxScoreSheet::QwixxScoreSheet(string name) :ScoreSheet(name)
+{
+}
+
 ostream & operator<<(ostream & os, const QwixxScoreSheet & dt)
 {   
 	os << "Player Name " << dt.playerName << endl; 

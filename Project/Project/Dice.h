@@ -11,6 +11,7 @@ using namespace std;
 class Dice
 {
 	RandomDice rand; 
+	
 public:
 	const Colour colour;
 	int face;

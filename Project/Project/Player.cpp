@@ -1,8 +1,11 @@
 #include "Player.h"
-#include <iostream>
 
-
-Player::Player()
+void Player::setActive(bool param)
 {
-	std::cout<<"Hello"<<std::endl;
+	isActive = param; 
+}
+
+bool Player::isOrNotActive()
+{
+	return false;
 }

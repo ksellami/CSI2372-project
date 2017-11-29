@@ -4,12 +4,11 @@
 
 class Player
 {
-	bool isActive = false; 
+	bool isActive=false ; 
 public:
+	void setActive(bool param); 
+	bool isOrNotActive(); 
 	virtual void inputBeforeRoll(RollOfDice& rod) = 0; 
-	virtual void inputAfterRoll(RollOfDice& rod) = 0;
-
-	Player();
-	
+	virtual void inputAfterRoll(RollOfDice& rod) = 0;	
 };
 

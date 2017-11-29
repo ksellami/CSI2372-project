@@ -8,6 +8,12 @@ QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
 }
 
 template<class T, Colour col>
+bool QwixxRow<T, col>::validateEntry(int &)
+{
+	return false;
+}
+
+template<class T, Colour col>
 int & QwixxRow<T, col>::operator[](int param)
 {
 	return Row[param];

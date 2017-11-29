@@ -5,11 +5,10 @@
 
 class QwixxPlayer :public Player
 {
-
-	//QwixxScoreSheet scoreSheet;
 public:
+	QwixxScoreSheet sheet;
+	QwixxPlayer(string name);
 	void inputBeforeRoll(RollOfDice& rod);
 	void inputAfterRoll(RollOfDice& rod);
-	QwixxPlayer();
 };
 
