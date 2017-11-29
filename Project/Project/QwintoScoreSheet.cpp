@@ -2,15 +2,13 @@
 
 
 
-QwintoScoreSheet::QwintoScoreSheet(string NewName) :playerName(NewName)
+QwintoScoreSheet::QwintoScoreSheet(string NewName) : ScoreSheet(NewName)
 {
+	
 }
 
 
-void QwintoScoreSheet::print(){
 
-
-}
 int QwintoScoreSheet::calcTotal()
 {
 	int total;
@@ -32,18 +30,26 @@ int QwintoScoreSheet::calcTotal()
 	return total;
 }
 
-bool QwintoScoreSheet::validate(Colour& color, int& position)
+
+
+bool  QwintoScoreSheet::validate(Colour& color, int& position)
 {
 	bool colorValidated = false;
 	switch (color){
 		case(Colour::RED) :
 			colorValidated = redRow.validateEntry(position);
+			if (position = 3)
+				colorValidated = false;
 		break;
 		case(Colour::YELLOW) :
 			colorValidated = yellowRow.validateEntry(position);
+			if (position = 5)
+				colorValidated = false;
 		break;
 		case(Colour::BLUE) :
 			colorValidated = blueRow.validateEntry(position);
+			if (position = 4)
+				colorValidated = false;
 		break;
 
 
@@ -69,7 +75,6 @@ bool QwintoScoreSheet::operator ! (){
 }
 
 
-
 ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
 	os << "Player Name :" << _qwinto.playerName << '\t' << '\t' << "Points: "<<_qwinto.overallScore <<endl ;
 	
@@ -88,5 +93,137 @@ ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
 }
 
 
+bool score(RollOfDice roll, Colour &uColor, int &uPostion, QwintoScoreSheet& sheet)
+{
+	roll.roll();
+
+	bool validRoll;
+	validRoll = sheet.validate(uColor, uPostion);
+	
+	bool scored = false; 
+
+	if (validRoll) {
+		int result = (int)roll;
+		switch (uColor) {
+
+			case(Colour::RED):
+				QwintoRow<Colour::RED> row = row;
+				for (int i = 0; i < uPostion; i++)
+				{
+					if (row[i] <= result)
+					{
+				
+
+						
+						if (i < 8 && (result == sheet.yellowRow[i + 1] || result == sheet.blueRow[i + 2]))
+							scored = false;
+						
+						else if (i == 8 && result == sheet.yellowRow[9])
+							scored = false;
+
+						else
+							scored = true;
+						
+
+					}
+
+					
+				}
+
+				if (scored)
+				{
+					row[uPostion] = roll;
+					sheet.redEntriesTotal++;
+				}
+				else
+				{
+					sheet.fail();
+					
+				}
+
+			break;
+
+			case(Colour::YELLOW):
+				QwintoRow<Colour::YELLOW> row = sheet.yellowRow;
+
+				for (int i = 0; i < uPostion; i++) 
+				{
+					if (row[i] <= result)
+					{
+						if (i < 9 && i>0 && (result == sheet.redRow[i -1] || result == sheet.blueRow[i + 1]))
+							scored = false;
+
+						else
+						{
+							if (i == 9 && result == sheet.redRow[8])
+								scored = false;
+							else if (i == 0 && result == sheet.blueRow[1])
+								scored = false;
+							else
+								scored = true;
+						}
+					}
+					
+				}
+
+				if (scored)
+				{
+					row[uPostion] = roll;
+					sheet.yellowEntriesTotal++;
+				}
+				else
+				{
+					sheet.fail();
+					
+				}
+			break;
+
+			case(Colour::BLUE):
+				QwintoRow<Colour::BLUE> row = sheet.blueRow;
+
+				for (int i = 0; i < uPostion; i++) 
+				{
+					if (row[i] <= result)
+					{
+						
+						if (i>1 && (result == sheet.redRow[i-2] || result == sheet.yellowRow[i-1]))
+							scored = false;
+
+						else
+						{
+							
+							if (i == 1 && result == sheet.yellowRow[0])
+								scored = false;
+							else
+								scored = true;
+						}
+					}
+					
+				}
+
+				if (scored)
+				{
+					row[uPostion] = roll;
+					sheet.blueEntriesTotal++;
+				}
+				else
+				{
+					sheet.fail();
+					scored = false;
+				}
+
+			break;
+
+		}
+
+
+	}
+
+	
+
+
+	
+	return scored;
+}
 
 
