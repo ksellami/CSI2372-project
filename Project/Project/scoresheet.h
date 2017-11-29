@@ -14,19 +14,24 @@ class ScoreSheet
 	
 
 public:	
-	
+	string playerName;
 	ScoreSheet(string pName);
-	virtual bool score(RollOfDice roll, Colour uColor, int uPostion=-1);
-	int setTotal(); 
-	virtual friend ostream& operator<<(ostream& ,const ScoreSheet& );
+	virtual friend ostream& operator<<(ostream&, const ScoreSheet&);
+	virtual  bool score(ScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion = -1) =0;
+	int setTotal();
+
+	void fail();
+
 
 private : 
+
 	virtual int calcTotal() = 0; 
 	virtual bool operator ! () = 0; 
 
 protected:
+
 	virtual bool validate(Colour&, int&) = 0;
-	string playerName;
+	
 	int failedAttempts = 0;
 	int overallScore = 0;
 

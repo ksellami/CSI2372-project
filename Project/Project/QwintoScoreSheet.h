@@ -10,24 +10,23 @@ public:
 	QwintoRow<Colour::YELLOW> yellowRow;
 	QwintoRow<Colour::BLUE> blueRow;
 	
-	bool score(RollOfDice roll, Colour uColor, int uPostion);
 	QwintoScoreSheet(string NewName);
-	void print();
-	int calcTotal();
-	
+	QwintoScoreSheet();
+
+	bool validate(Colour&, int&);
+	virtual bool score(RollOfDice roll, Colour uColor, int uPostion, QwintoScoreSheet& sheet);
 	friend ostream& operator<<(ostream& os, const QwintoScoreSheet& qwinto);
 
 	bool operator!();
-	string playerName;
-	
-protected:	
-	bool validate(Colour&, int&);
 	int totalRowsCompleted = 0;
+	int calcTotal();
 	
 	//Saves the total of entries in the corresponding color row
-	int redEntriesTotal=0;
-	int yellowEntriesTotal=0;
-	int blueEntriesTotal=0;
+	int redEntriesTotal = 0;
+	int yellowEntriesTotal = 0;
+	int blueEntriesTotal = 0;
+protected:	
+
 
 
 

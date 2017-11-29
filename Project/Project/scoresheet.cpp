@@ -20,7 +20,13 @@ int ScoreSheet::setTotal()
 
 
 
-bool ScoreSheet::score(RollOfDice roll, Colour uColor, int uPostion)
+bool ScoreSheet::score(ScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion = -1)
 {
 	return validate(uColor, uPostion);
+}
+
+void ScoreSheet::fail()
+{
+
+	failedAttempts--;
 }
