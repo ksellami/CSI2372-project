@@ -7,7 +7,8 @@
 
 
 int main(){
-	int versionInput; 
+	bool done = false ; 
+	int versionInput=0; 
 	int numberOfPlayers =0;
 
 	cout << "for Qwinto tap 1, for Qwixx tap 2" << endl; 
@@ -20,7 +21,7 @@ int main(){
 
 		vector<string> names; 
 	cout << "please enter the names of the players" << endl; 
-	for (int i; i < numberOfPlayers; i++)
+	for (int i=0; i < numberOfPlayers; i++)
 		while (names[i] == "")
 			cin >> names[i]; 
 
@@ -32,7 +33,7 @@ int main(){
 		playersQwinto[i]=*new QwintoPlayer(names[i]); 
 		RollOfDice rod; 
 		
-		while (true)
+		while (!done)
 		{
 			for (auto & activePlayer : playersQwinto) {
 				activePlayer.setActive(true);
@@ -41,12 +42,19 @@ int main(){
 				cout << rod;
 				cout << activePlayer.sheet;
 				activePlayer.inputAfterRoll(rod);
-				activePlayer.sheet.score(activePlayer.sheet,rod, rod.SelectedColor, rod.selectedPosition);
+				activePlayer.setActive(false); 
+				if (!activePlayer.sheet) {
+					done = true;
+					break;
+				}
 				for (auto& notActivePlayer : playersQwinto){
-					if (!notActivePlayer.isOrNotActive) {
+					if (!notActivePlayer.sheet) {
+						done = true;
+						break;
+					}
+					if (!notActivePlayer.isOrNotActive()) {
 						cout << notActivePlayer.sheet;
 						notActivePlayer.inputAfterRoll(rod);
-						notActivePlayer.sheet.score(notActivePlayer.sheet, rod, rod.SelectedColor, rod.selectedPosition);
 					}
 				}
 			}
@@ -65,7 +73,7 @@ int main(){
 			playersQwixx[i] = *new QwixxPlayer(names[i]);
 		RollOfDice rod;
 
-		while (true)
+		while (!done)
 		{
 			for (auto & activePlayer : playersQwixx) {
 				activePlayer.setActive(true);
@@ -74,12 +82,20 @@ int main(){
 				cout << rod;
 				cout << activePlayer.sheet;
 				activePlayer.inputAfterRoll(rod);
-				activePlayer.sheet.score(activePlayer.sheet,rod, rod.SelectedColor, rod.selectedPosition);
+				activePlayer.setActive(false);
+				if (!activePlayer.sheet) {
+					done = true;
+					break;
+				}
 				for (auto& notActivePlayer : playersQwixx) {
-					if (!notActivePlayer.isOrNotActive) {
+					if (!activePlayer.sheet) {
+						done = true;
+						break;
+					}
+					if (!notActivePlayer.isOrNotActive()) {
 						cout << notActivePlayer.sheet;
 						notActivePlayer.inputAfterRoll(rod);
-						notActivePlayer.sheet.score(notActivePlayer.sheet,rod, rod.SelectedColor, rod.selectedPosition);
+						
 					}
 				}
 			}

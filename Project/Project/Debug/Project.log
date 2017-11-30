@@ -1,7 +1,28 @@
-﻿  QwixxRow.cpp
-QwintoScoreSheet.obj : error LNK2019: symbole externe non résolu "public: __thiscall ScoreSheet::ScoreSheet(void)" (??0ScoreSheet@@QAE@XZ) référencé dans la fonction "public: __thiscall QwintoScoreSheet::QwintoScoreSheet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0QwintoScoreSheet@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-QwixxScoreSheet.obj : error LNK2001: symbole externe non résolu "public: __thiscall ScoreSheet::ScoreSheet(void)" (??0ScoreSheet@@QAE@XZ)
-QwintoScoreSheet.obj : error LNK2019: symbole externe non résolu "public: __thiscall QwintoRow<0>::QwintoRow<0>(void)" (??0?$QwintoRow@$0A@@@QAE@XZ) référencé dans la fonction "public: __thiscall QwintoScoreSheet::QwintoScoreSheet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0QwintoScoreSheet@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-QwintoScoreSheet.obj : error LNK2019: symbole externe non résolu "public: __thiscall QwintoRow<1>::QwintoRow<1>(void)" (??0?$QwintoRow@$00@@QAE@XZ) référencé dans la fonction "public: __thiscall QwintoScoreSheet::QwintoScoreSheet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0QwintoScoreSheet@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-QwintoScoreSheet.obj : error LNK2019: symbole externe non résolu "public: __thiscall QwintoRow<3>::QwintoRow<3>(void)" (??0?$QwintoRow@$02@@QAE@XZ) référencé dans la fonction "public: __thiscall QwintoScoreSheet::QwintoScoreSheet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0QwintoScoreSheet@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.exe : fatal error LNK1120: 4 externes non résolus
+﻿  QwixxScoreSheet.cpp
+  QwintoScoreSheet.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(148): error C2371: 'row' : redéfinition ; types de base différents
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(111): note: voir la déclaration de 'row'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(152): error C2088: '[' : non conforme pour class
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(172): error C2088: '[' : non conforme pour class
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(183): error C2371: 'row' : redéfinition ; types de base différents
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(111): note: voir la déclaration de 'row'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(187): error C2088: '[' : non conforme pour class
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(207): error C2088: '[' : non conforme pour class
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(147): error C2360: l'initialisation de 'row' est ignorée par l'étiquette 'case'
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(111): note: voir la déclaration de 'row'
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(182): error C2360: l'initialisation de 'row' est ignorée par l'étiquette 'case'
+  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(148): note: voir la déclaration de 'row'
+  QwintoRow.cpp
+  GameLoop.cpp
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cpp(32): warning C4018: '<' : incompatibilité signed/unsigned
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cpp(72): warning C4018: '<' : incompatibilité signed/unsigned
+  Génération de code en cours...
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cpp(15): error C4700: variable locale 'versionInput' non initialisée utilisée
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cpp(24): error C4700: variable locale 'i' non initialisée utilisée
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cpp(36): error C4700: variable locale 'done' non initialisée utilisée
+  Compilation en cours...
+  scoresheet.cpp
+  QwixxPlayer.cpp
+  QwintoPlayer.cpp
+  Génération de code en cours...
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\scoresheet.cpp(20): warning C4717: 'operator<<' : récurrent sur tous les chemins d'accès de contrôle, la fonction entraînera un dépassement de capacité de la pile d'exécution

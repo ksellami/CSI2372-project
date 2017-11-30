@@ -10,7 +10,7 @@ class QwintoRow
 {
 public:
 
-	int Size {return Row.size}
+	int Size{ return Row.size }; 
 	QwintoRow<col>();
 	bool validateEntry(int&);
 	int& operator[] (int);

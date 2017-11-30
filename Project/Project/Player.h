@@ -4,8 +4,9 @@
 
 class Player
 {
-	bool isActive=false ; 
+
 public:
+	bool isActive = false;
 	void setActive(bool param); 
 	bool isOrNotActive(); 
 	virtual void inputBeforeRoll(RollOfDice& rod) = 0; 

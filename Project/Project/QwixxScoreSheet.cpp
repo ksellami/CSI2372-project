@@ -31,5 +31,7 @@ ostream & operator<<(ostream & os, const QwixxScoreSheet & dt)
 	os << "Yellow "<<dt.yellowRow << endl;
 	os << "Green " <<dt.greenRow << endl;
 	os <<"Blue "<< dt.blueRow << endl;
+
+	return os;
 	
 }
