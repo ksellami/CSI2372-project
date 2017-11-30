@@ -55,7 +55,7 @@ template <Colour col> QwintoRow<col>::QwintoRow()
 	for (int i = 0, i < Row.max_size(), i++)
 	{
 
-		Row[i] = NULL;
+		Row[i] = 0;
 	}
 
 }

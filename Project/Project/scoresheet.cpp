@@ -1,7 +1,7 @@
 #include "scoresheet.h"
 
 
-ScoreSheet::ScoreSheet(string pName) :playerName(pName)
+ScoreSheet::ScoreSheet(string pName) :playerName(pName),overallScore(0),failedAttempts(0)
 {}
 
 

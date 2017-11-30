@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  QwixxScoreSheet.cpp
   QwintoScoreSheet.cpp
 c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoscoresheet.cpp(148): error C2371: 'row' : redéfinition ; types de base différents
@@ -26,3 +27,41 @@ c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cp
   QwintoPlayer.cpp
   Génération de code en cours...
 c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\scoresheet.cpp(20): warning C4717: 'operator<<' : récurrent sur tous les chemins d'accès de contrôle, la fonction entraînera un dépassement de capacité de la pile d'exécution
+=======
+﻿  test.cpp
+  scoresheet.cpp
+  RollOfDice.cpp
+  RandomDice.cpp
+  QwixxScoreSheet.cpp
+  QwixxRow.cpp
+  QwixxPlayer.cpp
+  QwintoScoreSheet.cpp
+a:\c++ project\csi2372-project\project\project\qwintorow.h(13): error C2059: erreur de syntaxe : 'return'
+  a:\c++ project\csi2372-project\project\project\qwintorow.h(13): note: Le diagnostic s'est produit dans la fonction 'QwintoRow<Colour::RED>::QwintoRow(void)' générée par le compilateur
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(152): error C2371: 'row' : redéfinition ; types de base différents
+  a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(111): note: voir la déclaration de 'row'
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(156): error C2088: '[' : non conforme pour class
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(176): error C2088: '[' : non conforme pour class
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(191): error C2371: 'row' : redéfinition ; types de base différents
+  a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(111): note: voir la déclaration de 'row'
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(195): error C2088: '[' : non conforme pour class
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(215): error C2088: '[' : non conforme pour class
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(151): error C2360: l'initialisation de 'row' est ignorée par l'étiquette 'case'
+  a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(111): note: voir la déclaration de 'row'
+a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(190): error C2360: l'initialisation de 'row' est ignorée par l'étiquette 'case'
+  a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(152): note: voir la déclaration de 'row'
+  QwintoRow.cpp
+a:\c++ project\csi2372-project\project\project\qwintorow.cpp(53): error C2039: '{ctor}' : n'est pas membre de 'QwintoRow<col>'
+a:\c++ project\csi2372-project\project\project\qwintorow.cpp(53): error C2447: '{' : en-tête de fonction manquant (liste formelle à l'ancien format ?)
+  QwintoPlayer.cpp
+  Player.cpp
+  GameLoop.cpp
+a:\c++ project\csi2372-project\project\project\gameloop.cpp(31): warning C4018: '<' : incompatibilité signed/unsigned
+a:\c++ project\csi2372-project\project\project\gameloop.cpp(46): error C2276: '!' : opération non conforme sur l'expression d'une fonction membre liée
+a:\c++ project\csi2372-project\project\project\gameloop.cpp(64): warning C4018: '<' : incompatibilité signed/unsigned
+a:\c++ project\csi2372-project\project\project\gameloop.cpp(79): error C2276: '!' : opération non conforme sur l'expression d'une fonction membre liée
+  Dice.cpp
+  Génération de code en cours...
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(35): error C4716: 'operator<<' : doit retourner une valeur
+a:\c++ project\csi2372-project\project\project\scoresheet.cpp(20): warning C4717: 'operator<<' : récurrent sur tous les chemins d'accès de contrôle, la fonction entraînera un dépassement de capacité de la pile d'exécution
+>>>>>>> 2a145f4928746bbe63cbf3fc2d6d803646b2572a
