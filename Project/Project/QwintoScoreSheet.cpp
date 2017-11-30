@@ -2,7 +2,7 @@
 
 
 
-QwintoScoreSheet::QwintoScoreSheet(string NewName) : ScoreSheet(NewName)
+QwintoScoreSheet::QwintoScoreSheet(string NewName) : ScoreSheet(NewName),redEntriesTotal(0),yellowEntriesTotal(0),blueEntriesTotal(0)
 {
 	
 }
@@ -62,7 +62,7 @@ bool  QwintoScoreSheet::validate(Colour& color, int& position)
 
 bool QwintoScoreSheet::operator ! (){
 
-	if (failedAttempts==4){
+	if (failedAttempts>=4){
 
 		return true;
 	}
@@ -79,7 +79,8 @@ bool QwintoScoreSheet::operator ! (){
 
 ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
 	os << "Player Name :" << _qwinto.playerName << '\t' << '\t' << "Points: "<<_qwinto.overallScore <<endl ;
-	
+	os <<'\t'<<"-------------------------------------" << endl;
+
 	os <<"Red"<<"   "<< _qwinto.redRow;
 
 	os << "Yellow" << "   " << _qwinto.yellowRow;
@@ -96,7 +97,6 @@ ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
 
 bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
-	roll.roll();
 
 	bool validRoll;
 	validRoll = sheet.validate(uColor, uPostion);
@@ -135,6 +135,10 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				{
 					row[uPostion] = roll;
 					sheet.redEntriesTotal++;
+						if (redEntriesTotal == redRow.Size){ 
+
+							totalRowsCompleted++;
+						}
 				}
 				else
 				{
@@ -171,6 +175,10 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				{
 					row[uPostion] = roll;
 					sheet.yellowEntriesTotal++;
+					if (yellowEntriesTotal == yellowRow.Size) {
+
+						totalRowsCompleted++;
+					}
 				}
 				else
 				{
@@ -206,11 +214,15 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				{
 					row[uPostion] = roll;
 					sheet.blueEntriesTotal++;
+
+					if (blueEntriesTotal == blueRow.Size) {
+
+						totalRowsCompleted++;
+					}
 				}
 				else
 				{
 					sheet.fail();
-					scored = false;
 				}
 
 			break;
@@ -218,6 +230,12 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 		}
 
 
+	}
+
+	else {
+
+
+		cout << "Not a valid throw" << endl;
 	}
 
 	
