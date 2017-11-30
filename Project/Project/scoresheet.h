@@ -11,30 +11,25 @@ using namespace std;
 
 class ScoreSheet
 { 
+
 	
 
 public:	
 	string playerName;
+	int failedAttempts = 0;
+	int overallScore = 0;
 	ScoreSheet(string pName);
-	virtual friend ostream& operator<<(ostream&, const ScoreSheet&);
-	virtual  bool score(ScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion = -1) =0;
+	//virtual  bool score(ScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion = -1) =0;
+	virtual bool validate(Colour&, int&) = 0;
+	friend ostream& operator<<(ostream&, const ScoreSheet&);
 	int setTotal();
-
 	void fail();
 
-
 private : 
-
 	virtual int calcTotal() = 0; 
 	virtual bool operator ! () = 0; 
 
-protected:
-
-	virtual bool validate(Colour&, int&) = 0;
 	
-	int failedAttempts = 0;
-	int overallScore = 0;
-
 
 
 

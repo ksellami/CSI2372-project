@@ -58,6 +58,8 @@ bool  QwintoScoreSheet::validate(Colour& color, int& position)
 	return colorValidated;
 }
 
+
+
 bool QwintoScoreSheet::operator ! (){
 
 	if (failedAttempts==4){
@@ -92,8 +94,7 @@ ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
 	//for (int i = 0;)
 }
 
-
-bool score(RollOfDice roll, Colour &uColor, int &uPostion, QwintoScoreSheet& sheet)
+bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
 	roll.roll();
 

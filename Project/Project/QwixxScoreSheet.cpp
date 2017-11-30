@@ -4,6 +4,26 @@ QwixxScoreSheet::QwixxScoreSheet(string name) :ScoreSheet(name)
 {
 }
 
+int QwixxScoreSheet::calcTotal()
+{
+	return 0;
+}
+
+bool QwixxScoreSheet::operator!()
+{
+	return false;
+}
+
+bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uColor, int uPostion)
+{
+	return false;
+}
+
+bool QwixxScoreSheet::validate(Colour &, int &)
+{
+	return false;
+}
+
 ostream & operator<<(ostream & os, const QwixxScoreSheet & dt)
 {   
 	os << "Player Name " << dt.playerName << endl; 

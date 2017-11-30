@@ -41,12 +41,12 @@ int main(){
 				cout << rod;
 				cout << activePlayer.sheet;
 				activePlayer.inputAfterRoll(rod);
-				activePlayer.sheet.score(rod, rod.SelectedColor, rod.selectedPosition);
+				activePlayer.sheet.score(activePlayer.sheet,rod, rod.SelectedColor, rod.selectedPosition);
 				for (auto& notActivePlayer : playersQwinto){
 					if (!notActivePlayer.isOrNotActive) {
 						cout << notActivePlayer.sheet;
 						notActivePlayer.inputAfterRoll(rod);
-						notActivePlayer.sheet.score(rod, rod.SelectedColor, rod.selectedPosition);
+						notActivePlayer.sheet.score(notActivePlayer.sheet, rod, rod.SelectedColor, rod.selectedPosition);
 					}
 				}
 			}
@@ -74,12 +74,12 @@ int main(){
 				cout << rod;
 				cout << activePlayer.sheet;
 				activePlayer.inputAfterRoll(rod);
-				activePlayer.sheet.score(rod, rod.SelectedColor, rod.selectedPosition);
+				activePlayer.sheet.score(activePlayer.sheet,rod, rod.SelectedColor, rod.selectedPosition);
 				for (auto& notActivePlayer : playersQwixx) {
 					if (!notActivePlayer.isOrNotActive) {
 						cout << notActivePlayer.sheet;
 						notActivePlayer.inputAfterRoll(rod);
-						notActivePlayer.sheet.score(rod, rod.SelectedColor, rod.selectedPosition);
+						notActivePlayer.sheet.score(notActivePlayer.sheet,rod, rod.SelectedColor, rod.selectedPosition);
 					}
 				}
 			}

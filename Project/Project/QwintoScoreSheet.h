@@ -14,7 +14,7 @@ public:
 	QwintoScoreSheet();
 
 	bool validate(Colour&, int&);
-	virtual bool score(RollOfDice roll, Colour uColor, int uPostion, QwintoScoreSheet& sheet);
+	bool score(QwintoScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion);
 	friend ostream& operator<<(ostream& os, const QwintoScoreSheet& qwinto);
 
 	bool operator!();

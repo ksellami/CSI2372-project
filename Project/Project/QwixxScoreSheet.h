@@ -15,8 +15,9 @@ public:
 
 	QwixxScoreSheet(string name); 
 	int calcTotal();
-	bool operator ! ();
+	bool operator !();
 	friend ostream& operator<<(ostream& os, const QwixxScoreSheet& dt);
+	bool score(QwixxScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion = -1); 
 
 protected:
 	bool validate(Colour&, int&);
