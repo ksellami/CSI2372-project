@@ -2,7 +2,6 @@
 #define QWINTOSCORESHEET_H
 #pragma once
 #include "scoresheet.h"
-#include "QwintoRow.h"
 #include "QwintoRow.cpp"
 #include <iostream>
 

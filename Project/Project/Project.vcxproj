@@ -115,10 +115,8 @@
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="QwintoPlayer.h" />
-    <ClInclude Include="QwintoRow.h" />
     <ClInclude Include="QwintoScoreSheet.h" />
     <ClInclude Include="QwixxPlayer.h" />
-    <ClInclude Include="QwixxRow.h" />
     <ClInclude Include="QwixxScoreSheet.h" />
     <ClInclude Include="RandomDice.h" />
     <ClInclude Include="RollOfDice.h" />

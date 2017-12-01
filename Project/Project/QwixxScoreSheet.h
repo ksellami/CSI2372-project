@@ -2,7 +2,6 @@
 #define QWIXXSCORESHEET_H
 #pragma once
 #include "scoresheet.h"
-#include "QwixxRow.h"
 #include "QwixxRow.cpp"
 #include "Colour.h"
 #include <iostream>

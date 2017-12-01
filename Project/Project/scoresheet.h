@@ -4,7 +4,6 @@
 
 #include "RollOfDice.h"
 #include "Colour.h"
-#include "QwintoRow.h"
 #include <string>
 
 using namespace std; 
