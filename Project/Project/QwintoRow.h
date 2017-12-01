@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef QWINTOROW_H
 #define QWINTOROW_H
 #pragma once
@@ -27,3 +28,5 @@ public:
 };
 
 #endif
+=======
+>>>>>>> 7666de96b052d0213f011d540228c5799dde7a20

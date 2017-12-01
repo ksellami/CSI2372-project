@@ -4,6 +4,7 @@
 #include "scoresheet.h"
 #include "QwintoRow.h"
 #include "QwintoRow.cpp"
+#include <iostream>
 
 class QwintoScoreSheet :
 	public ScoreSheet
@@ -14,8 +15,6 @@ public:
 	QwintoRow<Colour::BLUE> blueRow;
 	
 	QwintoScoreSheet(string NewName);
-	QwintoScoreSheet();
-
 	bool validate(Colour&, int&);
 	bool score(QwintoScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion);
 	friend ostream& operator<<(ostream& os, QwintoScoreSheet& qwinto);
