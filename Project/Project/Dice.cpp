@@ -14,8 +14,8 @@ string Dice::colourToStr(const Colour& _col)
 
 int Dice::roll()
 {
-	this->face = rand.DrawNumber(1, 6); 
-	return this->face; 
+	face = rand.DrawNumber(1, 6); 
+	return face; 
 }
 
 Dice::Dice(const Colour& _col) :
