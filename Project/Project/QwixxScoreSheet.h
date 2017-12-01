@@ -1,3 +1,5 @@
+#ifndef QWIXXSCORESHEET_H
+#define QWIXXSCORESHEET_H
 #pragma once
 #include "scoresheet.h"
 #include "QwixxRow.h"
@@ -16,7 +18,7 @@ public:
 	QwixxScoreSheet(string name); 
 	int calcTotal();
 	bool operator !();
-	friend ostream& operator<<(ostream& os, const QwixxScoreSheet& dt);
+	friend ostream& operator<<(ostream& os,QwixxScoreSheet& dt);
 	bool score(QwixxScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion = -1); 
 
 protected:
@@ -24,4 +26,4 @@ protected:
 
 
 };
-
+#endif

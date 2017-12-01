@@ -1,4 +1,5 @@
-
+#ifndef DICE_H
+#define DICE_H
 #include "Colour.h"
 #include <iostream>
 #include <vector> 
@@ -18,6 +19,7 @@ public:
 	string colourToStr(const Colour& _col); 
 	int roll();
 	Dice(const Colour& _col);
-	friend ostream& operator<<(ostream& os, const Dice& d);
+	friend ostream& operator<<(ostream& os, Dice& d);
 };
 
+#endif

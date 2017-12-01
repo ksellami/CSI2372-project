@@ -21,7 +21,7 @@ public:
 	ScoreSheet(string pName);
 	//virtual  bool score(ScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion = -1) =0;
 	virtual bool validate(Colour&, int&) = 0;
-	friend ostream& operator<<(ostream&, const ScoreSheet&);
+	
 	int setTotal();
 	void fail();
 

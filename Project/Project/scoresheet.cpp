@@ -13,11 +13,7 @@ int ScoreSheet::setTotal()
 	return overallScore;	
 }
 
-ostream & operator<<(ostream & os, const ScoreSheet & sheet)
-{
-	os << sheet;
-	return os;
-}
+
 void ScoreSheet::fail()
 {
 	failedAttempts--;

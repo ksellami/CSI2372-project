@@ -1,3 +1,5 @@
+#ifndef RANDOMDICE_H
+#define RANDOMDICE_H
 #include <iostream>
 #include <random>
 
@@ -12,3 +14,4 @@ private:
 	std::mt19937 eng{ std::random_device{}() };
 };
 
+#endif

@@ -20,7 +20,7 @@ int & QwixxRow<T, col>::operator[](int param)
 }
 
 template<class T, Colour col>
-ostream & operator<<(ostream & os, const QwixxRow<T, col>& pRow)
+ostream & operator<<(ostream & os, QwixxRow<T, col>& pRow)
 
 	{
 		if (col == Colour::RED)

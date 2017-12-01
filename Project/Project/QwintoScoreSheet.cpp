@@ -2,6 +2,7 @@
 
 
 
+
 QwintoScoreSheet::QwintoScoreSheet(string NewName) : ScoreSheet(NewName),redEntriesTotal(0),yellowEntriesTotal(0),blueEntriesTotal(0)
 {
 	
@@ -11,7 +12,7 @@ QwintoScoreSheet::QwintoScoreSheet(string NewName) : ScoreSheet(NewName),redEntr
 
 int QwintoScoreSheet::calcTotal()
 {
-	int total;
+	int total=0;
 	if (redEntriesTotal == redRow.Row.max_size())
 	{
 		total += redRow.Row[redRow.Row.max_size() - 1];
@@ -77,7 +78,7 @@ bool QwintoScoreSheet::operator ! (){
 }
 
 
-ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
+ostream& operator<<(ostream& os, QwintoScoreSheet& _qwinto){
 	os << "Player Name :" << _qwinto.playerName << '\t' << '\t' << "Points: "<<_qwinto.overallScore <<endl ;
 	os <<'\t'<<"-------------------------------------" << endl;
 
@@ -85,14 +86,13 @@ ostream& operator<<(ostream& os, const QwintoScoreSheet& _qwinto){
 
 	os << "Yellow" << "   " << _qwinto.yellowRow;
 
-
-
 	os << "Blue" << "   " << _qwinto.blueRow;
 
 	os << "-------------------------------------" << endl;
 
 	os << "Failed Throw";
 	//for (int i = 0;)
+	return os;
 }
 
 bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion)
@@ -105,13 +105,14 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 	if (validRoll) {
 		int result = (int)roll;
+		
 		switch (uColor) {
 
 			case(Colour::RED):
-				QwintoRow<Colour::RED> row = row;
+				
 				for (int i = 0; i < uPostion; i++)
 				{
-					if (row[i] <= result)
+					if (sheet.redRow[i] <= result)
 					{
 				
 
@@ -133,9 +134,9 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 				if (scored)
 				{
-					row[uPostion] = roll;
+					sheet.redRow[uPostion] = roll;
 					sheet.redEntriesTotal++;
-						if (redEntriesTotal == redRow.Size){ 
+						if (redEntriesTotal == redRow.Size()){ 
 
 							totalRowsCompleted++;
 						}
@@ -149,11 +150,10 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 			break;
 
 			case(Colour::YELLOW):
-				QwintoRow<Colour::YELLOW> row = sheet.yellowRow;
-
+				//QwintoRow<Colour::YELLOW> row = sheet.yellowRow;
 				for (int i = 0; i < uPostion; i++) 
 				{
-					if (row[i] <= result)
+					if (sheet.yellowRow.operator[](i) <= result)
 					{
 						if (i < 9 && i>0 && (result == sheet.redRow[i -1] || result == sheet.blueRow[i + 1]))
 							scored = false;
@@ -173,9 +173,10 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 				if (scored)
 				{
-					row[uPostion] = roll;
+					sheet.yellowRow.operator[](uPostion) = roll;
+					//row[uPostion] = roll;
 					sheet.yellowEntriesTotal++;
-					if (yellowEntriesTotal == yellowRow.Size) {
+					if (yellowEntriesTotal == yellowRow.Size()) {
 
 						totalRowsCompleted++;
 					}
@@ -188,11 +189,10 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 			break;
 
 			case(Colour::BLUE):
-				QwintoRow<Colour::BLUE> row = sheet.blueRow;
-
+				//QwintoRow<Colour::BLUE> row = sheet.blueRow;
 				for (int i = 0; i < uPostion; i++) 
 				{
-					if (row[i] <= result)
+					if (sheet.blueRow.operator[](i) <= result)
 					{
 						
 						if (i>1 && (result == sheet.redRow[i-2] || result == sheet.yellowRow[i-1]))
@@ -212,10 +212,11 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 				if (scored)
 				{
-					row[uPostion] = roll;
+					sheet.blueRow.operator[](uPostion) = roll;
+					//row[uPostion] = roll;
 					sheet.blueEntriesTotal++;
 
-					if (blueEntriesTotal == blueRow.Size) {
+					if (blueEntriesTotal == blueRow.Size()) {
 
 						totalRowsCompleted++;
 					}

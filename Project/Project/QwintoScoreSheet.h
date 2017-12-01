@@ -1,6 +1,9 @@
+#ifndef QWINTOSCORESHEET_H
+#define QWINTOSCORESHEET_H
 #pragma once
 #include "scoresheet.h"
 #include "QwintoRow.h"
+#include "QwintoRow.cpp"
 
 class QwintoScoreSheet :
 	public ScoreSheet
@@ -15,7 +18,7 @@ public:
 
 	bool validate(Colour&, int&);
 	bool score(QwintoScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion);
-	friend ostream& operator<<(ostream& os, const QwintoScoreSheet& qwinto);
+	friend ostream& operator<<(ostream& os, QwintoScoreSheet& qwinto);
 
 	bool operator!();
 	int totalRowsCompleted = 0;
@@ -25,13 +28,6 @@ public:
 	int redEntriesTotal = 0;
 	int yellowEntriesTotal = 0;
 	int blueEntriesTotal = 0;
-protected:	
-
-
-
-
-	
-	
-	
 };
 
+#endif

@@ -1,3 +1,5 @@
+#ifndef QWIXXROW_H
+#define QWIXXROW_H
 #pragma once
 #include "RollOfDice.h"
 #include <array>
@@ -10,9 +12,11 @@ class QwixxRow
 	T Row;
 public:
 	QwixxRow<T, col>();
-	friend QwixxRow<T,col> &operator+=(QwixxRow& ,const RollOfDice &); 
+	friend QwixxRow<T,col> &operator+=(QwixxRow& ,RollOfDice &); 
 	bool validateEntry(int&); 
 	int& operator[](int param);
-    friend ostream& operator<<(ostream &os, const QwixxRow<T,col>& pRow);
+	template <class X,Colour U>
+    friend ostream& operator<<(ostream &os, QwixxRow<X,U>& pRow);
 	
 };
+#endif

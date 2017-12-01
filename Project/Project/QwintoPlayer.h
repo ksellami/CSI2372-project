@@ -1,3 +1,5 @@
+#ifndef QWINTOPLAYER_H
+#define QWINTOPLAYER_H
 #pragma once
 #include "Player.h"
 #include <string>
@@ -15,3 +17,4 @@ public:
 	void inputAfterRoll(RollOfDice& rod);
 };
 
+#endif

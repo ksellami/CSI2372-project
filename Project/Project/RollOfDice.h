@@ -1,3 +1,5 @@
+#ifndef ROLLOFDICE_H
+#define ROLLOFDICE_H
 #pragma once
 #include "Dice.h"
 #include <stdio.h>
@@ -17,6 +19,7 @@ public:
 	std::vector<Dice>::const_iterator begin() const;
 	std::vector<Dice>::iterator end();
 	std::vector<Dice>::const_iterator end() const;
-	friend ostream& operator<<(ostream& os, const RollOfDice& rod);
+	friend ostream& operator<<(ostream& os, RollOfDice& rod);
 };
 
+#endif

@@ -1,3 +1,5 @@
+#ifndef PLAYER_H
+#define PLAYER_H
 #pragma once
 #include "RollOfDice.h"
 
@@ -13,3 +15,4 @@ public:
 	virtual void inputAfterRoll(RollOfDice& rod) = 0;	
 };
 
+#endif

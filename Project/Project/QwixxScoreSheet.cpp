@@ -24,7 +24,7 @@ bool QwixxScoreSheet::validate(Colour &, int &)
 	return false;
 }
 
-ostream & operator<<(ostream & os, const QwixxScoreSheet & dt)
+ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 {   
 	os << "Player Name " << dt.playerName << endl; 
 	os << "Red "<<dt.redRow << endl;

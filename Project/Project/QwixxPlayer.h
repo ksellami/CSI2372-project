@@ -1,3 +1,5 @@
+#ifndef QWIXXPLAYER_H
+#define QWIXXPLAYER_H
 #pragma once
 #include "Player.h"
 #include "RollOfDice.h"
@@ -12,3 +14,4 @@ public:
 	void inputAfterRoll(RollOfDice& rod);
 };
 
+#endif

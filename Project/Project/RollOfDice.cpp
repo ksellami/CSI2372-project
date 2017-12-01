@@ -52,10 +52,10 @@ RollOfDice::operator int()
 	return somme;
 }
 
-ostream & operator<<(ostream & os, const RollOfDice & rod)
+ostream & operator<<(ostream & os, RollOfDice & rod)
 {
 	for (Dice d : rod)
-		os << d;
+		os << d; 
 
 	return os;
 
