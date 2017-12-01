@@ -1,16 +1,19 @@
 #ifndef QWINTOROW_H
 #define QWINTOROW_H
 #pragma once
-
-
 #include "RollOfDice.h"
 #include <array>
 #include<iostream>
 
+
 using namespace std;
 
+template<Colour col> class QwintoRow;
 template<Colour col>
-class QwintoRow
+inline ostream& operator<<(ostream &os, const QwintoRow<col>& pRow);
+
+
+template<Colour col> class QwintoRow
 {
 
 public:
@@ -19,7 +22,7 @@ public:
 	QwintoRow();
 	bool validateEntry(int&);
 	int& operator[] (int);
-	friend ostream& operator<<(ostream &os, QwintoRow<col>& pRow); 
+	template<Colour col> friend inline ostream& operator<<(ostream &os, QwintoRow<col>& pRow);
 	
 };
 

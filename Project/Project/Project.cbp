@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Project" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Project" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="Debug x64">
+				<Option output="Project" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="Release x64">
+				<Option output="Project" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Project" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Unit filename="Colour.h" />
+		<Unit filename="Dice.cpp" />
+		<Unit filename="Dice.h" />
+		<Unit filename="GameLoop.cpp" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.h" />
+		<Unit filename="QwintoPlayer.cpp" />
+		<Unit filename="QwintoPlayer.h" />
+		<Unit filename="QwintoRow.cpp" />
+		<Unit filename="QwintoRow.h" />
+		<Unit filename="QwintoScoreSheet.cpp" />
+		<Unit filename="QwintoScoreSheet.h" />
+		<Unit filename="QwixxPlayer.cpp" />
+		<Unit filename="QwixxPlayer.h" />
+		<Unit filename="QwixxRow.cpp" />
+		<Unit filename="QwixxRow.h" />
+		<Unit filename="QwixxScoreSheet.cpp" />
+		<Unit filename="QwixxScoreSheet.h" />
+		<Unit filename="RandomDice.cpp" />
+		<Unit filename="RandomDice.h" />
+		<Unit filename="RollOfDice.cpp" />
+		<Unit filename="RollOfDice.h" />
+		<Unit filename="scoresheet.cpp" />
+		<Unit filename="scoresheet.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
