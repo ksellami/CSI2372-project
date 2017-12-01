@@ -112,7 +112,7 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				
 				for (int i = 0; i < uPostion; i++)
 				{
-					if (sheet.redRow[i] <= result)
+					if (sheet.redRow[i] < result)
 					{
 				
 
@@ -126,6 +126,12 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 						else
 							scored = true;
 						
+
+					}
+					else {
+
+
+						scored = false;
 
 					}
 
@@ -153,7 +159,7 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				//QwintoRow<Colour::YELLOW> row = sheet.yellowRow;
 				for (int i = 0; i < uPostion; i++) 
 				{
-					if (sheet.yellowRow.operator[](i) <= result)
+					if (sheet.yellowRow.operator[](i) < result)
 					{
 						if (i < 9 && i>0 && (result == sheet.redRow[i -1] || result == sheet.blueRow[i + 1]))
 							scored = false;
@@ -167,6 +173,13 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 							else
 								scored = true;
 						}
+					}
+
+					else {
+
+
+						scored = false;
+
 					}
 					
 				}
@@ -192,7 +205,7 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				//QwintoRow<Colour::BLUE> row = sheet.blueRow;
 				for (int i = 0; i < uPostion; i++) 
 				{
-					if (sheet.blueRow.operator[](i) <= result)
+					if (sheet.blueRow[i] < result)
 					{
 						
 						if (i>1 && (result == sheet.redRow[i-2] || result == sheet.yellowRow[i-1]))
@@ -206,6 +219,12 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 							else
 								scored = true;
 						}
+					}
+					else {
+
+
+						scored = false;
+
 					}
 					
 				}
