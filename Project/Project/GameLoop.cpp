@@ -11,17 +11,18 @@ int main(){
 	int numberOfPlayers =0;
 
 	cout << "for Qwinto tap 1, for Qwixx tap 2" << endl; 
-	while (versionInput != 1 || versionInput != 2)
+
+	while (!(versionInput == 1 || versionInput == 2))
 		cin >> versionInput; 
 
 	cout << "how many players for this game ?" << endl; 
 	while (numberOfPlayers == 0)
 		cin >> numberOfPlayers; 
 
-		vector<string> names; 
+	array<string, 15> names{"karim"};
 	cout << "please enter the names of the players" << endl; 
 	for (int i=0; i < numberOfPlayers; i++)
-		while (names[i] == "")
+		while (names[i] == "karim")
 			cin >> names[i]; 
 
 

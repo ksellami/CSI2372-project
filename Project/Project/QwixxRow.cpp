@@ -1,28 +1,23 @@
-#include "QwixxRow.h"
+#pragma once
+#ifndef QWIXXROW_H
+#define QWIXXROW_H
+
+#include "RollOfDice.h"
+#include <array>
+#include<iostream>
+using namespace std;
 
 template<class T, Colour col>
-QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
+class QwixxRow
 {
-	Row += rod; 
-	return this; 
-}
-
-template<class T, Colour col>
-bool QwixxRow<T, col>::validateEntry(int &)
-{
-	return false;
-}
-
-template<class T, Colour col>
-int & QwixxRow<T, col>::operator[](int param)
-{
-	return Row[param];
-}
-
-template<class T, Colour col>
-ostream & operator<<(ostream & os, QwixxRow<T, col>& pRow)
-
-	{
+	
+public:
+	T Row;
+	QwixxRow<T, col>();
+	friend QwixxRow<T, col> &operator+=(QwixxRow&, RollOfDice &);
+	bool validateEntry(int&);
+	int& operator[](int param);
+	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) {
 		if (col == Colour::RED)
 		{
 			os << "  " << "| " << pRow.Row[0] << "| " << pRow.Row[1] << "| " << pRow.Row[2] << "| " << pRow.Row[3] << "| " << pRow.Row[4]
@@ -48,11 +43,33 @@ ostream & operator<<(ostream & os, QwixxRow<T, col>& pRow)
 		}
 
 		return os;
+	}
+	
+};
+#endif
+template<class T, Colour col>
+QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
+{
+	Row += rod; 
+	return this; 
 }
+
+template<class T, Colour col>
+bool QwixxRow<T, col>::validateEntry(int &)
+{
+	return false;
+}
+
+template<class T, Colour col>
+int & QwixxRow<T, col>::operator[](int param)
+{
+	return Row[param];
+}
+
 
 template<class T, Colour col>
 QwixxRow<T, col>::QwixxRow()
 {
-	for (int i = 0, i < Row.max_size(), i++)
-		Row[i] = i + 2;
+//	for (int i = 0, i < Row.max_size(), i++)
+		//Row[i] = i + 2;
 }
