@@ -19,18 +19,24 @@ int main(){
 	while (numberOfPlayers == 0)
 		cin >> numberOfPlayers; 
 
-	array<string, 15> names{"karim"};
+	vector<string> names;
 	cout << "please enter the names of the players" << endl; 
-	for (int i=0; i < numberOfPlayers; i++)
-		while (names[i] == "karim")
-			cin >> names[i]; 
+	for (int i = 0; i < numberOfPlayers; i++) {
+		string input = "";
+		while (input == "") {
+			cin >> input; 
+			names.push_back(input);
+		}
+	}
 
 
 	if (versionInput == 1)
 	{
 		vector<QwintoPlayer> playersQwinto;
+
 		for (int i = 0; i < names.size(); i++)
-		playersQwinto[i]=*new QwintoPlayer(names[i]); 
+		playersQwinto.push_back(* new QwintoPlayer(names[i])); 
+
 		RollOfDice rod; 
 		
 		while (!done)
