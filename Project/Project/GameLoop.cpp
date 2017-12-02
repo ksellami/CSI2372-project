@@ -47,8 +47,7 @@ int main(){
 				rod.roll();
 				cout << rod;
 				cout << activePlayer.sheet;
-				activePlayer.inputAfterRoll(rod);
-				activePlayer.setActive(false); 
+				activePlayer.inputAfterRoll(rod); 
 				if (!activePlayer.sheet) {
 					done = true;
 					break;
@@ -63,6 +62,7 @@ int main(){
 						notActivePlayer.inputAfterRoll(rod);
 					}
 				}
+				activePlayer.setActive(false);
 			}
 		}
 		for (auto &player : playersQwinto) {

@@ -39,17 +39,17 @@ bool  QwintoScoreSheet::validate(Colour& color, int& position)
 	switch (color){
 		case(Colour::RED) :
 			colorValidated = redRow.validateEntry(position);
-			if (position = 3)
+			if (position == 3)
 				colorValidated = false;
 		break;
 		case(Colour::YELLOW) :
 			colorValidated = yellowRow.validateEntry(position);
-			if (position = 5)
+			if (position == 5)
 				colorValidated = false;
 		break;
 		case(Colour::BLUE) :
 			colorValidated = blueRow.validateEntry(position);
-			if (position = 4)
+			if (position == 4)
 				colorValidated = false;
 		break;
 
@@ -104,13 +104,13 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 	bool scored = false; 
 
 	if (validRoll) {
-		int result = (int)roll;
+		int result = roll;
 		
 		switch (uColor) {
 
 			case(Colour::RED):
 				
-				for (int i = 0; i < uPostion; i++)
+				for (int i = 0; i <= uPostion; i++)
 				{
 					if (sheet.redRow[i] < result)
 					{
