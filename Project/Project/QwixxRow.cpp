@@ -10,7 +10,7 @@ using namespace std;
 template<class T, Colour col>
 class QwixxRow
 {
-	
+
 public:
 	T Row;
 	QwixxRow<T, col>();
@@ -20,33 +20,17 @@ public:
 	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) {
 		if (col == Colour::RED)
 		{
-			os << "  " << "| " << pRow.Row[0] << "| " << pRow.Row[1] << "| " << pRow.Row[2] << "| " << pRow.Row[3] << "| " << pRow.Row[4]
-				<< "| " << pRow.Row[5] << "| " << pRow.Row[6] << "| " << pRow.Row[7] << "| " << pRow.Row[8] << "| " << pRow.Row[9] << "| " << pRow.Row[10] << "| ";
+			os << "  ";
+			for (auto & r : pRow.Row)
+				os << "| " << r;
 
-		}
-		else if (col == Colour::YELLOW)
-		{
-			os << "  " << "| " << pRow.Row[0] << "| " << pRow.Row[1] << "| " << pRow.Row[2] << "| " << pRow.Row[3] << "| " << pRow.Row[4]
-				<< "| " << pRow.Row[5] << "| " << pRow.Row[6] << "| " << pRow.Row[7] << "| " << pRow.Row[8] << "| " << pRow.Row[9] << "| " << pRow.Row[10] << "| ";
-
-		}
-		else if (col == Colour::GREEN)
-		{
-			os << "  " << "| " << pRow.Row[10] << "| " << pRow.Row[9] << "| " << pRow.Row[8] << "| " << pRow.Row[7] << "| " << pRow.Row[6]
-				<< "| " << pRow.Row[5] << "| " << pRow.Row[4] << "| " << pRow.Row[3] << "| " << pRow.Row[2] << "| " << pRow.Row[1] << "| " << pRow.Row[0] << "| ";
-
-		}
-		else if (col == Colour::BLUE)
-		{
-			os << "  " << "| " << pRow.Row[10] << "| " << pRow.Row[9] << "| " << pRow.Row[8] << "| " << pRow.Row[7] << "| " << pRow.Row[6]
-				<< "| " << pRow.Row[5] << "| " << pRow.Row[4] << "| " << pRow.Row[3] << "| " << pRow.Row[2] << "| " << pRow.Row[1] << "| " << pRow.Row[0] << "| ";
+			return os;
 		}
 
-		return os;
-	}
-	
-};
+	};
 #endif
+};
+
 template<class T, Colour col>
 QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
 {
@@ -70,6 +54,10 @@ int & QwixxRow<T, col>::operator[](int param)
 template<class T, Colour col>
 QwixxRow<T, col>::QwixxRow()
 {
-//	for (int i = 0, i < Row.max_size(), i++)
-		//Row[i] = i + 2;
+	int i = 0; 
+	for (auto & r : Row)
+	{
+		r = i + 2;
+		i++; 
+	}
 }

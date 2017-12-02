@@ -82,16 +82,16 @@ ostream& operator<<(ostream& os, QwintoScoreSheet& _qwinto){
 	os << "Player Name :" << _qwinto.playerName << '\t' << '\t' << "Points: "<<_qwinto.overallScore <<endl ;
 	os <<'\t'<<"-------------------------------------" << endl;
 
-	os <<"Red"<<"   "<< _qwinto.redRow;
+	os <<"Red   "<< _qwinto.redRow;
 
-	os << "Yellow" << "   " << _qwinto.yellowRow;
+	os << "Yellow   "<< _qwinto.yellowRow;
 
-	os << "Blue" << "   " << _qwinto.blueRow;
+	os << "Blue   "<< _qwinto.blueRow;
 
 	os << "-------------------------------------" << endl;
 
 	os << "Failed Throw" << endl;
-	//for (int i = 0;)
+
 	return os;
 }
 
@@ -99,7 +99,8 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 {
 
 	bool validRoll;
-	validRoll = sheet.validate(uColor, uPostion);
+	//validRoll=QwintoScoreSheet::validate(uColor, uPostion);
+		validRoll = sheet.validate(uColor, uPostion);
 	
 	bool scored = false; 
 

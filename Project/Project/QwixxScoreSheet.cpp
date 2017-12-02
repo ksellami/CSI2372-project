@@ -26,11 +26,14 @@ bool QwixxScoreSheet::validate(Colour &, int &)
 
 ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 {   
-	os << "Player Name " << dt.playerName << endl; 
-	os << "Red "<<dt.redRow << endl;
-	os << "Yellow "<<dt.yellowRow << endl;
-	os << "Green " <<dt.greenRow << endl;
-	os <<"Blue "<< dt.blueRow << endl;
+	os << "Player Name :" << dt.playerName << '\t' << '\t' << "Points: " << dt.overallScore << endl;
+	os << '\t' << "-------------------------------------" << endl;
+	os << "Red   "<<dt.redRow << endl;
+	os << "Yellow   "<<dt.yellowRow << endl;
+	os << "Green   " <<dt.greenRow << endl;
+	os <<"Blue   "<< dt.blueRow << endl;
+	os << "-------------------------------------" << endl;
+	os << "Failed Throw" << endl;
 
 	return os;
 	
