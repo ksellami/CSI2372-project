@@ -156,7 +156,6 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 			break;
 
 			case(Colour::YELLOW):
-				//QwintoRow<Colour::YELLOW> row = sheet.yellowRow;
 				for (int i = 0; i < uPostion; i++) 
 				{
 					if (sheet.yellowRow.operator[](i) < result)

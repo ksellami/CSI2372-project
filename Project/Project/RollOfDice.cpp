@@ -4,7 +4,7 @@
 
 void RollOfDice::roll()
 {
-	for (auto d : theRoll)
+	for (auto &d : theRoll)
 		d.roll(); 
 
 }
