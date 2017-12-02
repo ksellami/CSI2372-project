@@ -57,7 +57,7 @@ template <Colour col> bool QwintoRow<col>::validateEntry(int& indexEntry)
 
 	bool valid = false;
 
-	if (indexEntry > 0 && indexEntry < Row.max_size())
+	if (indexEntry >= 0 && indexEntry < Row.max_size())
 		valid = true;
 
 	if ((int)Row[indexEntry] != 0)

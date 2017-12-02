@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿  QwintoScoreSheet.cpp
 a:\c++ project\csi2372-project\project\project\qwintorow.cpp(78): warning C4018: '<' : incompatibilité signed/unsigned
   a:\c++ project\csi2372-project\project\project\qwintorow.cpp(76): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
@@ -8,10 +7,3 @@ a:\c++ project\csi2372-project\project\project\qwintorow.cpp(60): warning C4018:
   a:\c++ project\csi2372-project\project\project\qwintorow.cpp(56): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
   a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(41): note: voir la référence à l'instanciation de la fonction modèle 'bool QwintoRow<Colour::RED>::validateEntry(int &)' en cours de compilation
   Project.vcxproj -> A:\c++ project\CSI2372-project\Project\Debug\Project.exe
-=======
-﻿  GameLoop.cpp
-c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cpp(37): warning C4018: '<' : incompatibilité signed/unsigned
-c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cpp(78): warning C4018: '<' : incompatibilité signed/unsigned
-  Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.exe
-  Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.pdb (Partial PDB)
->>>>>>> 3147bbf408466fee0a103231bb5ea459220ce690
