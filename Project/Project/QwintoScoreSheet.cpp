@@ -99,8 +99,7 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 {
 
 	bool validRoll;
-	//validRoll=QwintoScoreSheet::validate(uColor, uPostion);
-		validRoll = sheet.validate(uColor, uPostion);
+	validRoll = sheet.validate(uColor, uPostion);
 	
 	bool scored = false; 
 
@@ -143,15 +142,15 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				{
 					sheet.redRow[uPostion] = roll;
 					sheet.redEntriesTotal++;
-						if (redEntriesTotal == redRow.Size()){ 
+						if (redEntriesTotal == (redRow.Size()-1)){ 
 
 							totalRowsCompleted++;
 						}
 				}
 				else
 				{
-					sheet.fail();
-					
+					cout << "\nNot a valid throw\n" << endl;
+
 				}
 
 			break;
@@ -187,22 +186,20 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				if (scored)
 				{
 					sheet.yellowRow.operator[](uPostion) = roll;
-					//row[uPostion] = roll;
 					sheet.yellowEntriesTotal++;
-					if (yellowEntriesTotal == yellowRow.Size()) {
+					if (yellowEntriesTotal == (yellowRow.Size()-1)) {
 
 						totalRowsCompleted++;
 					}
 				}
 				else
 				{
-					sheet.fail();
-					
+					cout << "\nNot a valid throw\n" << endl;
+
 				}
 			break;
 
 			case(Colour::BLUE):
-				//QwintoRow<Colour::BLUE> row = sheet.blueRow;
 				for (int i = 0; i <= uPostion; i++) 
 				{
 					if (sheet.blueRow[i] < result)
@@ -232,17 +229,17 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				if (scored)
 				{
 					sheet.blueRow.operator[](uPostion) = roll;
-					//row[uPostion] = roll;
 					sheet.blueEntriesTotal++;
 
-					if (blueEntriesTotal == blueRow.Size()) {
+					if (blueEntriesTotal == (blueRow.Size()-1)) {
 
 						totalRowsCompleted++;
 					}
 				}
 				else
 				{
-					sheet.fail();
+					cout << "\nNot a valid throw\n" << endl;
+					
 				}
 
 			break;
@@ -252,11 +249,7 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 	}
 
-	else {
-
-
-		cout << "Not a valid throw" << endl;
-	}
+	
 
 	
 
