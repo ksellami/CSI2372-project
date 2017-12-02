@@ -7,5 +7,5 @@ void Player::setActive(bool param)
 
 bool Player::isOrNotActive()
 {
-	return false;
+	return isActive;
 }
