@@ -101,7 +101,8 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 				return;
 			}
 			if (input == "fail" && isActive == true) {
-				qp->sheet.score(sheet,_rollOfDice, Colour::RED, -5); // failed throw
+				qp->sheet.fail(); 
+			//	qp->sheet.score(sheet,_rollOfDice, Colour::RED, -5); // failed throw
 				return;
 			}
 			selection.push_back(input);

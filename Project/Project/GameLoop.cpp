@@ -34,7 +34,7 @@ int main(){
 	{
 		vector<QwintoPlayer> playersQwinto;
 		
-		for (int i = 0; i < names.size(); i++)
+		for (int i = 0; i < static_cast<int>(names.size()); i++)
 		playersQwinto.push_back(* new QwintoPlayer(names[i])); 
 
 		 
@@ -77,7 +77,7 @@ int main(){
 	else if (versionInput == 2)
 	{
 		vector<QwixxPlayer> playersQwixx;
-		for (int i = 0; i < names.size(); i++)
+		for (int i = 0; i < static_cast<int>(names.size()); i++)
 			playersQwixx[i] = *new QwixxPlayer(names[i]);
 		RollOfDice rod;
 

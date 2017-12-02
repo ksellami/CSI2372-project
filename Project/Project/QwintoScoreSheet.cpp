@@ -69,8 +69,6 @@ bool QwintoScoreSheet::operator ! (){
 	}
 
 	if (totalRowsCompleted>=2){
-
-
 		return true;
 	}
 	
