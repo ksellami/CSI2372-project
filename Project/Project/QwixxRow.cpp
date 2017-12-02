@@ -18,16 +18,13 @@ public:
 	bool validateEntry(int&);
 	int& operator[](int param);
 	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) {
-		if (col == Colour::RED)
-		{
+		
 			os << "  ";
 			for (auto & r : pRow.Row)
 				os << "| " << r;
 
 			return os;
-		}
-
-	};
+	}
 #endif
 };
 
