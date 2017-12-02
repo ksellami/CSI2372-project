@@ -1,2 +1,23 @@
-﻿  LINK : A:\c++ project\CSI2372-project\Project\Debug\Project.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+﻿  scoresheet.cpp
+  RollOfDice.cpp
+  RandomDice.cpp
+  QwixxScoreSheet.cpp
+  QwixxRow.cpp
+  QwixxPlayer.cpp
+  QwintoScoreSheet.cpp
+a:\c++ project\csi2372-project\project\project\qwintorow.cpp(78): warning C4018: '<' : incompatibilité signed/unsigned
+  a:\c++ project\csi2372-project\project\project\qwintorow.cpp(76): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(7): note: voir la référence à l'instanciation de la fonction modèle 'QwintoRow<Colour::RED>::QwintoRow(void)' en cours de compilation
+  a:\c++ project\csi2372-project\project\project\qwintoscoresheet.h(12): note: voir la référence à l'instanciation de classe modèle 'QwintoRow<Colour::RED>' en cours de compilation
+a:\c++ project\csi2372-project\project\project\qwintorow.cpp(60): warning C4018: '<' : incompatibilité signed/unsigned
+  a:\c++ project\csi2372-project\project\project\qwintorow.cpp(56): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  a:\c++ project\csi2372-project\project\project\qwintoscoresheet.cpp(41): note: voir la référence à l'instanciation de la fonction modèle 'bool QwintoRow<Colour::RED>::validateEntry(int &)' en cours de compilation
+  QwintoRow.cpp
+  QwintoPlayer.cpp
+  Player.cpp
+  GameLoop.cpp
+a:\c++ project\csi2372-project\project\project\gameloop.cpp(37): warning C4018: '<' : incompatibilité signed/unsigned
+a:\c++ project\csi2372-project\project\project\gameloop.cpp(80): warning C4018: '<' : incompatibilité signed/unsigned
+  Dice.cpp
+  Génération de code en cours...
   Project.vcxproj -> A:\c++ project\CSI2372-project\Project\Debug\Project.exe
