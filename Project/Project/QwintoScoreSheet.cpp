@@ -156,7 +156,7 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 			break;
 
 			case(Colour::YELLOW):
-				for (int i = 0; i < uPostion; i++) 
+				for (int i = 0; i <= uPostion; i++) 
 				{
 					if (sheet.yellowRow.operator[](i) < result)
 					{
@@ -202,7 +202,7 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 			case(Colour::BLUE):
 				//QwintoRow<Colour::BLUE> row = sheet.blueRow;
-				for (int i = 0; i < uPostion; i++) 
+				for (int i = 0; i <= uPostion; i++) 
 				{
 					if (sheet.blueRow[i] < result)
 					{
