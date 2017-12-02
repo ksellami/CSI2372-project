@@ -33,15 +33,16 @@ int main(){
 	if (versionInput == 1)
 	{
 		vector<QwintoPlayer> playersQwinto;
-
+		
 		for (int i = 0; i < names.size(); i++)
 		playersQwinto.push_back(* new QwintoPlayer(names[i])); 
 
-		RollOfDice rod; 
+		 
 		
 		while (!done)
 		{
 			for (auto & activePlayer : playersQwinto) {
+				RollOfDice rod;
 				activePlayer.setActive(true);
 				activePlayer.inputBeforeRoll(rod);
 				rod.roll();
@@ -53,13 +54,14 @@ int main(){
 					break;
 				}
 				for (auto& notActivePlayer : playersQwinto){
-					if (!notActivePlayer.sheet) {
-						done = true;
-						break;
-					}
+				
 					if (!notActivePlayer.isOrNotActive()) {
 						cout << notActivePlayer.sheet;
 						notActivePlayer.inputAfterRoll(rod);
+					}
+					else if (!notActivePlayer.sheet) {
+						done = true;
+						break;
 					}
 				}
 				activePlayer.setActive(false);
@@ -72,7 +74,7 @@ int main(){
 	}
 
 
-	if (versionInput == 2)
+	else if (versionInput == 2)
 	{
 		vector<QwixxPlayer> playersQwixx;
 		for (int i = 0; i < names.size(); i++)
@@ -88,22 +90,23 @@ int main(){
 				cout << rod;
 				cout << activePlayer.sheet;
 				activePlayer.inputAfterRoll(rod);
-				activePlayer.setActive(false);
+				
 				if (!activePlayer.sheet) {
 					done = true;
 					break;
 				}
 				for (auto& notActivePlayer : playersQwixx) {
-					if (!activePlayer.sheet) {
+					
+					if (!notActivePlayer.isOrNotActive()) {
+						cout << notActivePlayer.sheet;
+						notActivePlayer.inputAfterRoll(rod);	
+					}
+					else if (!activePlayer.sheet) {
 						done = true;
 						break;
 					}
-					if (!notActivePlayer.isOrNotActive()) {
-						cout << notActivePlayer.sheet;
-						notActivePlayer.inputAfterRoll(rod);
-						
-					}
 				}
+				activePlayer.setActive(false);
 			}
 		}
 		for (auto &player : playersQwixx) {

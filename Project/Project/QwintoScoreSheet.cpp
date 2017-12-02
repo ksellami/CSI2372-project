@@ -90,7 +90,7 @@ ostream& operator<<(ostream& os, QwintoScoreSheet& _qwinto){
 
 	os << "-------------------------------------" << endl;
 
-	os << "Failed Throw";
+	os << "Failed Throw" << endl;
 	//for (int i = 0;)
 	return os;
 }
