@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  scoresheet.cpp
   RollOfDice.cpp
   RandomDice.cpp
@@ -22,3 +23,7 @@ c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\gameloop.cp
   Génération de code en cours...
   Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.pdb (Partial PDB)
+=======
+﻿  LINK : A:\c++ project\CSI2372-project\Project\Debug\Project.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+  Project.vcxproj -> A:\c++ project\CSI2372-project\Project\Debug\Project.exe
+>>>>>>> 1228d7121a44edaa861c181390f473a364a293c8
