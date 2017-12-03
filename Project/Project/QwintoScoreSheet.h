@@ -15,6 +15,7 @@ public:
 	
 	QwintoScoreSheet(string NewName);
 	bool validate(Colour&, int&);
+	bool verify(int position, int result, array<int, 10>& Row);
 	bool score(QwintoScoreSheet& sheet,RollOfDice roll, Colour uColor, int uPostion);
 	friend ostream& operator<<(ostream& os, QwintoScoreSheet& qwinto);
 

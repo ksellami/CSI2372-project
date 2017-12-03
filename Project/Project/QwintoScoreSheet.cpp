@@ -93,6 +93,44 @@ ostream& operator<<(ostream& os, QwintoScoreSheet& _qwinto){
 	return os;
 }
 
+bool QwintoScoreSheet::verify(int position,int result, array<int, 10>& Row) {
+	bool valid = false;
+	
+
+		for (int i = 0; i < 10; i++) {
+
+			if (i <= position) {
+
+				if (Row[i] < result)
+					valid = true;
+				else
+					return false;
+			}
+			else {
+
+
+				if (Row[i] != 0 && Row[i] <= result) {
+
+					return false;
+				}
+				else
+					valid = true;
+
+
+
+			}
+
+
+
+		}
+
+
+	
+	
+
+
+	return valid;
+}
 bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
 
@@ -103,39 +141,22 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 	if (validRoll) {
 		int result = roll;
-		
+		bool initialCondition;
+	
 		switch (uColor) {
 
 			case(Colour::RED):
-				
-				for (int i = 0; i <= uPostion; i++)
-				{
-					if (sheet.redRow[i] < result)
-					{
-				
+				//For the column restrictions
+				initialCondition = false;
 
-						
-						if (i < 8 && (result == sheet.yellowRow[i + 1] || result == sheet.blueRow[i + 2]))
-							scored = false;
-						
-						else if (i == 8 && result == sheet.yellowRow[9])
-							scored = false;
+				if (uPostion < 8 && (result == sheet.yellowRow[uPostion + 1] ||result == sheet.blueRow[uPostion + 2]))
+					initialCondition = false;
+				else if  (uPostion == 8 && result == sheet.yellowRow[9])
+					initialCondition = false;
+				else
+					initialCondition = true;
 
-						else
-							scored = true;
-						
-
-					}
-					else {
-
-
-						scored = false;
-
-					}
-
-					
-				}
-
+				scored = verify(uPostion,result,sheet.redRow.Row) && initialCondition;
 				if (scored)
 				{
 					sheet.redRow[uPostion] = roll;
@@ -154,32 +175,22 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 			break;
 
 			case(Colour::YELLOW):
-				for (int i = 0; i <= uPostion; i++) 
+
+				initialCondition = false;
+
+				if (uPostion < 9 && uPostion>0 && (result == sheet.redRow[uPostion - 1] || result == sheet.blueRow[uPostion + 1]))
+					initialCondition = false;
+				else
 				{
-					if (sheet.yellowRow.operator[](i) < result)
-					{
-						if (i < 9 && i>0 && (result == sheet.redRow[i -1] || result == sheet.blueRow[i + 1]))
-							scored = false;
-
-						else
-						{
-							if (i == 9 && result == sheet.redRow[8])
-								scored = false;
-							else if (i == 0 && result == sheet.blueRow[1])
-								scored = false;
-							else
-								scored = true;
-						}
-					}
-
-					else {
-
-
-						scored = false;
-
-					}
-					
+					if (uPostion == 9 && result == sheet.redRow[8])
+						initialCondition = false;
+					else if (uPostion == 0 && result == sheet.blueRow[1])
+						initialCondition = false;
+					else
+						initialCondition = true;
 				}
+
+				scored = verify(uPostion, result, sheet.yellowRow.Row) && initialCondition;
 
 				if (scored)
 				{
@@ -198,31 +209,21 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 			break;
 
 			case(Colour::BLUE):
-				for (int i = 0; i <= uPostion; i++) 
+				initialCondition = false;
+
+				if (uPostion>1 && (result == sheet.redRow[uPostion - 2] || result == sheet.yellowRow[uPostion-1]))
+					initialCondition = false;
+				else
 				{
-					if (sheet.blueRow[i] < result)
-					{
-						
-						if (i>1 && (result == sheet.redRow[i-2] || result == sheet.yellowRow[i-1]))
-							scored = false;
-
-						else
-						{
-							
-							if (i == 1 && result == sheet.yellowRow[0])
-								scored = false;
-							else
-								scored = true;
-						}
-					}
-					else {
-
-
-						scored = false;
-
-					}
-					
+					if (uPostion == 1 && result == sheet.yellowRow[0])
+						initialCondition = false;
+				
+					else
+						initialCondition = true;
 				}
+			
+						
+				scored = verify(uPostion, result, sheet.blueRow.Row) && initialCondition;
 
 				if (scored)
 				{
