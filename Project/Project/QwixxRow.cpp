@@ -52,16 +52,24 @@ int & QwixxRow<T, col>::operator[](int param)
 template<class T, Colour col>
 QwixxRow<T, col>::QwixxRow()
 {
-	int i = 0; 
-	for (auto & r : Row)
+	if (T==std::vector)
+		int i = 2;
+		for (auto & r : Row)
 	{
-		r = i + 2;
+		r = i;
 		i++; 
 	}
+	else if (T == std::list)
+			int j = 12;
+		for (auto & r : Row)
+		{
+			r = j;
+			j--;
+		}
 }
 
 template <class T , Colour col>
-std::vector<int>::iterator QwixxRow<T, col>::itAtPosition(int pos)
+std::vector<int>::iterator QwixxRow<T, col>::itAtPosition(int &pos)
 {
 	std::vector<int>::iterator iPos ;
 	iPos = QwixxRow.Row.begin()+(pos-1);

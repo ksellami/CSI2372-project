@@ -24,7 +24,8 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uCo
 		switch (uColor) {
 
 		case(Colour::RED):
-			for (std::vector<int>::iterator it = sheet.redRow.Row.begin(); it != sheet.redRow.Row.end(); ++it) {
+			for (std::vector<string>::iterator it = sheet.redRow.Row.begin(); it != sheet.redRow.Row.end(); ++it) { 
+				// a changer par for (auto & d : sheet.redRow.Row) 
 
 				
 
