@@ -2,6 +2,8 @@
 
 QwixxScoreSheet::QwixxScoreSheet(string name) :ScoreSheet(name)
 {
+
+	
 }
 
 int QwixxScoreSheet::calcTotal()
@@ -16,6 +18,29 @@ bool QwixxScoreSheet::operator!()
 
 bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
+
+	if (uColor == Colour::RED || uColor == Colour::YELLOW) {
+
+		switch (uColor) {
+
+		case(Colour::RED):
+			for (std::vector<int>::iterator it = sheet.redRow.Row.begin(); it != sheet.redRow.Row.end(); ++it) {
+
+				
+
+			}
+			break;
+		case(Colour::YELLOW):
+			break;
+
+		}
+
+	}
+	else {
+
+
+
+	}
 	return false;
 }
 

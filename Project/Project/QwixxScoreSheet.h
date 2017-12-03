@@ -10,10 +10,10 @@
 
 class QwixxScoreSheet : public ScoreSheet
 {
-	QwixxRow<std::vector<int>, Colour::RED> redRow; 
-	QwixxRow<std::vector<int>, Colour::YELLOW> yellowRow;
-	QwixxRow<std::list<int>, Colour::BLUE> blueRow;
-	QwixxRow<std::list<int>,Colour::GREEN> greenRow; 
+	QwixxRow<std::vector<string>, Colour::RED> redRow; 
+	QwixxRow<std::vector<string>, Colour::YELLOW> yellowRow;
+	QwixxRow<std::list<string>, Colour::BLUE> blueRow;
+	QwixxRow<std::list<string>,Colour::GREEN> greenRow; 
 public:
 	
 	QwixxScoreSheet(string name); 

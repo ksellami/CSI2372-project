@@ -14,6 +14,7 @@ class QwixxRow
 public:
 	T Row;
 	QwixxRow<T, col>();
+	std::vector<int>::iterator itAtPosition(int&);
 	friend QwixxRow<T, col> &operator+=(QwixxRow&, RollOfDice &);
 	bool validateEntry(int&);
 	int& operator[](int param);
@@ -57,4 +58,15 @@ QwixxRow<T, col>::QwixxRow()
 		r = i + 2;
 		i++; 
 	}
+}
+
+template <class T , Colour col>
+std::vector<int>::iterator QwixxRow<T, col>::itAtPosition(int pos)
+{
+	std::vector<int>::iterator iPos ;
+	iPos = QwixxRow.Row.begin()+(pos-1);
+
+
+
+	return iPos;
 }
