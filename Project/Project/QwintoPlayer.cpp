@@ -1,7 +1,7 @@
 #include "QwintoPlayer.h"
 #include "Colour.h"
 #include <string>
-QwintoPlayer::QwintoPlayer(string name) : sheet(name){}
+QwintoPlayer::QwintoPlayer(string name) : sheet(name) {}
 
 void QwintoPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
 	string tmp = "";
@@ -14,12 +14,12 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
 		vector<string>::iterator it;
 		string input = "";
 
-		while (input != "done" || (input != "pass" && isActive == false)) {
+		while (input != "done" || (input != "pass" && isActive() == false)) {
 			cin >> input;
 			selection.push_back(input);
 		}
 
-		for (it = selection.begin(); it<selection.end(); it++) {
+		for (it = selection.begin(); it < selection.end(); it++) {
 			if (*it == "blue" || *it == "b")
 				refinedSelection.push_back("blue");
 			else if (*it == "red" || *it == "r")
@@ -58,7 +58,7 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 
 	bool hasRed = false, hasBlue = false, hasYellow = false;
 
-	for (std::vector<Dice>::iterator i = _rollOfDice.theRoll.begin(); i != _rollOfDice.theRoll.end(); ++i) {
+	for (std::vector<Dice>::iterator i = _rollOfDice.theRoll.begin(); i != _rollOfDice.theRoll.end(); ++i) { // a changer avec for auto d 
 		Dice d = *i;
 		switch (d.colour) {
 		case Colour::RED:
@@ -73,15 +73,15 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 		}
 	}
 
-	QwintoPlayer *qp = dynamic_cast<QwintoPlayer*>(this); // can be used like this : qp->scoreSheet.score(~~~)
+	QwintoPlayer *qp = dynamic_cast<QwintoPlayer*>(this);
 
-	cout << sheet.playerName<< ", please select the row color and the column number (between 1 and 9) where you would like to place [" << _rollOfDice << "] in.\nType \"done\" when finished\n";
+	cout << sheet.playerName << ", please select the row color and the column number (between 1 and 9) where you would like to place [" << _rollOfDice << "] in.\nType \"done\" when finished\n";
 	cout << "(e.g. red 3 done)" << endl;
-	if (!isActive) {
+	if (!isActive()) {
 		cout << "NOTE: You can type \"pass\" to skip with no penalty ";
 		cout << "(e.g. pass done):" << endl;
 	}
-	if (isActive) {
+	if (isActive()) {
 		cout << "NOTE: You can type \"fail\" to mark a failed throw ";
 		cout << "(e.g. fail done):" << endl;
 	}
@@ -97,12 +97,12 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 		input = "";
 		while (input != "done") {
 			cin >> input;
-			if (input == "pass" && isActive == false) {
+			if (input == "pass" && isActive() == false) {
 				return;
 			}
-			if (input == "fail" && isActive == true) {
-				qp->sheet.fail(); 
-			//	qp->sheet.score(sheet,_rollOfDice, Colour::RED, -5); // failed throw
+			if (input == "fail" && isActive() == true) {
+				qp->sheet.fail();
+				//	qp->sheet.score(sheet,_rollOfDice, Colour::RED, -5); // failed throw
 				return;
 			}
 			selection.push_back(input);
@@ -112,7 +112,7 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 			//stringstream asdf(selection.end()[-2]);
 			int x = 0;
 			//asdf >> x;
-			x = std::stoi(selection.end()[-2]); 
+			x = std::stoi(selection.end()[-2]);
 
 			//cout<<"end-2: "<<selection.end()[-2]<<" end-1: "<<selection.end()[-1];
 			if (selection.end()[-3] == "red" && hasRed) {
@@ -120,11 +120,11 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 					enteredValid = true;
 			}
 			else if (selection.end()[-3] == "blue" && hasBlue) {
-				if (qp->sheet.score(sheet,_rollOfDice, Colour::BLUE, x - 1))
+				if (qp->sheet.score(sheet, _rollOfDice, Colour::BLUE, x - 1))
 					enteredValid = true;
 			}
 			else if (selection.end()[-3] == "yellow" && hasYellow) {
-				if (qp->sheet.score(sheet,_rollOfDice, Colour::YELLOW, x - 1))
+				if (qp->sheet.score(sheet, _rollOfDice, Colour::YELLOW, x - 1))
 					enteredValid = true;
 				else {
 					cout << "invalid entry" << endl;
@@ -136,13 +136,13 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 			if (!enteredValid) {
 				input = "";
 				cout << endl << sheet.playerName << ", THAT WAS AN INVALID SELECTION.\n" << qp->sheet << endl;
-				cout << endl << sheet.playerName << "Now please select the row color and the column number (between 1 and 9) where you would like to place [" << _rollOfDice << "] in.\nType \"done\" when finished\n";
+				cout << endl << sheet.playerName << ", Now please select the row color and the column number (between 1 and 9) where you would like to place [" << _rollOfDice << "] in.\nType \"done\" when finished\n";
 				cout << "(e.g. red 3 done)" << endl;
-				if (!isActive) {
+				if (!isActive()) {
 					cout << "NOTE: You can type \"pass\" to skip with no penalty ";
 					cout << "(e.g. pass done):" << endl;
 				}
-				if (isActive) {
+				if (isActive()) {
 					cout << "NOTE: You can type \"fail\" to mark a failed throw ";
 					cout << "(e.g. fail done):" << endl;
 				}
@@ -157,6 +157,4 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 			selection.clear();
 		}
 	}
-
 }
-

@@ -16,9 +16,9 @@ public:
 	void add(Dice & d); 
 	operator int(); 
 	std::vector<Dice>::iterator begin();
-	std::vector<Dice>::const_iterator begin() const;
+	std::vector<Dice>::const_iterator cbegin() const;
 	std::vector<Dice>::iterator end();
-	std::vector<Dice>::const_iterator end() const;
+	std::vector<Dice>::const_iterator cend() const;
 	friend ostream& operator<<(ostream& os, RollOfDice& rod);
 };
 

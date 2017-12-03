@@ -8,9 +8,9 @@ class Player
 {
 
 public:
-	bool isActive = false;
+	bool statut = false;
 	void setActive(bool param); 
-	bool isOrNotActive(); 
+	bool isActive(); 
 	virtual void inputBeforeRoll(RollOfDice& rod) = 0; 
 	virtual void inputAfterRoll(RollOfDice& rod) = 0;	
 };

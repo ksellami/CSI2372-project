@@ -2,10 +2,10 @@
 
 void Player::setActive(bool param)
 {
-	isActive = param; 
+	statut = param; 
 }
 
-bool Player::isOrNotActive()
+bool Player::isActive()
 {
-	return isActive;
+	return statut;
 }

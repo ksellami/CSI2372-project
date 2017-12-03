@@ -10,17 +10,20 @@ int main(){
 	int versionInput=0; 
 	int numberOfPlayers =0;
 
-	cout << "for Qwinto tap 1, for Qwixx tap 2" << endl; 
+	cout << "For Qwinto tap 1, for Qwixx tap 2" << endl; 
 
 	while (!(versionInput == 1 || versionInput == 2))
 		cin >> versionInput; 
 
-	cout << "how many players for this game ?" << endl; 
-	while (numberOfPlayers == 0)
-		cin >> numberOfPlayers; 
+	cout << "How many players (1-3) for this game ?" << endl; 
+	while (!(numberOfPlayers >= 1 && numberOfPlayers <= 3)) {
+		cin >> numberOfPlayers;
+		if (numberOfPlayers < 1 || numberOfPlayers > 3)
+			cout << "Invalid number of players" << endl; 
+	}
 
 	vector<string> names;
-	cout << "please enter the names of the players" << endl; 
+	cout << "Please enter the names of the players" << endl; 
 	for (int i = 0; i < numberOfPlayers; i++) {
 		string input = "";
 		while (input == "") {
@@ -55,7 +58,7 @@ int main(){
 				}
 				for (auto& notActivePlayer : playersQwinto){
 				
-					if (!notActivePlayer.isOrNotActive()) {
+					if (!notActivePlayer.isActive()) {
 						cout << notActivePlayer.sheet;
 						notActivePlayer.inputAfterRoll(rod);
 					}
@@ -79,11 +82,12 @@ int main(){
 		vector<QwixxPlayer> playersQwixx;
 		for (int i = 0; i < static_cast<int>(names.size()); i++)
 			playersQwixx[i] = *new QwixxPlayer(names[i]);
-		RollOfDice rod;
+		
 
 		while (!done)
 		{
 			for (auto & activePlayer : playersQwixx) {
+				RollOfDice rod;
 				activePlayer.setActive(true);
 				activePlayer.inputBeforeRoll(rod);
 				rod.roll();
@@ -97,7 +101,7 @@ int main(){
 				}
 				for (auto& notActivePlayer : playersQwixx) {
 					
-					if (!notActivePlayer.isOrNotActive()) {
+					if (!notActivePlayer.isActive()) {
 						cout << notActivePlayer.sheet;
 						notActivePlayer.inputAfterRoll(rod);	
 					}
