@@ -20,25 +20,125 @@ public:
 	friend ostream& operator<<(ostream &os, QwintoRow<col>& pRow) {
 			if (col == Colour::RED)
 			{
-				os << "-------------------------------------" << endl;
-				os << "  " << "| " << pRow.Row[0] << "% " << pRow.Row[1] << "% " << pRow.Row[2] << "| " << "XX" << "| " << pRow.Row[4]
-					<< "% " << pRow.Row[5] << "% " << pRow.Row[6] << "| " << pRow.Row[7] << "| " << pRow.Row[8] << "| " << pRow.Row[9] << "| " << endl;
+				os << "Red" << "\t\t";
+				for (int i = 0; i < 11; i++) {
+
+					switch (i) {
+
+						case 0:
+							os << "|";
+						break;
+						case 1:
+							os << "%";
+						break;
+						case 2:
+							os << "%";
+						break;
+						case 3:
+							os << "|XX";
+						break;
+						case 5:
+							os << "%";
+						break;
+						case 6:
+							os << "%";
+						break;
+						default:
+							os << "|";
+						break;
+					}
+					if (i != 3 && i != 10) {
+						if (pRow[i] > 9) {
+							os << pRow[i];
+						}
+						else if (pRow[i] < 10 && pRow[i] != 0) {
+							os << " " << pRow[i];
+						}
+						else { 
+							os << "  ";
+						}
+
+					}
+
+				}
+
+				os << endl;
 
 			}
 			else if (col == Colour::YELLOW)
 			{
-				os << "-------------------------------------" << endl;
-				os << " " << "| " << pRow.Row[0] << "| " << pRow.Row[1] << "| " << pRow.Row[2] << "| " << pRow.Row[3] << "| " << pRow.Row[4]
-					<< "|" << "XX" << "| " << pRow.Row[6] << "% " << pRow.Row[7] << "% " << pRow.Row[8] << "| " << pRow.Row[9] << "| " << endl;
+
+				os << "Yellow" << "\t     ";
+				for (int i = 0; i < 11; i++) {
+					switch (i) {
+					case 5:
+						os << "|XX";
+						break;
+					case 7:
+						os << "%";
+						break;
+					case 8:
+						os << "%";
+						break;
+					default:
+						os << "|";
+						break;
+					}
+					if (i != 5 && i != 10) {
+						if (pRow[i] > 9) { 
+
+							os << pRow[i]; 
+						}
+						else if (pRow[i] < 10 && pRow[i] != 0) {
+							os << " " << pRow[i]; 
+						}
+						else { 
+							os << "  "; 
+						}
+					}
+				}
+
+				os << endl;
 
 
 			}
 			else if (col == Colour::BLUE)
 			{
-				os << "-------------------------------------" << endl;
-				os << "| " << pRow.Row[0] << "| " << pRow.Row[1] << "% " << pRow.Row[2] << "% " << pRow.Row[3] << "|" << "XX" << "| " << pRow.Row[5]
-					<< "| " << pRow.Row[6] << "| " << pRow.Row[7] << "| " << pRow.Row[8] << "% " << pRow.Row[9] << "% " << endl;
-
+				os << "Blue" << "      ";
+				for (int i = 0; i < 11; i++) {
+					switch (i) {
+					case 4:
+						os << "|XX";
+						break;
+					case 2:
+						os << "%";
+						break;
+					case 3:
+						os << "%";
+						break;
+					case 9:
+						os << "%";
+						break;
+					case 10:
+						os << "%";
+						break;
+					default:
+						os << "|";
+						break;
+					}
+					if (i != 4 && i != 10) {
+						if (pRow[i] > 9) { 
+							os << pRow[i]; 
+						}
+						else if (pRow[i] < 10 && pRow[i] != 0) { 
+							os << " " << pRow[i]; 
+						}
+						else { 
+							os << "  "; 
+						}
+					}
+				}
+				os << endl;
 			}
 			return os; 
 		}

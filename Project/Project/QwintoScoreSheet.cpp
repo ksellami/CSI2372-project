@@ -13,24 +13,82 @@ QwintoScoreSheet::QwintoScoreSheet(string NewName) : ScoreSheet(NewName),redEntr
 int QwintoScoreSheet::calcTotal()
 {
 	int total=0;
-	if (redEntriesTotal == redRow.Row.max_size())
+	if (redEntriesTotal == redRow.Size()-1)
 	{
-		total += redRow.Row[redRow.Row.max_size() - 1];
+		total += redRow[redRow.Size() - 1];
 	}
-	if (yellowEntriesTotal == yellowRow.Row.max_size()){
 
-		total += yellowRow.Row[yellowRow.Row.max_size()-1];
+	else {
+		
+		for (int i = 0; i < redRow.Size(); i++) {
+
+			if (redRow[i] != 0)
+				total++;
+		}
 	}
-	if (blueEntriesTotal == blueRow.Row.max_size()){
+	if (yellowEntriesTotal == yellowRow.Size()-1){
 
-		total += yellowRow.Row[blueRow.Row.max_size() - 1];
+		total += yellowRow[yellowRow.Size()-1];
+	}
+	else {
+
+		for (int i = 0; i < yellowRow.Size(); i++) {
+
+			if (yellowRow[i] != 0)
+				total++;
+		}
+	}
+	if (blueEntriesTotal == blueRow.Size()-1){
+
+		total += yellowRow[blueRow.Size() - 1];
+	}
+	else {
+
+		for (int i = 0; i < blueRow.Size(); i++) {
+
+			if (blueRow[i] != 0)
+				total++;
+		}
+	}
+
+	for (int i = 2; i < 11; i++) {
+		if (blueRow[i] != 0 && redRow[i - 2] != 0 && yellowRow[i - 1] != 0)
+		{
+			switch (i) {
+
+				case 2 :
+					total += blueRow[i];
+				break;
+				
+				case 3:
+					total += redRow[i-2];
+				break;
+				
+				case 7:
+					total += redRow[i-2];
+				break;
+				
+				case 8:
+					total += yellowRow[i-1];
+				break; 
+				
+				case 9:
+					total += blueRow[i];
+				break;
+				default :
+				break;
+
+			}
+				
+
+		}
+
 	}
 
 	total -= failedAttempts * 5;
-
+	
 	return total;
 }
-
 
 
 bool  QwintoScoreSheet::validate(Colour& color, int& position)
@@ -60,7 +118,6 @@ bool  QwintoScoreSheet::validate(Colour& color, int& position)
 }
 
 
-
 bool QwintoScoreSheet::operator ! (){
 
 	if (failedAttempts>=4){
@@ -77,19 +134,24 @@ bool QwintoScoreSheet::operator ! (){
 
 
 ostream& operator<<(ostream& os, QwintoScoreSheet& _qwinto){
-	os << "Player Name :" << _qwinto.playerName << '\t' << '\t' << "Points: "<<_qwinto.overallScore <<endl ;
-	os <<'\t'<<"-------------------------------------" << endl;
 
-	os <<"Red   "<< _qwinto.redRow;
 
-	os << "Yellow   "<< _qwinto.yellowRow;
+	os << endl;
+	os << "Player name: " << _qwinto.playerName << "\t Points: " << _qwinto.overallScore << std::endl;
+	os << "\t\t--------------------------------" << endl;
+	os << _qwinto.redRow;
+	os << "\t     -----------------------------------" << endl;
+	os << _qwinto.yellowRow;
+	os << "\t -----------------------------------" << endl;
+	os << _qwinto.blueRow;
+	os << "\t --------------------------------" << endl;
+	os << "Failed throws: ";
+	for (int i = 1; i <= _qwinto.failedAttempts; i++) {
+		os<< i<<" ";
+	}
 
-	os << "Blue   "<< _qwinto.blueRow;
-
-	os << "-------------------------------------" << endl;
-
-	os << "Failed Throw" << endl;
-
+		
+	os <<endl<< endl;
 	return os;
 }
 

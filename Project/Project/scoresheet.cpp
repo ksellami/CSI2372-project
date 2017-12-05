@@ -9,7 +9,7 @@ ScoreSheet::ScoreSheet(string pName) :playerName(pName),overallScore(0),failedAt
 int ScoreSheet::setTotal()
 {
 	overallScore = calcTotal();
-	//returns the final score 
+	
 	return overallScore;	
 }
 

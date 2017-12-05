@@ -18,8 +18,8 @@ public:
 	friend QwixxRow<T, col> &operator+=(QwixxRow&, RollOfDice &);
 	bool validateEntry(int&);
 	int& operator[](int param);
-	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) {
-		
+	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) 
+	{
 			os << "  ";
 			for (auto & r : pRow.Row)
 				os << "| " << r;
@@ -52,7 +52,7 @@ int & QwixxRow<T, col>::operator[](int param)
 template<class T, Colour col>
 QwixxRow<T, col>::QwixxRow()
 {
-	if (T==std::vector)
+	/*if (T==std::vector)
 		int i = 2;
 		for (auto & r : Row)
 	{
@@ -65,7 +65,7 @@ QwixxRow<T, col>::QwixxRow()
 		{
 			r = j;
 			j--;
-		}
+		}*/
 }
 
 template <class T , Colour col>
@@ -73,6 +73,7 @@ std::vector<int>::iterator QwixxRow<T, col>::itAtPosition(int &pos)
 {
 	std::vector<int>::iterator iPos ;
 	iPos = QwixxRow.Row.begin()+(pos-1);
+	
 
 
 

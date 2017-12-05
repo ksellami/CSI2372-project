@@ -16,6 +16,14 @@ bool QwixxScoreSheet::operator!()
 	return false;
 }
 
+
+bool QwixxScoreSheet::validate(Colour &uColor, int &roll)
+{
+
+
+
+	return false;
+}
 bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
 
@@ -23,15 +31,15 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uCo
 
 		switch (uColor) {
 
-		case(Colour::RED):
-			for (std::vector<string>::iterator it = sheet.redRow.Row.begin(); it != sheet.redRow.Row.end(); ++it) { 
-				// a changer par for (auto & d : sheet.redRow.Row) 
+			case(Colour::RED):
+				for (auto &d : sheet.redRow.Row) { 
+					// a changer par for (auto & d : sheet.redRow.Row) 
 
 				
 
-			}
+				}
 			break;
-		case(Colour::YELLOW):
+			case(Colour::YELLOW):
 			break;
 
 		}
@@ -45,10 +53,6 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uCo
 	return false;
 }
 
-bool QwixxScoreSheet::validate(Colour &, int &)
-{
-	return false;
-}
 
 ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 {   
