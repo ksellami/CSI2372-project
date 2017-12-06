@@ -19,35 +19,119 @@ bool QwixxScoreSheet::operator!()
 
 bool QwixxScoreSheet::validate(Colour &uColor, int &roll)
 {
+	switch (uColor) {
 
+		/*case (Colour::RED)
+			break;
+		case (Colour::YELLOW)
+			break;
+		case (Colour::GREEN)
+			break;
+		case (Colour::BLUE)
+			break;*/
+
+
+	}
 
 
 	return false;
 }
 bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
+	int result = roll;
+	bool scored = false;
 
 	if (uColor == Colour::RED || uColor == Colour::YELLOW) {
 
 		switch (uColor) {
 
-			case(Colour::RED):
-				for (auto &d : sheet.redRow.Row) { 
-					// a changer par for (auto & d : sheet.redRow.Row) 
+		case(Colour::RED):
+			result++;			// next position
 
-				
+			for (std::vector<string>::iterator it = sheet.redRow.itAtPosition(result); it != sheet.redRow.Row.end(); ++it) {
 
+				if (*it == "XX")
+				{
+					return false;
 				}
+				else {
+
+
+					scored= true;
+				}
+				
+			}
+
+			*--sheet.redRow.itAtPosition(result) = "XX";
+
+
 			break;
-			case(Colour::YELLOW):
+		case(Colour::YELLOW):
+			result++;			// next position
+			
+			for (std::vector<string>::iterator it = sheet.yellowRow.itAtPosition(result); it != sheet.yellowRow.Row.end(); ++it) {
+
+				if (*it == "XX")
+				{
+					return false;
+				}
+				else {
+
+
+					scored = true;
+				}
+			}
+
+			*--sheet.yellowRow.itAtPosition(result) = "XX";
+
 			break;
 
 		}
 
 	}
 	else {
+		
+		switch (uColor) {
+
+		case(Colour::GREEN):
+			 
+			for (std::list<string>::iterator it = sheet.greenRow.Row.end(); it != sheet.greenRow.itAtPosition(result); --it) {
+				
+				if (*it == "XX")
+				{
+					return false;
+				}
+				else {
 
 
+					scored = true;
+				}
+			}
+
+			*--sheet.greenRow.itAtPosition(result) = "XX";
+
+		break;
+		case(Colour::BLUE):
+
+			for (std::list<string>::iterator it = sheet.blueRow.Row.end(); it != sheet.blueRow.itAtPosition(result); --it) {
+
+				if (*it == "XX")
+				{
+					return false;
+				}
+				else {
+
+
+					scored = true;
+				}
+			}
+
+			*--sheet.blueRow.itAtPosition(result) = "XX";
+
+			
+		break;
+
+		}
 
 	}
 	return false;
