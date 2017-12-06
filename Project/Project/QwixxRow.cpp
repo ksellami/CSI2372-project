@@ -4,6 +4,7 @@
 
 #include "RollOfDice.h"
 #include <array>
+#include <typeinfo> 
 #include<iostream>
 using namespace std;
 
@@ -14,9 +15,8 @@ class QwixxRow
 public:
 	T Row;
 	QwixxRow<T, col>();
-	typename T::iterator& itAtPosition(int&);
+	typename T::iterator itAtPosition(int&);
 	friend QwixxRow<T, col> &operator+=(QwixxRow&, RollOfDice &);
-	bool validateEntry(int&);
 	int& operator[](int param);
 	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) 
 	{
@@ -36,11 +36,7 @@ QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
 	return this; 
 }
 
-template<class T, Colour col>
-bool QwixxRow<T, col>::validateEntry(int &)
-{
-	return false;
-}
+
 
 template<class T, Colour col>
 int & QwixxRow<T, col>::operator[](int param)
@@ -52,28 +48,43 @@ int & QwixxRow<T, col>::operator[](int param)
 template<class T, Colour col>
 QwixxRow<T, col>::QwixxRow()
 {
-	if (T==std::vector<string>)
-		int i = 2;
-		for (auto & r : Row)
-	{
-		r = std::string.to_string(i);
-		i++; 
-	}
-	else if (T == std::list<string>)
-			int j = 12;
-		for (auto & r : Row)
+	if (typeid(T) == typeid(std::vector<string>)) {
+		
+		for (int i = 2 ; i< 13 ;i++)
 		{
-			r = string.to_string(j);
-			j--;
+			Row.push_back(std::to_string(i));
+			
 		}
+
+		Row.push_back("U");
+	}
+	else if (typeid(T) == typeid(std::list<string>)) {
+
+		for (int i = 12; i> 1; i--)
+		{
+			Row.push_back(std::to_string(i));
+
+		}
+
+		Row.push_back("U");
+
+
+	}
+
+
 }
 
 template <class T , Colour col>
-typename T::iterator& QwixxRow<T, col>::itAtPosition(int &pos)
+typename T::iterator QwixxRow<T, col>::itAtPosition(int &pos)
 {
 	typename T::iterator iPos ;
-	iPos = QwixxRow.Row.begin()+(pos-2);
-	
+	for (iPos; iPos != this->Row.end(); iPos++) {
+
+		if (*iPos == std::to_string(pos))
+			return iPos;
+
+	}
+
 
 
 

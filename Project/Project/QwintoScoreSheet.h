@@ -27,7 +27,7 @@ public:
 	int redEntriesTotal = 0;
 	int yellowEntriesTotal = 0;
 	int blueEntriesTotal = 0;
-	
+
 };
 
 #endif

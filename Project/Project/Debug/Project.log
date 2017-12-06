@@ -2,77 +2,6 @@
   RollOfDice.cpp
   RandomDice.cpp
   QwixxScoreSheet.cpp
-a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(34): warning C4060: l'instruction switch ne contient aucune étiquette 'case' ou 'default'
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(55): error C2059: erreur de syntaxe : '=='
-  a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(54): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(4): note: voir la référence à l'instanciation de la fonction modèle 'QwixxRow<std::vector<std::string,std::allocator<_Ty>>,Colour::RED>::QwixxRow(void)' en cours de compilation
-          with
-          [
-              _Ty=std::string
-          ]
-  a:\c++ project\csi2372-project\project\project\qwixxscoresheet.h(13): note: voir la référence à l'instanciation de classe modèle 'QwixxRow<std::vector<std::string,std::allocator<_Ty>>,Colour::RED>' en cours de compilation
-          with
-          [
-              _Ty=std::string
-          ]
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(59): error C2275: 'std::string' : utilisation non conforme de ce type comme expression
-  a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(59): note: voir la déclaration de 'std::string'
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(59): error C2228: la partie gauche de '.to_string' doit avoir un class/struct/union
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(59): error C2065: 'i' : identificateur non déclaré
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(60): error C2065: 'i' : identificateur non déclaré
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(62): error C2181: instruction else sans if correspondant non conforme
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(62): error C2059: erreur de syntaxe : '=='
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(66): error C2275: 'std::string' : utilisation non conforme de ce type comme expression
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.11.25503\include\xstring(4079): note: voir la déclaration de 'std::string'
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(66): error C2228: la partie gauche de '.to_string' doit avoir un class/struct/union
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(66): error C2065: 'j' : identificateur non déclaré
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(67): error C2065: 'j' : identificateur non déclaré
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(75): error C2275: 'QwixxRow<std::vector<std::string,std::allocator<_Ty>>,Colour::RED>' : utilisation non conforme de ce type comme expression
-          with
-          [
-              _Ty=std::string
-          ]
-  a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(73): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(51): note: voir la référence à l'instanciation de la fonction modèle 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &QwixxRow<std::vector<_Ty,std::allocator<_Ty>>,Colour::RED>::itAtPosition(int &)' en cours de compilation
-          with
-          [
-              _Ty=std::string
-          ]
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(75): error C2228: la partie gauche de '.Row' doit avoir un class/struct/union
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(75): error C2228: la partie gauche de '.begin' doit avoir un class/struct/union
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(75): error C2275: 'QwixxRow<std::vector<std::string,std::allocator<_Ty>>,Colour::YELLOW>' : utilisation non conforme de ce type comme expression
-          with
-          [
-              _Ty=std::string
-          ]
-  a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(73): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(72): note: voir la référence à l'instanciation de la fonction modèle 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &QwixxRow<std::vector<_Ty,std::allocator<_Ty>>,Colour::YELLOW>::itAtPosition(int &)' en cours de compilation
-          with
-          [
-              _Ty=std::string
-          ]
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(75): error C2275: 'QwixxRow<std::list<std::string,std::allocator<_Ty>>,Colour::BLUE>' : utilisation non conforme de ce type comme expression
-          with
-          [
-              _Ty=std::string
-          ]
-  a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(73): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(116): note: voir la référence à l'instanciation de la fonction modèle 'std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>> &QwixxRow<std::list<_Ty,std::allocator<_Ty>>,Colour::BLUE>::itAtPosition(int &)' en cours de compilation
-          with
-          [
-              _Ty=std::string
-          ]
-a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(75): error C2275: 'QwixxRow<std::list<std::string,std::allocator<_Ty>>,Colour::GREEN>' : utilisation non conforme de ce type comme expression
-          with
-          [
-              _Ty=std::string
-          ]
-  a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(73): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(98): note: voir la référence à l'instanciation de la fonction modèle 'std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>> &QwixxRow<std::list<_Ty,std::allocator<_Ty>>,Colour::GREEN>::itAtPosition(int &)' en cours de compilation
-          with
-          [
-              _Ty=std::string
-          ]
   QwixxRow.cpp
   QwixxPlayer.cpp
   QwintoScoreSheet.cpp
@@ -82,3 +11,4 @@ a:\c++ project\csi2372-project\project\project\qwixxrow.cpp(75): error C2275: 'Q
   GameLoop.cpp
   Dice.cpp
   Génération de code en cours...
+  Project.vcxproj -> A:\c++ project\CSI2372-project\Project\Debug\Project.exe
