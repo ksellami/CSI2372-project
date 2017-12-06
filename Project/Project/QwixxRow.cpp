@@ -26,9 +26,9 @@ public:
 
 			return os;
 	}
-#endif
-};
 
+};
+#endif
 template<class T, Colour col>
 QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
 {

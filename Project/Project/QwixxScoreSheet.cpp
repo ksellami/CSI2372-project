@@ -19,36 +19,42 @@ bool QwixxScoreSheet::operator!()
 
  bool QwixxScoreSheet::validate(Colour &uColor, int &roll)
 {
-	switch (uColor) {
 
-		
-	case (Colour::RED):
-		if (*redRow.itAtPosition(roll) == "XX")
-			return false;
-		else
-			return true;
-	break;
-	case (Colour::YELLOW):
-		if (*yellowRow.itAtPosition(roll) == "XX")
-			return false;
-		else
-			return true;
-	break;
-	case (Colour::GREEN):
-		if (*greenRow.itAtPosition(roll) == "XX")
-			return false;
-		else
-			return true;
-			break;
-	case (Colour::BLUE):
-		if (*blueRow.itAtPosition(roll) == "XX")
-			return false;
-		else
-			return true;
-			break;
+	 if (roll < 2 || roll > 12)
+		 return false; 
+	 else {
+		 switch (uColor) {
 
 
-	}
+		 case (Colour::RED):
+			 if (*redRow.itAtPosition(roll) == "XX" || this->redEntriesTotal == 5 )
+				 return false;
+			 else
+				 return true;
+			 break;
+		 case (Colour::YELLOW):
+			 if (*yellowRow.itAtPosition(roll) == "XX" || this->yellowEntriesTotal == 5)
+				 return false;
+			 else
+				 return true;
+			 break;
+		 case (Colour::GREEN):
+			 if (*greenRow.itAtPosition(roll) == "XX" || this->greenEntriesTotal == 5)
+				 return false;
+			 else
+				 return true;
+			 break;
+		 case (Colour::BLUE):
+			 if (*blueRow.itAtPosition(roll) == "XX" || this->blueEntriesTotal == 5)
+				 return false;
+			 else
+				 return true;
+			 break;
+			
+
+		 }
+	 }
+	
 
 
 	return false;
