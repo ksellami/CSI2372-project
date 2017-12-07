@@ -6,14 +6,63 @@ QwixxScoreSheet::QwixxScoreSheet(string name) :ScoreSheet(name)
 	
 }
 
+int QwixxScoreSheet::calcScore(int & entriesNum)
+{
+	int result = 0;
+
+		
+	for (int i = 1; i <= entriesNum; i++) {
+
+		result = i + result;
+
+	}
+	
+		return result;
+}
 int QwixxScoreSheet::calcTotal()
 {
-	return 0;
+	int total = 0;
+
+	total += this->calcScore(redEntriesTotal);
+	total += this->calcScore(yellowEntriesTotal);
+	total += this->calcScore(greenEntriesTotal);
+	total += this->calcScore(blueEntriesTotal);
+
+	return total;
 }
 
 bool QwixxScoreSheet::operator!()
 {
-	return false;
+	bool gameEnd = false;
+	int lockedRows = 0;
+	//if failed throws is 4 or more
+	if (this->failedAttempts >= 4)
+		gameEnd=true;
+	else 
+		gameEnd = false;
+
+	//see if two rows or more are locked if so return true: 
+	if (*redRow.Row.end() == "L")
+		lockedRows++;
+
+	if (*greenRow.Row.end() == "L")
+		lockedRows++;
+
+	if (*yellowRow.Row.end() == "L")
+		 lockedRows++;
+
+	if (*blueRow.Row.end() == "L")
+		lockedRows++;
+
+	if (lockedRows >= 2) {
+
+		gameEnd = true;;
+	}
+	else 
+		gameEnd = false;
+	
+	
+	return gameEnd;
 }
 
 
@@ -25,25 +74,41 @@ bool QwixxScoreSheet::operator!()
 	 else {
 		 switch (uColor) {
 		 case (Colour::RED):
+<<<<<<< HEAD
 			 if (redRow[roll] == "XX" || this->redEntriesTotal == 5)
+=======
+			 if (*redRow.itAtPosition(roll) == "XX" || *redRow.Row.end() == "L" )
+>>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::YELLOW):
+<<<<<<< HEAD
 			 if (yellowRow[roll] == "XX" || this->yellowEntriesTotal == 5)
+=======
+			 if (*yellowRow.itAtPosition(roll) == "XX" || *yellowRow.Row.end() == "L")
+>>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::GREEN):
+<<<<<<< HEAD
 			 if (greenRow[roll] == "XX" || this->greenEntriesTotal == 5)
+=======
+			 if (*greenRow.itAtPosition(roll) == "XX" || *greenRow.Row.end() == "L")
+>>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::BLUE):
+<<<<<<< HEAD
 			 if (blueRow[roll]== "XX" || this->blueEntriesTotal == 5)
+=======
+			 if (*blueRow.itAtPosition(roll) == "XX" || *blueRow.Row.end() == "L")
+>>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
 				 return false;
 			 else
 				 return true;
