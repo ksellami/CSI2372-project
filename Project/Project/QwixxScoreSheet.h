@@ -12,12 +12,14 @@ class QwixxScoreSheet : public ScoreSheet
 {
 	
 public:
+
 	QwixxRow<std::vector<string>, Colour::RED> redRow;
 	QwixxRow<std::vector<string>, Colour::YELLOW> yellowRow;
 	QwixxRow<std::list<string>, Colour::BLUE> blueRow;
 	QwixxRow<std::list<string>, Colour::GREEN> greenRow;
 
 	QwixxScoreSheet(string name); 
+	int calcScore(int &);
 	int calcTotal();
 	bool operator !();
 	friend ostream& operator<<(ostream& os,QwixxScoreSheet& dt);
@@ -29,6 +31,8 @@ public:
 	int yellowEntriesTotal = 0;
 	int blueEntriesTotal = 0;
 	int greenEntriesTotal = 0;
+	
+	int failedAttempts = 0;
 
 
 protected :
