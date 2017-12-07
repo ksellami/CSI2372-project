@@ -17,122 +17,154 @@ bool QwixxScoreSheet::operator!()
 }
 
 
-bool QwixxScoreSheet::validate(Colour &uColor, int &roll)
+ bool QwixxScoreSheet::validate(Colour &uColor, int &roll)
 {
-	switch (uColor) {
 
-		/*case (Colour::RED)
-			break;
-		case (Colour::YELLOW)
-			break;
-		case (Colour::GREEN)
-			break;
-		case (Colour::BLUE)
-			break;*/
+	 if (roll < 2 || roll > 12)
+		 return false; 
+	 else {
+		 switch (uColor) {
 
 
-	}
+		 case (Colour::RED):
+			 if (*redRow.itAtPosition(roll) == "XX" || this->redEntriesTotal == 5 )
+				 return false;
+			 else
+				 return true;
+			 break;
+		 case (Colour::YELLOW):
+			 if (*yellowRow.itAtPosition(roll) == "XX" || this->yellowEntriesTotal == 5)
+				 return false;
+			 else
+				 return true;
+			 break;
+		 case (Colour::GREEN):
+			 if (*greenRow.itAtPosition(roll) == "XX" || this->greenEntriesTotal == 5)
+				 return false;
+			 else
+				 return true;
+			 break;
+		 case (Colour::BLUE):
+			 if (*blueRow.itAtPosition(roll) == "XX" || this->blueEntriesTotal == 5)
+				 return false;
+			 else
+				 return true;
+			 break;
+			
+
+		 }
+	 }
+	
 
 
 	return false;
 }
 bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
+	
 	int result = roll;
 	bool scored = false;
+	bool valid = sheet.validate(uColor, result);
 
-	if (uColor == Colour::RED || uColor == Colour::YELLOW) {
+	if (valid) {
+		if (uColor == Colour::RED || uColor == Colour::YELLOW) {
+			int afterResult = result;
 
-		switch (uColor) {
+			switch (uColor) {
+			case(Colour::RED):
+				afterResult++;			// next position
 
-		case(Colour::RED):
-			result++;			// next position
+				for (std::vector<string>::iterator it = sheet.redRow.itAtPosition(afterResult); it != sheet.redRow.Row.end(); ++it) {
 
-			for (std::vector<string>::iterator it = sheet.redRow.itAtPosition(result); it != sheet.redRow.Row.end(); ++it) {
+					if (*it == "XX")
+					{
+						return false;
+					}
+					else {
 
-				if (*it == "XX")
-				{
-					return false;
+
+						scored = true;
+					}
+
 				}
-				else {
+
+				*sheet.redRow.itAtPosition(result) = "XX";
+				sheet.redEntriesTotal++;
 
 
-					scored= true;
+				break;
+			case(Colour::YELLOW):
+				afterResult++;			// next position
+
+				for (std::vector<string>::iterator it = sheet.yellowRow.itAtPosition(afterResult); it != sheet.yellowRow.Row.end(); ++it) {
+
+					if (*it == "XX")
+					{
+						return false;
+					}
+					else {
+
+
+						scored = true;
+					}
 				}
-				
+
+				*sheet.yellowRow.itAtPosition(result) = "XX";
+				sheet.yellowEntriesTotal++;
+
+				break;
+
 			}
-
-			*--sheet.redRow.itAtPosition(result) = "XX";
-
-
-			break;
-		case(Colour::YELLOW):
-			result++;			// next position
-			
-			for (std::vector<string>::iterator it = sheet.yellowRow.itAtPosition(result); it != sheet.yellowRow.Row.end(); ++it) {
-
-				if (*it == "XX")
-				{
-					return false;
-				}
-				else {
-
-
-					scored = true;
-				}
-			}
-
-			*--sheet.yellowRow.itAtPosition(result) = "XX";
-
-			break;
 
 		}
+		else {
+			int afterResult = result;
 
-	}
-	else {
-		
-		switch (uColor) {
+			switch (uColor) {
 
-		case(Colour::GREEN):
-			 
-			for (std::list<string>::iterator it = sheet.greenRow.Row.end(); it != sheet.greenRow.itAtPosition(result); --it) {
-				
-				if (*it == "XX")
-				{
-					return false;
+			case(Colour::GREEN):
+				afterResult--;
+				for (std::list<string>::iterator it = sheet.greenRow.itAtPosition(afterResult); it != sheet.greenRow.Row.end(); ++it) {
+
+					if (*it == "XX")
+					{
+						return false;
+					}
+					else {
+
+
+						scored = true;
+					}
 				}
-				else {
+
+				*sheet.greenRow.itAtPosition(result) = "XX";
+				sheet.greenEntriesTotal++;
+
+				break;
+			case(Colour::BLUE):
+				afterResult--;
+				for (std::list<string>::iterator it = sheet.blueRow.itAtPosition(afterResult); it != sheet.blueRow.Row.end(); --it) {
+
+					if (*it == "XX")
+					{
+						return false;
+					}
+					else {
 
 
-					scored = true;
+						scored = true;
+					}
 				}
+
+				*sheet.blueRow.itAtPosition(result) = "XX";
+				sheet.blueEntriesTotal++;
+
+
+				break;
+
 			}
-
-			*--sheet.greenRow.itAtPosition(result) = "XX";
-
-		break;
-		case(Colour::BLUE):
-
-			for (std::list<string>::iterator it = sheet.blueRow.Row.end(); it != sheet.blueRow.itAtPosition(result); --it) {
-
-				if (*it == "XX")
-				{
-					return false;
-				}
-				else {
-
-
-					scored = true;
-				}
-			}
-
-			*--sheet.blueRow.itAtPosition(result) = "XX";
-
-			
-		break;
 
 		}
-
 	}
 	return false;
 }

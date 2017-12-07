@@ -2,6 +2,7 @@
   RollOfDice.cpp
   RandomDice.cpp
   QwixxScoreSheet.cpp
+<<<<<<< HEAD
 c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxscoresheet.cpp(34): warning C4060: l'instruction switch ne contient aucune étiquette 'case' ou 'default'
 c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxrow.cpp(55): error C2059: erreur de syntaxe : '=='
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxrow.cpp(54): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
@@ -73,6 +74,8 @@ c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxrow.cp
           [
               _Ty=std::string
           ]
+=======
+>>>>>>> af4aafcdad8b3c548ffd289718800fea3c3abb2b
   QwixxRow.cpp
   QwixxPlayer.cpp
   QwintoScoreSheet.cpp
@@ -82,3 +85,4 @@ c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxrow.cp
   GameLoop.cpp
   Dice.cpp
   Génération de code en cours...
+  Project.vcxproj -> A:\c++ project\CSI2372-project\Project\Debug\Project.exe
