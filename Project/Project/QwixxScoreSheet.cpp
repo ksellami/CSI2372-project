@@ -24,28 +24,26 @@ bool QwixxScoreSheet::operator!()
 		 return false; 
 	 else {
 		 switch (uColor) {
-
-
 		 case (Colour::RED):
-			 if (*redRow.itAtPosition(roll) == "XX" || this->redEntriesTotal == 5 )
+			 if (redRow[roll] == "XX" || this->redEntriesTotal == 5)
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::YELLOW):
-			 if (*yellowRow.itAtPosition(roll) == "XX" || this->yellowEntriesTotal == 5)
+			 if (yellowRow[roll] == "XX" || this->yellowEntriesTotal == 5)
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::GREEN):
-			 if (*greenRow.itAtPosition(roll) == "XX" || this->greenEntriesTotal == 5)
+			 if (greenRow[roll] == "XX" || this->greenEntriesTotal == 5)
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::BLUE):
-			 if (*blueRow.itAtPosition(roll) == "XX" || this->blueEntriesTotal == 5)
+			 if (blueRow[roll]== "XX" || this->blueEntriesTotal == 5)
 				 return false;
 			 else
 				 return true;
@@ -59,7 +57,7 @@ bool QwixxScoreSheet::operator!()
 
 	return false;
 }
-bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uColor, int uPostion)
+bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uColor)
 {
 	
 	int result = roll;
@@ -68,48 +66,42 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uCo
 
 	if (valid) {
 		if (uColor == Colour::RED || uColor == Colour::YELLOW) {
-			int afterResult = result;
-
+			
 			switch (uColor) {
 			case(Colour::RED):
-				afterResult++;			// next position
 
-				for (std::vector<string>::iterator it = sheet.redRow.itAtPosition(afterResult); it != sheet.redRow.Row.end(); ++it) {
+				for (int it = roll.operator int() - 1; it <= 10; ++it) {
 
-					if (*it == "XX")
+					if (redRow[it] == "XX")
 					{
 						return false;
 					}
 					else {
-
-
 						scored = true;
 					}
 
 				}
 
-				*sheet.redRow.itAtPosition(result) = "XX";
+				sheet.redRow[result-2] = "XX";
 				sheet.redEntriesTotal++;
 
 
 				break;
 			case(Colour::YELLOW):
-				afterResult++;			// next position
 
-				for (std::vector<string>::iterator it = sheet.yellowRow.itAtPosition(afterResult); it != sheet.yellowRow.Row.end(); ++it) {
+				for (int it = roll - 1; it <= 10; ++it) {
 
-					if (*it == "XX")
+					if (yellowRow[it] == "XX")
 					{
 						return false;
 					}
 					else {
-
-
 						scored = true;
 					}
+
 				}
 
-				*sheet.yellowRow.itAtPosition(result) = "XX";
+				sheet.yellowRow[result-2]= "XX";
 				sheet.yellowEntriesTotal++;
 
 				break;
@@ -123,40 +115,37 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uCo
 			switch (uColor) {
 
 			case(Colour::GREEN):
-				afterResult--;
-				for (std::list<string>::iterator it = sheet.greenRow.itAtPosition(afterResult); it != sheet.greenRow.Row.end(); ++it) {
 
-					if (*it == "XX")
+				for (int it = 13 - roll; it <= 10; ++it) {
+
+					if (greenRow[it] == "XX")
 					{
 						return false;
 					}
 					else {
-
-
 						scored = true;
 					}
-				}
 
-				*sheet.greenRow.itAtPosition(result) = "XX";
+				}
+				sheet.greenRow[12 - result] = "XX";
 				sheet.greenEntriesTotal++;
 
 				break;
 			case(Colour::BLUE):
 				afterResult--;
-				for (std::list<string>::iterator it = sheet.blueRow.itAtPosition(afterResult); it != sheet.blueRow.Row.end(); --it) {
+				for (int it = 13 - roll; it <= 10; ++it) {
 
-					if (*it == "XX")
+					if (blueRow[it] == "XX")
 					{
 						return false;
 					}
 					else {
-
-
 						scored = true;
 					}
+
 				}
 
-				*sheet.blueRow.itAtPosition(result) = "XX";
+				sheet.blueRow[result] = "XX";
 				sheet.blueEntriesTotal++;
 
 
@@ -166,7 +155,7 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice roll, Colour uCo
 
 		}
 	}
-	return false;
+	return scored;
 }
 
 

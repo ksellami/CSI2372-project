@@ -6,6 +6,7 @@
 #include <array>
 #include <typeinfo> 
 #include<iostream>
+#include <list>
 using namespace std;
 
 template<class T, Colour col>
@@ -15,9 +16,9 @@ class QwixxRow
 public:
 	T Row;
 	QwixxRow<T, col>();
-	typename T::iterator itAtPosition(int&);
+	//std::vector<string>::iterator itAtPosition(int&);
 	friend QwixxRow<T, col> &operator+=(QwixxRow&, RollOfDice &);
-	int& operator[](int param);
+	string& operator[](int param);
 	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) 
 	{
 			os << "  ";
@@ -39,9 +40,12 @@ QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
 
 
 template<class T, Colour col>
-int & QwixxRow<T, col>::operator[](int param)
-{
-	return Row[param];
+string & QwixxRow<T, col>::operator[](int param){
+
+		T::iterator iter = Row.begin();
+		std::advance(iter, param);
+		return *iter;
+	
 }
 
 
@@ -74,21 +78,14 @@ QwixxRow<T, col>::QwixxRow()
 
 }
 
-template <class T , Colour col>
-typename T::iterator QwixxRow<T, col>::itAtPosition(int &pos)
+/*template <class T , Colour col> 
+std::vector<string>::iterator QwixxRow<T, col>::itAtPosition(int &pos)
 {
-	typename T::iterator iPos ;
-	for (iPos; iPos != this->Row.end(); iPos++) {
-
+	for (std::vector<string>::iterator iPos; iPos != this->Row.end(); iPos++) {
 		if (*iPos == std::to_string(pos))
 			return iPos;
-
 	}
-
-
-
-
-	return iPos;
-}
+	return NULL;
+}*/
 
 

@@ -82,7 +82,7 @@ int main(){
 	{
 		vector<QwixxPlayer> playersQwixx;
 		for (int i = 0; i < static_cast<int>(names.size()); i++)
-			playersQwixx[i] = *new QwixxPlayer(names[i]);
+			playersQwixx.push_back(*new QwixxPlayer(names[i]));
 		
 
 		while (!done)
