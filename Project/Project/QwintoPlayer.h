@@ -12,7 +12,7 @@ class QwintoPlayer :public Player
 {
 
 public:
-	QwintoScoreSheet sheet;
+	QwintoScoreSheet sheet; // the player sheet 
 	QwintoPlayer(string name); 
 	void inputBeforeRoll(RollOfDice& rod) ;
 	void inputAfterRoll(RollOfDice& rod);

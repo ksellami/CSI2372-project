@@ -19,6 +19,7 @@ a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(197): error C
   QwixxRow.cpp
   QwixxPlayer.cpp
 <<<<<<< HEAD
+<<<<<<< HEAD
 a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): error C2259: 'QwixxScoreSheet' : impossible d'instancier une classe abstraite
   a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): note: à cause des membres suivants :
   a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): note: 'bool ScoreSheet::score(RollOfDice,Colour,int)' : est abstrait
@@ -30,15 +31,14 @@ c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer.h(11): note: 'bool ScoreSheet::score(RollOfDice,Colour,int)' : est abstrait
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\scoresheet.h(21): note: voir la déclaration de 'ScoreSheet::score'
 >>>>>>> 9ba2be270fdcab921992109970a9a3963264e755
+=======
+>>>>>>> 92fc452a3c33ac5e48b7dab9bb251a2c543fa8c4
   QwintoScoreSheet.cpp
   QwintoRow.cpp
   QwintoPlayer.cpp
-c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoplayer.h(15): error C2259: 'QwintoScoreSheet' : impossible d'instancier une classe abstraite
-  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoplayer.h(15): note: à cause des membres suivants :
-  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwintoplayer.h(15): note: 'bool ScoreSheet::score(RollOfDice,Colour,int)' : est abstrait
-  c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\scoresheet.h(21): note: voir la déclaration de 'ScoreSheet::score'
   Player.cpp
   GameLoop.cpp
+<<<<<<< HEAD
 <<<<<<< HEAD
 a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): error C2259: 'QwixxScoreSheet' : impossible d'instancier une classe abstraite
   a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): note: à cause des membres suivants :
@@ -61,5 +61,9 @@ c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer
   GameLoop.cpp
 >>>>>>> b8f5e53f97b3a15fc084c827a398dbb9aefe23ac
 >>>>>>> 9ba2be270fdcab921992109970a9a3963264e755
+=======
+>>>>>>> 92fc452a3c33ac5e48b7dab9bb251a2c543fa8c4
   Dice.cpp
   Génération de code en cours...
+  Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.exe
+  Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.pdb (Partial PDB)

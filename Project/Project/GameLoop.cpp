@@ -5,55 +5,54 @@
 #include <string>
 
 
-int main(){
-	bool done = false ; 
-	int versionInput=0; 
-	int numberOfPlayers =0;
+int main() {
+	bool done = false;
+	int versionInput = 0;
+	int numberOfPlayers = 0;
 
-	cout << "For Qwinto tap 1, for Qwixx tap 2" << endl; 
+	cout << "For Qwinto tap 1, for Qwixx tap 2" << endl;
 
 	while (versionInput != 1 && versionInput != 2) {
 		cin >> versionInput;
 		if (versionInput != 1 && versionInput != 2)
 		{
-	     	cout << "invalid selection" << endl;
+			cout << "invalid selection" << endl;
 		}
 	}
 
-	cout << "How many players (1-3) for this game ?" << endl; 
+	cout << "How many players (1-3) for this game ?" << endl;
 	while (!(numberOfPlayers >= 1 && numberOfPlayers <= 3)) {
 		cin >> numberOfPlayers;
 		if (numberOfPlayers < 1 || numberOfPlayers > 3) {
 			cout << "Invalid number of players" << endl;
-			numberOfPlayers = 0; 
+			numberOfPlayers = 0;
 		}
 	}
 
 	vector<string> names;
-	cout << "Please enter the names of the players one by one" << endl; 
+	cout << "Please enter the names of the players one by one" << endl;
 	for (int i = 0; i < numberOfPlayers; i++) {
 		string input = "";
 		while (input == "") {
-			cin >> input; 
+			cin >> input;
 			names.push_back(input);
 		}
 	}
 
-	cout << endl; 
-	cout << "-------------------" << endl; 
+	cout << endl;
+	cout << "-------------------" << endl;
 	cout << "LET THE GAME BEGIN!" << endl;
 	cout << "-------------------" << endl;
-	
 
+	
 	if (versionInput == 1)
 	{
 		vector<QwintoPlayer> playersQwinto;
-		
-		for (int i = 0; i < static_cast<int>(names.size()); i++)
-		playersQwinto.push_back(* new QwintoPlayer(names[i])); 
 
-		 
-		
+		for (int i = 0; i < static_cast<int>(names.size()); i++)
+			playersQwinto.push_back(*new QwintoPlayer(names[i]));
+
+
 		while (!done)
 		{
 			for (auto & activePlayer : playersQwinto) {
@@ -66,19 +65,15 @@ int main(){
 				cout << rod;
 				cout << endl;
 				activePlayer.sheet.setTotal();
-<<<<<<< HEAD
-=======
-
->>>>>>> b8f5e53f97b3a15fc084c827a398dbb9aefe23ac
- 				cout << activePlayer.sheet;
+					cout << activePlayer.sheet;
 				cout << endl;
-				activePlayer.inputAfterRoll(rod); 
+				activePlayer.inputAfterRoll(rod);
 				if (!activePlayer.sheet) {
 					done = true;
 					break;
 				}
-				for (auto& notActivePlayer : playersQwinto){
-				
+				for (auto& notActivePlayer : playersQwinto) {
+
 					if (!notActivePlayer.isActive()) {
 
 						cout << notActivePlayer.sheet;
@@ -93,8 +88,8 @@ int main(){
 			}
 		}
 		for (auto &player : playersQwinto) {
-			player.sheet.setTotal(); 
-			cout << player.sheet; 
+			player.sheet.setTotal();
+			cout << player.sheet;
 		}
 	}
 
@@ -104,7 +99,7 @@ int main(){
 		vector<QwixxPlayer> playersQwixx;
 		for (int i = 0; i < static_cast<int>(names.size()); i++)
 			playersQwixx.push_back(*new QwixxPlayer(names[i]));
-		
+
 
 		while (!done)
 		{
@@ -118,23 +113,19 @@ int main(){
 				cout << rod;
 				cout << endl;
 				activePlayer.sheet.setTotal();
-<<<<<<< HEAD
-=======
-
->>>>>>> b8f5e53f97b3a15fc084c827a398dbb9aefe23ac
-				cout << activePlayer.sheet;
+					cout << activePlayer.sheet;
 				cout << endl;
 				activePlayer.inputAfterRoll(rod);
-				
+
 				if (!activePlayer.sheet) {
 					done = true;
 					break;
 				}
 				for (auto& notActivePlayer : playersQwixx) {
-					
+
 					if (!notActivePlayer.isActive()) {
 						cout << notActivePlayer.sheet;
-						notActivePlayer.inputAfterRoll(rod);	
+						notActivePlayer.inputAfterRoll(rod);
 					}
 					else if (!activePlayer.sheet) {
 						done = true;

@@ -201,7 +201,7 @@ bool QwintoScoreSheet::verify(int position,int result, array<int, 10>& Row) {
 }
 
 
-bool  QwintoScoreSheet::score(RollOfDice roll, Colour uColor, int uPostion)
+bool  QwintoScoreSheet::score(RollOfDice& roll, Colour uColor, int uPostion)
 {
 
 	bool validRoll;
