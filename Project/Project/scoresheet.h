@@ -18,7 +18,7 @@ public:
 	int failedAttempts = 0;
 	int overallScore = 0;
 	ScoreSheet(string pName);
-	//virtual  bool score(RollOfDice roll, Colour uColor, int uPostion = -1) =0;
+	virtual bool score(RollOfDice roll, Colour uColor, int uPostion = -1) =0;
 	virtual bool validate(Colour&, int&) = 0;
 	
 	int setTotal();

@@ -23,7 +23,7 @@ public:
 	int calcTotal();
 	bool operator !();
 	friend ostream& operator<<(ostream& os,QwixxScoreSheet& dt);
-	bool score(QwixxScoreSheet& sheet, RollOfDice& roll, Colour uColor); 
+	bool score(RollOfDice& roll, Colour uColor); 
 
 
 	//Saves the total of entries in the corresponding color row

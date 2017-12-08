@@ -22,12 +22,6 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &rod) {
 		vector<string> entries;
 		vector<string>::iterator it;
 			
-		
-		
-		
-		
-			
-
 
 		// to verify player input
 
@@ -96,7 +90,6 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &rod) {
 
 }
 
-<<<<<<< HEAD
 
 void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 

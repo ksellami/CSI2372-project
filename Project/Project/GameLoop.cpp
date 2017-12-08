@@ -64,12 +64,8 @@ int main(){
 				cout << endl;
 				cout << "the roll is:" << endl;
 				cout << rod;
-<<<<<<< HEAD
 				cout << endl;
-=======
 				activePlayer.sheet.setTotal();
-
->>>>>>> 02f6909973754dea1be84a9866a0e8bb6bbca5e5
  				cout << activePlayer.sheet;
 				cout << endl;
 				activePlayer.inputAfterRoll(rod); 
@@ -116,12 +112,8 @@ int main(){
 				cout << endl;
 				cout << "the roll is:" << endl;
 				cout << rod;
-<<<<<<< HEAD
 				cout << endl;
-=======
 				activePlayer.sheet.setTotal();
-
->>>>>>> 02f6909973754dea1be84a9866a0e8bb6bbca5e5
 				cout << activePlayer.sheet;
 				cout << endl;
 				activePlayer.inputAfterRoll(rod);
