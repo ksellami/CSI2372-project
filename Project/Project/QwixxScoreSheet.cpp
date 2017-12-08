@@ -118,7 +118,7 @@ bool QwixxScoreSheet::operator!()
 
 	return false;
 }
-bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor, int uPosition)
+bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 {
 	
 	int result = roll;
