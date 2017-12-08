@@ -118,12 +118,12 @@ bool QwixxScoreSheet::operator!()
 
 	return false;
 }
-bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uColor)
+bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor)
 {
 	
 	int result = roll;
 	bool scored = false;
-	bool valid = sheet.validate(uColor, result);
+	bool valid = validate(uColor, result);
 
 	if (valid) {
 		if (uColor == Colour::RED || uColor == Colour::YELLOW) {
@@ -143,8 +143,8 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 				}
 
-				sheet.redRow[result-2] = "XX";
-				sheet.redEntriesTotal++;
+				redRow[result-2] = "XX";
+				redEntriesTotal++;
 
 
 				break;
@@ -162,8 +162,8 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 				}
 
-				sheet.yellowRow[result-2]= "XX";
-				sheet.yellowEntriesTotal++;
+				yellowRow[result-2]= "XX";
+				yellowEntriesTotal++;
 
 				break;
 
@@ -187,8 +187,8 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 					}
 
 				}
-				sheet.greenRow[12 - result] = "XX";
-				sheet.greenEntriesTotal++;
+				greenRow[12 - result] = "XX";
+				greenEntriesTotal++;
 
 				break;
 			case(Colour::BLUE):
@@ -204,8 +204,8 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 				}
 
-				sheet.blueRow[12-result] = "XX";
-				sheet.blueEntriesTotal++;
+				blueRow[12-result] = "XX";
+				blueEntriesTotal++;
 
 
 				break;

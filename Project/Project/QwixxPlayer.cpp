@@ -91,7 +91,7 @@ void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
 					}
 				}
 
-				if (sheet.score(sheet, lastRod, theColor))
+				if (sheet.score(lastRod, theColor))
 					scoringDone = true;
 				else {
 					cout << "invalid scoring!" << endl;

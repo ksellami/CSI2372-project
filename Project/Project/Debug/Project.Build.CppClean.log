@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\vc141.pdb
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\vc141.idb
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\dice.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\player.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\qwintorow.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\qwintoscoresheet.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\qwixxrow.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\randomdice.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\rollofdice.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\scoresheet.obj
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\project.tlog\cl.command.1.tlog
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\project.tlog\cl.read.1.tlog
+c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\debug\project.tlog\cl.write.1.tlog
+=======
 a:\c++ project\csi2372-project\project\project\debug\vc141.pdb
 a:\c++ project\csi2372-project\project\project\debug\vc141.idb
 a:\c++ project\csi2372-project\project\project\debug\dice.obj
@@ -21,3 +36,4 @@ a:\c++ project\csi2372-project\project\project\debug\project.tlog\cl.write.1.tlo
 a:\c++ project\csi2372-project\project\project\debug\project.tlog\link.command.1.tlog
 a:\c++ project\csi2372-project\project\project\debug\project.tlog\link.read.1.tlog
 a:\c++ project\csi2372-project\project\project\debug\project.tlog\link.write.1.tlog
+>>>>>>> b8f5e53f97b3a15fc084c827a398dbb9aefe23ac

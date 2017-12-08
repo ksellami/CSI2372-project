@@ -66,7 +66,10 @@ int main(){
 				cout << rod;
 				cout << endl;
 				activePlayer.sheet.setTotal();
+<<<<<<< HEAD
+=======
 
+>>>>>>> b8f5e53f97b3a15fc084c827a398dbb9aefe23ac
  				cout << activePlayer.sheet;
 				cout << endl;
 				activePlayer.inputAfterRoll(rod); 
@@ -115,7 +118,10 @@ int main(){
 				cout << rod;
 				cout << endl;
 				activePlayer.sheet.setTotal();
+<<<<<<< HEAD
+=======
 
+>>>>>>> b8f5e53f97b3a15fc084c827a398dbb9aefe23ac
 				cout << activePlayer.sheet;
 				cout << endl;
 				activePlayer.inputAfterRoll(rod);
