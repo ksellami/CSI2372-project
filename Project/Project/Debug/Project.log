@@ -4,6 +4,7 @@
   QwixxScoreSheet.cpp
   QwixxRow.cpp
   QwixxPlayer.cpp
+<<<<<<< HEAD
 c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer.h(11): error C2259: 'QwixxScoreSheet' : impossible d'instancier une classe abstraite
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer.h(11): note: à cause des membres suivants :
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer.h(11): note: 'bool ScoreSheet::score(RollOfDice,Colour,int)' : est abstrait
@@ -25,5 +26,12 @@ c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer.h(11): note: à cause des membres suivants :
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\qwixxplayer.h(11): note: 'bool ScoreSheet::score(RollOfDice,Colour,int)' : est abstrait
   c:\users\sallami\desktop\automne 2017\csi2372\github\project\project\scoresheet.h(21): note: voir la déclaration de 'ScoreSheet::score'
+=======
+  QwintoScoreSheet.cpp
+  QwintoRow.cpp
+  QwintoPlayer.cpp
+  Player.cpp
+  GameLoop.cpp
+>>>>>>> b8f5e53f97b3a15fc084c827a398dbb9aefe23ac
   Dice.cpp
   Génération de code en cours...
