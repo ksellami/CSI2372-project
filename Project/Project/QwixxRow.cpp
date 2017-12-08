@@ -42,7 +42,7 @@ template<class T, Colour col>
 string & QwixxRow<T, col>::operator[](int param){
 
 		T::iterator iter = Row.begin();
-		std::advance(iter, param);
+		std::advance(iter, param); 
 		return *iter;
 	
 }
@@ -76,6 +76,3 @@ QwixxRow<T, col>::QwixxRow()
 
 
 }
-
-
-
