@@ -96,7 +96,6 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &rod) {
 
 }
 
-<<<<<<< HEAD
 
 void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 
@@ -165,7 +164,7 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 				columnSelection = 0;
 			}
 		}
-		if (sheet.score(sheet, rod, theColor, columnSelection - 1))
+		if (sheet.score(rod, theColor, columnSelection - 1))
 			scoringDone = true;
 		else {
 			cout << "invalid selection!" << endl;

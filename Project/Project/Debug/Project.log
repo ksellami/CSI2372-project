@@ -1,4 +1,14 @@
-﻿  QwixxPlayer.cpp
+﻿  scoresheet.cpp
+  RollOfDice.cpp
+  RandomDice.cpp
+  QwixxScoreSheet.cpp
+  QwixxRow.cpp
+  QwixxPlayer.cpp
+  QwintoScoreSheet.cpp
+  QwintoRow.cpp
   QwintoPlayer.cpp
+  Player.cpp
+  GameLoop.cpp
+  Dice.cpp
   Génération de code en cours...
   Project.vcxproj -> A:\c++ project\CSI2372-project\Project\Debug\Project.exe

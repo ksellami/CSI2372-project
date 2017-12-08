@@ -9,6 +9,7 @@ QwintoScoreSheet::QwintoScoreSheet(string NewName) : ScoreSheet(NewName),redEntr
 }
 
 
+// calcultes the total score of one scoresheet
 
 int QwintoScoreSheet::calcTotal()
 {
@@ -194,11 +195,12 @@ bool QwintoScoreSheet::verify(int position,int result, array<int, 10>& Row) {
 	return valid;
 }
 
-bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion)
+
+bool  QwintoScoreSheet::score(RollOfDice roll, Colour uColor, int uPostion)
 {
 
 	bool validRoll;
-	validRoll = sheet.validate(uColor, uPostion);
+	validRoll = validate(uColor, uPostion);
 	
 	bool scored = false; 
 
@@ -212,18 +214,18 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				//For the column restrictions
 				initialCondition = false;
 
-				if (uPostion < 8 && (result == sheet.yellowRow[uPostion + 1] ||result == sheet.blueRow[uPostion + 2]))
+				if (uPostion < 8 && (result == yellowRow[uPostion + 1] ||result == blueRow[uPostion + 2]))
 					initialCondition = false;
-				else if  (uPostion == 8 && result == sheet.yellowRow[9])
+				else if  (uPostion == 8 && result == yellowRow[9])
 					initialCondition = false;
 				else
 					initialCondition = true;
 
-				scored = verify(uPostion,result,sheet.redRow.Row) && initialCondition;
+				scored = verify(uPostion,result,redRow.Row) && initialCondition;
 				if (scored)
 				{
-					sheet.redRow[uPostion] = roll;
-					sheet.redEntriesTotal++;
+					redRow[uPostion] = roll;
+					redEntriesTotal++;
 						if (redEntriesTotal == (redRow.Size()-1)){ 
 
 							totalRowsCompleted++;
@@ -241,24 +243,24 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 
 				initialCondition = false;
 
-				if (uPostion < 9 && uPostion>0 && (result == sheet.redRow[uPostion - 1] || result == sheet.blueRow[uPostion + 1]))
+				if (uPostion < 9 && uPostion>0 && (result == redRow[uPostion - 1] || result == blueRow[uPostion + 1]))
 					initialCondition = false;
 				else
 				{
-					if (uPostion == 9 && result == sheet.redRow[8])
+					if (uPostion == 9 && result == redRow[8])
 						initialCondition = false;
-					else if (uPostion == 0 && result == sheet.blueRow[1])
+					else if (uPostion == 0 && result == blueRow[1])
 						initialCondition = false;
 					else
 						initialCondition = true;
 				}
 
-				scored = verify(uPostion, result, sheet.yellowRow.Row) && initialCondition;
+				scored = verify(uPostion, result, yellowRow.Row) && initialCondition;
 
 				if (scored)
 				{
-					sheet.yellowRow.operator[](uPostion) = roll;
-					sheet.yellowEntriesTotal++;
+					yellowRow.operator[](uPostion) = roll;
+					yellowEntriesTotal++;
 					if (yellowEntriesTotal == (yellowRow.Size()-1)) {
 
 						totalRowsCompleted++;
@@ -274,11 +276,11 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 			case(Colour::BLUE):
 				initialCondition = false;
 
-				if (uPostion>1 && (result == sheet.redRow[uPostion - 2] || result == sheet.yellowRow[uPostion-1]))
+				if (uPostion>1 && (result == redRow[uPostion - 2] || result == yellowRow[uPostion-1]))
 					initialCondition = false;
 				else
 				{
-					if (uPostion == 1 && result == sheet.yellowRow[0])
+					if (uPostion == 1 && result == yellowRow[0])
 						initialCondition = false;
 				
 					else
@@ -286,12 +288,12 @@ bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour u
 				}
 			
 						
-				scored = verify(uPostion, result, sheet.blueRow.Row) && initialCondition;
+				scored = verify(uPostion, result, blueRow.Row) && initialCondition;
 
 				if (scored)
 				{
-					sheet.blueRow.operator[](uPostion) = roll;
-					sheet.blueEntriesTotal++;
+					blueRow.operator[](uPostion) = roll;
+					blueEntriesTotal++;
 
 					if (blueEntriesTotal == (blueRow.Size()-1)) {
 
