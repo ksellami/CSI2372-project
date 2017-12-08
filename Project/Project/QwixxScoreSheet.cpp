@@ -28,6 +28,8 @@ int QwixxScoreSheet::calcTotal()
 	total += this->calcScore(greenEntriesTotal);
 	total += this->calcScore(blueEntriesTotal);
 
+	total -= this->failedAttempts * 5;
+
 	return total;
 }
 
@@ -226,6 +228,9 @@ ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 	os <<"Blue   "<< dt.blueRow << endl;
 	os << "-------------------------------------" << endl;
 	os << "Failed Throw" << endl;
+	for (int i = 1; i <= dt.failedAttempts; i++) {
+		os << i << " ";
+	}
 
 	return os;
 	

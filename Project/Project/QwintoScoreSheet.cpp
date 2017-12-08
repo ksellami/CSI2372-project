@@ -51,7 +51,7 @@ int QwintoScoreSheet::calcTotal()
 		}
 	}
 
-	for (int i = 2; i < 11; i++) {
+	for (int i = 2; i < 10; i++) {
 		if (blueRow[i] != 0 && redRow[i - 2] != 0 && yellowRow[i - 1] != 0)
 		{
 			switch (i) {
@@ -120,7 +120,7 @@ bool  QwintoScoreSheet::validate(Colour& color, int& position)
 
 bool QwintoScoreSheet::operator ! (){
 
-	if (failedAttempts>=4){
+	if (this->failedAttempts>=4){
 
 		return true;
 	}
@@ -193,6 +193,7 @@ bool QwintoScoreSheet::verify(int position,int result, array<int, 10>& Row) {
 
 	return valid;
 }
+
 bool  QwintoScoreSheet::score(QwintoScoreSheet& sheet, RollOfDice roll, Colour uColor, int uPostion)
 {
 
