@@ -4,3 +4,5 @@
 enum class Colour { RED, YELLOW, GREEN, BLUE, WHITE };
 
 #endif
+
+// this is the enumeration for the colors 
