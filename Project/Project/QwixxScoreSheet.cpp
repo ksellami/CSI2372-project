@@ -74,41 +74,28 @@ bool QwixxScoreSheet::operator!()
 	 else {
 		 switch (uColor) {
 		 case (Colour::RED):
-<<<<<<< HEAD
-			 if (redRow[roll] == "XX" || this->redEntriesTotal == 5)
-=======
-			 if (*redRow.itAtPosition(roll) == "XX" || *redRow.Row.end() == "L" )
->>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
+			 if (redRow[roll] == "XX" || *redRow.Row.end() == "L")
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::YELLOW):
-<<<<<<< HEAD
-			 if (yellowRow[roll] == "XX" || this->yellowEntriesTotal == 5)
-=======
-			 if (*yellowRow.itAtPosition(roll) == "XX" || *yellowRow.Row.end() == "L")
->>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
+			 if (yellowRow[roll] == "XX" | *yellowRow.Row.end() == "L")
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::GREEN):
-<<<<<<< HEAD
-			 if (greenRow[roll] == "XX" || this->greenEntriesTotal == 5)
-=======
-			 if (*greenRow.itAtPosition(roll) == "XX" || *greenRow.Row.end() == "L")
->>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
+			 if (greenRow[roll] == "XX" || *greenRow.Row.end() == "L")
+
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::BLUE):
-<<<<<<< HEAD
-			 if (blueRow[roll]== "XX" || this->blueEntriesTotal == 5)
-=======
-			 if (*blueRow.itAtPosition(roll) == "XX" || *blueRow.Row.end() == "L")
->>>>>>> 5ca1b65fc589d0f14d0cf0b35b9c0d797c6ac758
+
+			 if (blueRow[roll]== "XX" || *blueRow.Row.end() == "L")
+
 				 return false;
 			 else
 				 return true;

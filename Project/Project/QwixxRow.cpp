@@ -16,7 +16,6 @@ class QwixxRow
 public:
 	T Row;
 	QwixxRow<T, col>();
-	//std::vector<string>::iterator itAtPosition(int&);
 	friend QwixxRow<T, col> &operator+=(QwixxRow&, RollOfDice &);
 	string& operator[](int param);
 	friend ostream& operator<<(ostream &os, QwixxRow<T, col>& pRow) 
@@ -78,14 +77,5 @@ QwixxRow<T, col>::QwixxRow()
 
 }
 
-/*template <class T , Colour col> 
-std::vector<string>::iterator QwixxRow<T, col>::itAtPosition(int &pos)
-{
-	for (std::vector<string>::iterator iPos; iPos != this->Row.end(); iPos++) {
-		if (*iPos == std::to_string(pos))
-			return iPos;
-	}
-	return NULL;
-}*/
 
 
