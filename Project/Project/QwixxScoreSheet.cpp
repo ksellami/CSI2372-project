@@ -71,22 +71,35 @@ bool QwixxScoreSheet::operator!()
 
 	 if (roll < 2 || roll > 12)
 		 return false; 
+
 	 else {
 		 switch (uColor) {
 		 case (Colour::RED):
+<<<<<<< HEAD
 			 if (redRow[roll-2] == "XX" || redRow[11] == "L")
+=======
+			 if (redRow[roll-2] == "XX" || *redRow.Row.end() == "L")
+>>>>>>> ae98060816f89d21190dfd79a1529e2c9a720461
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::YELLOW):
+<<<<<<< HEAD
 			 if (yellowRow[roll-2] == "XX" | yellowRow[11] == "L")
+=======
+			 if (yellowRow[roll-2] == "XX" | *yellowRow.Row.end() == "L")
+>>>>>>> ae98060816f89d21190dfd79a1529e2c9a720461
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::GREEN):
+<<<<<<< HEAD
 			 if (greenRow[12-roll] == "XX" || greenRow[11] == "L")
+=======
+			 if (greenRow[12-roll] == "XX" || *greenRow.Row.end() == "L")
+>>>>>>> ae98060816f89d21190dfd79a1529e2c9a720461
 
 				 return false;
 			 else
@@ -94,7 +107,11 @@ bool QwixxScoreSheet::operator!()
 			 break;
 		 case (Colour::BLUE):
 
+<<<<<<< HEAD
 			 if (blueRow[12-roll]== "XX" || blueRow[11] == "L")
+=======
+			 if (blueRow[12-roll]== "XX" || *blueRow.Row.end() == "L")
+>>>>>>> ae98060816f89d21190dfd79a1529e2c9a720461
 
 				 return false;
 			 else
@@ -162,7 +179,6 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 		}
 		else {
-			int afterResult = result;
 
 			switch (uColor) {
 
@@ -184,7 +200,6 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 				break;
 			case(Colour::BLUE):
-				afterResult--;
 				for (int it = 13 - roll; it <= 10; ++it) {
 
 					if (blueRow[it] == "XX")
