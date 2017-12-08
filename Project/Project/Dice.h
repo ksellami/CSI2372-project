@@ -19,6 +19,7 @@ public:
 	string colourToStr(const Colour& _col); 
 	int roll();
 	Dice(const Colour& _col);
+	friend bool operator==(const Dice&,const Dice&); 
 	friend ostream& operator<<(ostream& os, Dice& d);
 };
 

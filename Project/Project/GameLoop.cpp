@@ -4,7 +4,38 @@
 #include "QwixxPlayer.h"
 #include <string>
 
-
+void checkRows(std::vector<QwixxPlayer>& players ) {
+	for (auto &player : players) {
+		if (player.sheet.redRow[11] == "L") {
+			for (auto &otherPlayer : players) {
+				if (otherPlayer.sheet.redRow[11] != "L") {
+					otherPlayer.sheet.redRow[11] != "X";
+				}
+			}
+		}
+		if (player.sheet.yellowRow[11] == "L") {
+			for (auto &otherPlayer : players) {
+				if (otherPlayer.sheet.yellowRow[11] != "L") {
+					otherPlayer.sheet.yellowRow[11] != "X";
+				}
+			}
+		}
+		if (player.sheet.greenRow[11] == "L") {
+			for (auto &otherPlayer : players) {
+				if (otherPlayer.sheet.greenRow[11] != "L") {
+					otherPlayer.sheet.greenRow[11] != "X";
+				}
+			}
+		}
+		if (player.sheet.blueRow[11]=="L"){
+			for (auto &otherPlayer : players) {
+				if (otherPlayer.sheet.blueRow[11] != "L") {
+					otherPlayer.sheet.blueRow[11] != "X";
+				}
+			}
+		}
+	}
+}
 int main() {
 	bool done = false;
 	int versionInput = 0;
@@ -103,6 +134,7 @@ int main() {
 
 		while (!done)
 		{
+			checkRows(playersQwixx); 
 			for (auto & activePlayer : playersQwixx) {
 				RollOfDice rod;
 				activePlayer.setActive(true);

@@ -23,6 +23,11 @@ Dice::Dice(const Colour& _col) :
 {
 }
 
+bool operator==(const Dice & d1,const Dice & d2)
+{
+	return d1.colour == d2.colour; 
+}
+
 ostream & operator<<(ostream & os, Dice & d)
 {
 

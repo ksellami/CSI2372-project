@@ -1,6 +1,7 @@
 #ifndef QWIXXPLAYER_H
 #define QWIXXPLAYER_H
 #pragma once
+#include <algorithm>  
 #include "Player.h"
 #include "RollOfDice.h"
 #include "QwixxScoreSheet.h"
