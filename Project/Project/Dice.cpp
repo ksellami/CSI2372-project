@@ -26,7 +26,7 @@ Dice::Dice(const Colour& _col) :
 ostream & operator<<(ostream & os, Dice & d)
 {
 
-		os << d.colourToStr(d.colour) << ", " << d.face << std::endl;
+	os << "["<<d.colourToStr(d.colour) << ", " << d.face<<"]";
 		return os;
 
 }

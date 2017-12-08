@@ -1,15 +1,5 @@
-﻿  scoresheet.cpp
-  RollOfDice.cpp
-  RandomDice.cpp
-  QwixxScoreSheet.cpp
-  QwixxRow.cpp
-  QwixxPlayer.cpp
-  QwintoScoreSheet.cpp
-  QwintoRow.cpp
+﻿  QwixxPlayer.cpp
   QwintoPlayer.cpp
-  Player.cpp
-  GameLoop.cpp
-  Dice.cpp
   Génération de code en cours...
   Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.pdb (Partial PDB)

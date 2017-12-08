@@ -6,137 +6,122 @@ QwixxPlayer::QwixxPlayer(string name) : sheet(name)
 {
 }
 
-void QwixxPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
+void QwixxPlayer::inputBeforeRoll(RollOfDice &rod) {
 
-	Dice red = Dice(Colour::RED);
-	_rollOfDice.add(red);
-	Dice green = Dice(Colour::GREEN);
-	_rollOfDice.add(green);
-	Dice yellow = Dice(Colour::YELLOW);
-	_rollOfDice.add(yellow);
-	Dice blue = Dice(Colour::BLUE);
-	_rollOfDice.add(blue);
-	Dice white1 = Dice(Colour::WHITE);
-	_rollOfDice.add(white1);
-	Dice white2 = Dice(Colour::WHITE);
-	_rollOfDice.add(white2);
 
-	/*bool validSelection = false;
-
-	while (!validSelection) {
-		cout << sheet.playerName << ", Please enter the color you would like to enter the white dice [" << int(_rollOfDice) << "] in.";
-
-		cout << "(Or you can pass)" << endl;
-
-		string input = "";
-		cin >> input;
-
-		if (input == "pass") {
-			validSelection = true;
-		}
-
-		if (input == "red") {
-			if (sheet.score(sheet,_rollOfDice, Colour::RED)) {
-				validSelection = true;
-			}
-		}
-		else if (input == "yellow") {
-			if (sheet.score(sheet,_rollOfDice, Colour::YELLOW)) {
-				validSelection = true;
-			}
-		}
-		else if (input == "green") {
-			if (sheet.score(sheet,_rollOfDice, Colour::GREEN)) {
-				validSelection = true;
-			}
-		}
-		else if (input == "blue") {
-			if (sheet.score(sheet,_rollOfDice, Colour::BLUE)) {
-				validSelection = true;
-			}
-		}
-		if (!validSelection)
-			cout << sheet.playerName << ", THAT WAS IN INVALID SELECTION!" << endl << endl;
-	}*/
+	rod.add(Dice(Colour::RED));
+	rod.add(Dice(Colour::YELLOW));
+    rod.add(Dice(Colour::GREEN));
+	rod.add(Dice(Colour::BLUE));
+	rod.add(Dice(Colour::WHITE));
+	rod.add(Dice(Colour::WHITE));
 
 }
 
 
-void QwixxPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
-	bool validSelection = false, scored = false, failed = false;
-	Colour c; 
-	string input, color;
-	int selectedColorDice;
-	while (!scored) {
-		cout << sheet.playerName << ", Please enter the name of the colored dice you would like to score (or type fail): " << endl;
-
-		validSelection = false;
-		while (!validSelection) {
-			input = "";
-			cin >> input;
-			if (input == "fail") {
+void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
+	int index; 
+	Colour theColor; 
+	bool scoringDone = false, fail = false, validSelect = false; 
+	string inputColor,inputWhite,inputConfirmation;
+	while (!scoringDone) {
+		cout << sheet.playerName << ", in what row do you want to score ? (eg : red)" << endl;
+		cout << "you can type 'fail' to fail the throw" << endl;
+		cout << endl; 
+		while (!validSelect) {
+			cin >> inputColor;
+			if (inputColor == "fail") {
 				sheet.fail();
-				validSelection = true;
-				failed = true;
-				scored = true;
+				fail = true;
+				scoringDone = true;
+				validSelect = true;
 			}
-			if (input == "red") {
-				c = Colour::RED;
-				selectedColorDice = 0;
-				validSelection = true;
-				color = input;
+			else if (inputColor == "red" ) {
+				validSelect = true;
+				theColor = Colour::RED; 
+				index = 0; 
 			}
-			else if (input == "green") {
-				c = Colour::GREEN;
-				selectedColorDice = 1;
-				validSelection = true;
-				color = input;
+			else if (inputColor == "yellow") {
+				validSelect = true;
+				theColor = Colour::YELLOW;
+				index = 1; 
 			}
-			else if (input == "yellow") {
-				c = Colour::YELLOW;
-				selectedColorDice = 2;
-				validSelection = true;
-				color = input;
+			else if (inputColor == "green") {
+				validSelect = true;
+				theColor = Colour::GREEN;
+				index = 2; 
 			}
-			else if (input == "blue") {
-				c = Colour::BLUE;
-				selectedColorDice = 3;
-				validSelection = true;
-				color = input;
+			else if (inputColor == "blue") {
+				validSelect = true;
+				theColor = Colour::BLUE;
+				index = 3;
 			}
-			if (!validSelection) {
-				cout << "INVALID SELECTION! (please type one of: red yellow green blue)";
+			else {
+				cout << "your selection is not valid" << endl; 
+				cout << endl;
+				inputColor = ""; 
 			}
-
 		}
-		validSelection = false;
-		if (!failed) {
-			int selection = 0;
-			while (!validSelection) {
-				input = "";
-				cout << "Please enter 5 for white dice [" << _rollOfDice.theRoll[4].face << "] or enter 6 for white dice [" << _rollOfDice.theRoll[5].face << "]" << endl;
-				cin >> input;
-				stringstream asdf(input);
-				if (asdf >> selection && (selection == 5 || selection == 6))
-					validSelection = true;
-			}
-
-			validSelection = false;
-
-			RollOfDice pair = _rollOfDice.pair(_rollOfDice.theRoll[selection - 1], _rollOfDice.theRoll[selectedColorDice]);
-
-			input = "";
-			cout << "Type \"yes\" to confirm your move of " << color << ", " << int(pair) << endl;
-			cin >> input;
-			if (input == "yes") {
-				if (sheet.score(sheet,pair, c)) {
-					scored = true;
+		
+		
+		if(!fail) {
+			
+			cout << "chose one white dice you want to add to the roll:" << endl; 
+				cout << "type 1 for dice " << rod.theRoll[4] << " or type 2 for dice " << rod.theRoll[5] << endl;
+				cout << endl;
+				while (inputWhite != "1" && inputWhite != "2") {
+					cin >> inputWhite; 
+					if (inputWhite != "1" && inputWhite != "2") {
+						cout << "invalid selection" << endl;
+						cout << endl;
+						inputWhite == ""; 
+					}
 				}
+				RollOfDice lastRod = rod.pair(rod.theRoll[index], rod.theRoll[std::stoi(inputWhite) + 4]); 
+				cout << "this is your selection: " << inputColor << ", " << (int)lastRod << endl; 
+				cout << "enter to continue " << endl; 
+				cout << endl;
+
+				while (inputConfirmation != "") {
+					cin >> inputConfirmation;
+					if (inputConfirmation != "") {
+						cout << "just confirm please!" << endl;
+						cout << endl;
+						inputConfirmation == "";
+					}
+				}
+
+				if (sheet.score(sheet, lastRod, theColor))
+					scoringDone = true;
 				else {
-					cout << "That is an invalid move" << endl;
+					cout << "invalid scoring!" << endl;
+					cout << endl;
 				}
-			}
 		}
 	}
-
+	string decision; 
+	if (sheet.redEntriesTotal >= 5) {
+		cout << "do you want to lock the red row ? type 'yes' or enter to ignore" << endl;
+		cin >> decision;
+		if (decision == "yes")
+			sheet.redRow[11] == "L";
+	}
+	else if (sheet.yellowEntriesTotal >= 5) {
+		cout << "do you want to lock the yellow row ? type 'yes' or enter to ignore" << endl;
+		cin >> decision;
+		if (decision == "yes")
+			sheet.yellowRow[11] == "L";
+	}
+	else if (sheet.greenEntriesTotal >= 5) {
+		cout << "do you want to lock the green row ? type 'yes' or enter to ignore" << endl;
+		cin >> decision;
+		if (decision == "yes")
+			sheet.greenRow[11] == "L";
+	}
+	else if (sheet.blueEntriesTotal >= 5) {
+		cout << "do you want to lock the blue row ? type 'yes' or enter to ignore" << endl;
+		cin >> decision;
+		if (decision == "yes")
+			sheet.blueRow[11] == "L";
+	}
 }

@@ -51,6 +51,6 @@ RollOfDice::operator int()
 ostream & operator<<(ostream & os, RollOfDice & rod)
 {
 	for (Dice &d : rod)
-		os << d; 
+		os << d <<endl; 
 	return os;
 }

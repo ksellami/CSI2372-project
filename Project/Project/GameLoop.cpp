@@ -12,18 +12,25 @@ int main(){
 
 	cout << "For Qwinto tap 1, for Qwixx tap 2" << endl; 
 
-	while (!(versionInput == 1 || versionInput == 2))
-		cin >> versionInput; 
+	while (versionInput != 1 && versionInput != 2) {
+		cin >> versionInput;
+		if (versionInput != 1 && versionInput != 2)
+		{
+	     	cout << "invalid selection" << endl;
+		}
+	}
 
 	cout << "How many players (1-3) for this game ?" << endl; 
 	while (!(numberOfPlayers >= 1 && numberOfPlayers <= 3)) {
 		cin >> numberOfPlayers;
-		if (numberOfPlayers < 1 || numberOfPlayers > 3)
-			cout << "Invalid number of players" << endl; 
+		if (numberOfPlayers < 1 || numberOfPlayers > 3) {
+			cout << "Invalid number of players" << endl;
+			numberOfPlayers = 0; 
+		}
 	}
 
 	vector<string> names;
-	cout << "Please enter the names of the players" << endl; 
+	cout << "Please enter the names of the players one by one" << endl; 
 	for (int i = 0; i < numberOfPlayers; i++) {
 		string input = "";
 		while (input == "") {
@@ -32,6 +39,11 @@ int main(){
 		}
 	}
 
+	cout << endl; 
+	cout << "-------------------" << endl; 
+	cout << "LET THE GAME BEGIN!" << endl;
+	cout << "-------------------" << endl;
+	
 
 	if (versionInput == 1)
 	{
@@ -49,8 +61,12 @@ int main(){
 				activePlayer.setActive(true);
 				activePlayer.inputBeforeRoll(rod);
 				rod.roll();
+				cout << endl;
+				cout << "the roll is:" << endl;
 				cout << rod;
+				cout << endl;
  				cout << activePlayer.sheet;
+				cout << endl;
 				activePlayer.inputAfterRoll(rod); 
 				if (!activePlayer.sheet) {
 					done = true;
@@ -92,8 +108,12 @@ int main(){
 				activePlayer.setActive(true);
 				activePlayer.inputBeforeRoll(rod);
 				rod.roll();
+				cout << endl;
+				cout << "the roll is:" << endl;
 				cout << rod;
+				cout << endl;
 				cout << activePlayer.sheet;
+				cout << endl;
 				activePlayer.inputAfterRoll(rod);
 				
 				if (!activePlayer.sheet) {

@@ -54,107 +54,80 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
 }
 
 
-void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
+void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 
-	bool hasRed = false, hasBlue = false, hasYellow = false;
+	bool rowSelection = false, blue = false, yellow = false, red = false, scoringDone=false;
+	string inputFS; 
+	Colour theColor = Colour::WHITE; 
+	int columnSelection=0; 
 
-	for (std::vector<Dice>::iterator i = _rollOfDice.theRoll.begin(); i != _rollOfDice.theRoll.end(); ++i) { // a changer avec for auto d 
-		Dice d = *i;
+	for (auto &d : rod) {
 		switch (d.colour) {
 		case Colour::RED:
-			hasRed = true;
-			break;
-		case Colour::BLUE:
-			hasBlue = true;
+			red = true;
 			break;
 		case Colour::YELLOW:
-			hasYellow = true;
+			yellow = true;
+			break;
+		case Colour::BLUE:
+			blue = true;
 			break;
 		}
-	}
-
-	QwintoPlayer *qp = dynamic_cast<QwintoPlayer*>(this);
-
-	cout << sheet.playerName << ", please select the row color and the column number (between 1 and 9) where you would like to place [" << _rollOfDice << "] in.\nType \"done\" when finished\n";
-	cout << "(e.g. red 3 done)" << endl;
-	if (!isActive()) {
-		cout << "NOTE: You can type \"pass\" to skip with no penalty ";
-		cout << "(e.g. pass done):" << endl;
-	}
-	if (isActive()) {
-		cout << "NOTE: You can type \"fail\" to mark a failed throw ";
-		cout << "(e.g. fail done):" << endl;
-	}
-	cout << endl;
-	vector<string> selection;
-	vector<string>::iterator it;
-	string input = "";
-
-	bool enteredValid = false;
-
-	cin.ignore();
-	while (!enteredValid) {
-		input = "";
-		while (input != "done") {
-			cin >> input;
-			if (input == "pass" && isActive() == false) {
-				return;
-			}
-			if (input == "fail" && isActive() == true) {
-				qp->sheet.fail();
-				//	qp->sheet.score(sheet,_rollOfDice, Colour::RED, -5); // failed throw
-				return;
-			}
-			selection.push_back(input);
 		}
 
-		if (selection.size() >= 3) {
-			//stringstream asdf(selection.end()[-2]);
-			int x = 0;
-			//asdf >> x;
-			x = std::stoi(selection.end()[-2]);
+	while (!scoringDone) {
+		cout << "in what row you want to score the roll? (eg yellow)" << endl;
 
-			//cout<<"end-2: "<<selection.end()[-2]<<" end-1: "<<selection.end()[-1];
-			if (selection.end()[-3] == "red" && hasRed) {
-				if (qp->sheet.score(sheet, _rollOfDice, Colour::RED, x - 1))
-					enteredValid = true;
-			}
-			else if (selection.end()[-3] == "blue" && hasBlue) {
-				if (qp->sheet.score(sheet, _rollOfDice, Colour::BLUE, x - 1))
-					enteredValid = true;
-			}
-			else if (selection.end()[-3] == "yellow" && hasYellow) {
-				if (qp->sheet.score(sheet, _rollOfDice, Colour::YELLOW, x - 1))
-					enteredValid = true;
-				else {
-					cout << "invalid entry" << endl;
-					input = "";
-					selection.clear();
-				}
-			}
-
-			if (!enteredValid) {
-				input = "";
-				cout << endl << sheet.playerName << ", THAT WAS AN INVALID SELECTION.\n" << qp->sheet << endl;
-				cout << endl << sheet.playerName << ", Now please select the row color and the column number (between 1 and 9) where you would like to place [" << _rollOfDice << "] in.\nType \"done\" when finished\n";
-				cout << "(e.g. red 3 done)" << endl;
-				if (!isActive()) {
-					cout << "NOTE: You can type \"pass\" to skip with no penalty ";
-					cout << "(e.g. pass done):" << endl;
-				}
-				if (isActive()) {
-					cout << "NOTE: You can type \"fail\" to mark a failed throw ";
-					cout << "(e.g. fail done):" << endl;
-				}
-				cout << endl;
-				selection.clear();
-			}
-
+		if (!isActive()) {
+			cout << "You can also enter 'pass' to skip with no penalty " << endl;
 		}
+		if (isActive()) {
+			cout << "You can also enter 'fail' to fail the throw " << endl;
+		}
+
+		while (!rowSelection) {
+			cin >> inputFS;
+			if (inputFS == "pass" && !isActive())
+				return;
+			else if (inputFS == "fail" && isActive()) {
+				sheet.fail();
+				return;
+			}
+			else if (inputFS == "red" && red) {
+				theColor = Colour::RED;
+				rowSelection = true;
+			}
+			else if (inputFS == "yellow" && yellow) {
+				theColor = Colour::YELLOW; 
+				rowSelection = true;
+			}
+			else if (inputFS == "blue" && blue) {
+				theColor = Colour::BLUE;
+				rowSelection = true;
+			}
+			else
+				cout << "invalid entry, or the color selected is not in the roll" << endl;
+			
+		}
+
+		rowSelection = false; 
+		inputFS = ""; 
+		cout << "in what row you column (1-9) you want to score the roll?" << endl;
+
+		while (columnSelection < 1 || columnSelection>9) {
+			cin >> columnSelection;
+			if (columnSelection < 1 && columnSelection>9) {
+				cout << "invalid Selection!" << endl;
+				columnSelection = 0;
+			}
+		}
+		if (sheet.score(sheet, rod, theColor, columnSelection - 1))
+			scoringDone = true;
 		else {
-			cout << "invalid entry" << endl;
-			input = "";
-			selection.clear();
+			cout << "invalid selection!" << endl;
+			columnSelection = 0;
+
 		}
 	}
 }
+
