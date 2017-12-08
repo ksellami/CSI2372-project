@@ -2,13 +2,34 @@
   RollOfDice.cpp
   RandomDice.cpp
   QwixxScoreSheet.cpp
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(122): error C2511: 'bool QwixxScoreSheet::score(QwixxScoreSheet &,RollOfDice &,Colour)' : impossible de trouver la fonction membre surchargée dans 'QwixxScoreSheet'
+  a:\c++ project\csi2372-project\project\project\qwixxscoresheet.h(11): note: voir la déclaration de 'QwixxScoreSheet'
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(136): error C2597: référence non conforme à un membre non static 'QwixxScoreSheet::redRow'
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(136): error C3867: 'QwixxScoreSheet::redRow' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(136): error C2109: un indice requiert un type tableau ou pointeur
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(155): error C2597: référence non conforme à un membre non static 'QwixxScoreSheet::yellowRow'
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(155): error C3867: 'QwixxScoreSheet::yellowRow' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(155): error C2109: un indice requiert un type tableau ou pointeur
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(181): error C2597: référence non conforme à un membre non static 'QwixxScoreSheet::greenRow'
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(181): error C3867: 'QwixxScoreSheet::greenRow' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(181): error C2109: un indice requiert un type tableau ou pointeur
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(197): error C2597: référence non conforme à un membre non static 'QwixxScoreSheet::blueRow'
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(197): error C3867: 'QwixxScoreSheet::blueRow' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+a:\c++ project\csi2372-project\project\project\qwixxscoresheet.cpp(197): error C2109: un indice requiert un type tableau ou pointeur
   QwixxRow.cpp
   QwixxPlayer.cpp
+a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): error C2259: 'QwixxScoreSheet' : impossible d'instancier une classe abstraite
+  a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): note: à cause des membres suivants :
+  a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): note: 'bool ScoreSheet::score(RollOfDice,Colour,int)' : est abstrait
+  a:\c++ project\csi2372-project\project\project\scoresheet.h(21): note: voir la déclaration de 'ScoreSheet::score'
   QwintoScoreSheet.cpp
   QwintoRow.cpp
   QwintoPlayer.cpp
   Player.cpp
   GameLoop.cpp
+a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): error C2259: 'QwixxScoreSheet' : impossible d'instancier une classe abstraite
+  a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): note: à cause des membres suivants :
+  a:\c++ project\csi2372-project\project\project\qwixxplayer.h(11): note: 'bool ScoreSheet::score(RollOfDice,Colour,int)' : est abstrait
+  a:\c++ project\csi2372-project\project\project\scoresheet.h(21): note: voir la déclaration de 'ScoreSheet::score'
   Dice.cpp
   Génération de code en cours...
-  Project.vcxproj -> A:\c++ project\CSI2372-project\Project\Debug\Project.exe

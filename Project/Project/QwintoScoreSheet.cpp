@@ -91,7 +91,8 @@ int QwintoScoreSheet::calcTotal()
 	return total;
 }
 
-
+// this function checks if the position is not and invalid field in the associated color row
+//and we call validate entry to see if there is no entry at that position
 bool  QwintoScoreSheet::validate(Colour& color, int& position)
 {
 	bool colorValidated = false;
@@ -118,7 +119,8 @@ bool  QwintoScoreSheet::validate(Colour& color, int& position)
 	return colorValidated;
 }
 
-
+//Checks if the game has ended if there is more or exactly 4 failed throws 
+//and if at least two rows has been completed
 bool QwintoScoreSheet::operator ! (){
 
 	if (this->failedAttempts>=4){
@@ -155,6 +157,9 @@ ostream& operator<<(ostream& os, QwintoScoreSheet& _qwinto){
 	os <<endl<< endl;
 	return os;
 }
+
+// this function is to check if all the row entries that are positioned
+//after the desired position if they are less and not equal to the roll result
 
 bool QwintoScoreSheet::verify(int position,int result, array<int, 10>& Row) {
 	bool valid = false;
@@ -200,6 +205,8 @@ bool  QwintoScoreSheet::score(RollOfDice roll, Colour uColor, int uPostion)
 {
 
 	bool validRoll;
+	//we first see if the player entered a valid position 
+
 	validRoll = validate(uColor, uPostion);
 	
 	bool scored = false; 
@@ -211,7 +218,8 @@ bool  QwintoScoreSheet::score(RollOfDice roll, Colour uColor, int uPostion)
 		switch (uColor) {
 
 			case(Colour::RED):
-				//For the column restrictions
+				//the initial condition variable if to see whether there is column restrictions 
+				//in an overlapping column can't have the same entries 
 				initialCondition = false;
 
 				if (uPostion < 8 && (result == yellowRow[uPostion + 1] ||result == blueRow[uPostion + 2]))
@@ -221,6 +229,8 @@ bool  QwintoScoreSheet::score(RollOfDice roll, Colour uColor, int uPostion)
 				else
 					initialCondition = true;
 
+				// we verify if the entry is valid and we see if the the initial condition is valid
+				// to proceed with the scoring procedure
 				scored = verify(uPostion,result,redRow.Row) && initialCondition;
 				if (scored)
 				{

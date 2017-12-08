@@ -152,6 +152,9 @@ template <Colour col> int& QwintoRow<col>::operator[](int index)
 	return Row[index];
 }
 
+// we check if the position entered by the player is 
+// within the row boundaries and if the element at that position
+// is not taken
 template <Colour col> bool QwintoRow<col>::validateEntry(int& indexEntry)
 {
 
