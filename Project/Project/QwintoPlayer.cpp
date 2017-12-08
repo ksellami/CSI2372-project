@@ -3,7 +3,7 @@
 #include <string>
 QwintoPlayer::QwintoPlayer(string name) : sheet(name) {}
 
-void QwintoPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
+void QwintoPlayer::inputBeforeRoll(RollOfDice &rod) {
 
 	string entry = "";
 	
@@ -81,17 +81,17 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
 
 	if (std::find(Colors.begin(), Colors.end(), "red") != Colors.end()) {
 		Dice dice = Dice(Colour::RED);
-		_rollOfDice.theRoll.push_back(dice);
+		rod.theRoll.push_back(dice);
 	}
 
 	if (std::find(Colors.begin(), Colors.end(), "yellow") != Colors.end()) {
 		Dice dice = Dice(Colour::YELLOW);
-		_rollOfDice.theRoll.push_back(dice);
+		rod.theRoll.push_back(dice);
 	}
 
 	if (std::find(Colors.begin(), Colors.end(), "blue") != Colors.end()) {
 		Dice dice = Dice(Colour::BLUE);
-		_rollOfDice.theRoll.push_back(dice);
+		rod.theRoll.push_back(dice);
 	}
 
 }
@@ -99,10 +99,6 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
 <<<<<<< HEAD
 
 void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
-=======
-//Not yet changed
-void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
->>>>>>> 02f6909973754dea1be84a9866a0e8bb6bbca5e5
 
 	bool rowSelection = false, blue = false, yellow = false, red = false, scoringDone=false;
 	string inputFS; 
