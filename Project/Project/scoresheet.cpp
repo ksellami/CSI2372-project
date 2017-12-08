@@ -16,5 +16,5 @@ int ScoreSheet::setTotal()
 
 void ScoreSheet::fail()
 {
-	failedAttempts--;
+	failedAttempts++;
 }

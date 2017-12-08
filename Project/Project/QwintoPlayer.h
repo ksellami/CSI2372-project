@@ -5,6 +5,7 @@
 #include <string>
 #include "QwintoScoreSheet.h"
 
+using namespace std;
 
 
 class QwintoPlayer :public Player
@@ -15,6 +16,7 @@ public:
 	QwintoPlayer(string name); 
 	void inputBeforeRoll(RollOfDice& rod) ;
 	void inputAfterRoll(RollOfDice& rod);
+
 };
 
 #endif

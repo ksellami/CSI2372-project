@@ -50,6 +50,8 @@ int main(){
 				activePlayer.inputBeforeRoll(rod);
 				rod.roll();
 				cout << rod;
+				activePlayer.sheet.setTotal();
+
  				cout << activePlayer.sheet;
 				activePlayer.inputAfterRoll(rod); 
 				if (!activePlayer.sheet) {
@@ -93,6 +95,8 @@ int main(){
 				activePlayer.inputBeforeRoll(rod);
 				rod.roll();
 				cout << rod;
+				activePlayer.sheet.setTotal();
+
 				cout << activePlayer.sheet;
 				activePlayer.inputAfterRoll(rod);
 				

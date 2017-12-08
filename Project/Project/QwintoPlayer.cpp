@@ -4,56 +4,99 @@
 QwintoPlayer::QwintoPlayer(string name) : sheet(name) {}
 
 void QwintoPlayer::inputBeforeRoll(RollOfDice &_rollOfDice) {
-	string tmp = "";
-	vector<string> refinedSelection;
-	while (tmp != "yes") {
-		refinedSelection.clear();
-		cout << "Please select the dice you would like to roll, type \"done\" when finished: " << endl;
-		cout << "(e.g. red blue yellow done):" << endl;
-		vector<string> selection;
+
+	string entry = "";
+	
+	vector<string> Colors;
+	
+	while (entry != "yes") {
+
+		Colors.clear();
+
+		cout << "Select the color of the dice you want to roll" << endl;
+
+		cout << "Please choose either Red , Blue or Yellow" << endl;
+
+		cout << "enter ok when you are done" << endl;
+
+		vector<string> entries;
 		vector<string>::iterator it;
-		string input = "";
+			
+		
+		
+		
+		
+			
 
-		while (input != "done" || (input != "pass" && isActive() == false)) {
-			cin >> input;
-			selection.push_back(input);
-		}
 
-		for (it = selection.begin(); it < selection.end(); it++) {
-			if (*it == "blue" || *it == "b")
-				refinedSelection.push_back("blue");
-			else if (*it == "red" || *it == "r")
-				refinedSelection.push_back("red");
-			else if (*it == "yellow" || *it == "y")
-				refinedSelection.push_back("yellow");
+		// to verify player input
+
+		int validColor = 0;
+		while (validColor == 0) {
+
+			while (entry != "ok") {
+				cin >> entry;
+				entries.push_back(entry);
+
+			}
+
+			entries.pop_back();
+			for (vector<string>::iterator it = entries.begin(); it != entries.end(); it++) {
+
+				if (*it == "blue" || *it == "red" || *it == "yellow") {
+
+					Colors.push_back(*it);
+					validColor++;
+
+
+				}
+				else {
+
+
+					cout << *it << " is not a valid color" << endl;
+				}
+
+			}
+
+			if (validColor == 0) {
+
+
+				cout << "No valid color was entered \nChoose blue, red or yellow" << endl;
+				cout << endl;
+				entry = "";
+			}
+
 		}
-		cout << "Rolling: " << endl;
-		for (vector<string>::iterator i = refinedSelection.begin(); i != refinedSelection.end(); i++) {
-			cout << "[" << *i << "  dice]\n";
+	
+	
+		cout << "You rolled the " << endl;
+
+		for (vector<string>::iterator i = Colors.begin(); i != Colors.end(); i++) {
+			cout << *i <<" dice"<< endl;
 		}
 		cout << "type \"yes\" to confirm roll:" << endl;
-
-		cin >> tmp;
+		entry = "";
+		cin >> entry;
 	}
 
-	if (std::find(refinedSelection.begin(), refinedSelection.end(), "red") != refinedSelection.end()) {
-		Dice d1 = Dice(Colour::RED);
-		_rollOfDice.theRoll.push_back(d1);
+	if (std::find(Colors.begin(), Colors.end(), "red") != Colors.end()) {
+		Dice dice = Dice(Colour::RED);
+		_rollOfDice.theRoll.push_back(dice);
 	}
 
-	if (std::find(refinedSelection.begin(), refinedSelection.end(), "yellow") != refinedSelection.end()) {
-		Dice d2 = Dice(Colour::YELLOW);
-		_rollOfDice.theRoll.push_back(d2);
+	if (std::find(Colors.begin(), Colors.end(), "yellow") != Colors.end()) {
+		Dice dice = Dice(Colour::YELLOW);
+		_rollOfDice.theRoll.push_back(dice);
 	}
 
-	if (std::find(refinedSelection.begin(), refinedSelection.end(), "blue") != refinedSelection.end()) {
-		Dice d3 = Dice(Colour::BLUE);
-		_rollOfDice.theRoll.push_back(d3);
+	if (std::find(Colors.begin(), Colors.end(), "blue") != Colors.end()) {
+		Dice dice = Dice(Colour::BLUE);
+		_rollOfDice.theRoll.push_back(dice);
 	}
 
 }
 
-
+//Not yet changed
 void QwintoPlayer::inputAfterRoll(RollOfDice &_rollOfDice) {
 
 	bool hasRed = false, hasBlue = false, hasYellow = false;
