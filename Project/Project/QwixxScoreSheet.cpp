@@ -71,22 +71,23 @@ bool QwixxScoreSheet::operator!()
 
 	 if (roll < 2 || roll > 12)
 		 return false; 
+
 	 else {
 		 switch (uColor) {
 		 case (Colour::RED):
-			 if (redRow[roll] == "XX" || *redRow.Row.end() == "L")
+			 if (redRow[roll-2] == "XX" || *redRow.Row.end() == "L")
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::YELLOW):
-			 if (yellowRow[roll] == "XX" | *yellowRow.Row.end() == "L")
+			 if (yellowRow[roll-2] == "XX" | *yellowRow.Row.end() == "L")
 				 return false;
 			 else
 				 return true;
 			 break;
 		 case (Colour::GREEN):
-			 if (greenRow[roll] == "XX" || *greenRow.Row.end() == "L")
+			 if (greenRow[12-roll] == "XX" || *greenRow.Row.end() == "L")
 
 				 return false;
 			 else
@@ -94,7 +95,7 @@ bool QwixxScoreSheet::operator!()
 			 break;
 		 case (Colour::BLUE):
 
-			 if (blueRow[roll]== "XX" || *blueRow.Row.end() == "L")
+			 if (blueRow[12-roll]== "XX" || *blueRow.Row.end() == "L")
 
 				 return false;
 			 else
@@ -162,7 +163,6 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 		}
 		else {
-			int afterResult = result;
 
 			switch (uColor) {
 
@@ -184,7 +184,6 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 				break;
 			case(Colour::BLUE):
-				afterResult--;
 				for (int it = 13 - roll; it <= 10; ++it) {
 
 					if (blueRow[it] == "XX")
@@ -197,7 +196,7 @@ bool QwixxScoreSheet::score(QwixxScoreSheet & sheet, RollOfDice &roll, Colour uC
 
 				}
 
-				sheet.blueRow[result] = "XX";
+				sheet.blueRow[12-result] = "XX";
 				sheet.blueEntriesTotal++;
 
 
