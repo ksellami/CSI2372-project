@@ -50,7 +50,7 @@ int main() {
 		}
 		else{
 			cout << "invalid selection" << endl;
-			versionInput = 0;
+			versionInput = "";
 		}
 	}
 
@@ -62,7 +62,7 @@ int main() {
 		}
 		else {
 			cout << "Invalid number of players" << endl;
-			numberOfPlayers = 0;
+			numberOfPlayers = "";
 		}
 	}
 
