@@ -263,6 +263,7 @@ ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 	for (int i = 1; i <= dt.failedAttempts; i++) {
 		os << i << " ";
 	}
+	cout << endl;
 
 	return os;
 	

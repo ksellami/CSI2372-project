@@ -47,20 +47,20 @@ void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
 		cout << endl; 
 		while (!validSelect) {
 			cin >> inputColor;
-			if (inputColor == "fail" && isActive()) {
+			if (inputColor == "fail" && isActive()) { // if the active player want to fail the throw
 				sheet.fail();
 				fail = true;
 				scoringDone = true;
 				validSelect = true;
 
 			}
-			else if (inputColor == "pass" && !isActive()) {
+			else if (inputColor == "pass" && !isActive()) { // if the inactive player want to pass his round
 				fail = true;
 				scoringDone = true;
 				validSelect = true;
 			}
-			else if (inputColor == "red" && sheet.redRow[11]=="U") {
-				validSelect = true;
+			else if (inputColor == "red" && sheet.redRow[11]=="U") { // this verification is repeated 4 times, check where the player want to score the roll, save the index of the Dice in the roll
+				validSelect = true;									// save the color, and quit the first
 				theColor = Colour::RED; 
 				index = std::find(rod.theRoll.begin(),rod.theRoll.end(),Dice(theColor)) - rod.theRoll.begin() ;
 
@@ -80,7 +80,7 @@ void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
 			else if (inputColor == "blue" && sheet.blueRow[11] == "U") {
 				validSelect = true;
 				theColor = Colour::BLUE;
-				index = std::find(rod.theRoll.begin(), rod.theRoll.end(), Dice(theColor)) - rod.theRoll.begin();
+				index = std::find(rod.theRoll.begin(), rod.theRoll.end(), Dice(theColor)) - rod.theRoll.begin(); // get the index of the Dice in the Roll
 
 			}
 			else {
@@ -96,7 +96,7 @@ void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
 			if (isActive()){
 				cout << "do you want to score one coloured dice? (you can add a white dice) or score the 2 white dices? type '1' or '2'" << endl;
 			while (true) {
-				cin >> scoreType;
+				cin >> scoreType;																	// get the choice of the active player (score coloured or score white dices)
 				if (scoreType == "1" || scoreType == "2") {
 					break;
 				}
@@ -110,7 +110,7 @@ void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
 			RollOfDice lastRod; 
 			if (scoreType == "1" && isActive()) {
 				cout << endl;
-				cout << "chose one white dice you want to add to the coloured dice you choosed" << endl;
+				cout << "chose one white dice you want to add to the coloured dice you choosed" << endl;					// if the active want to score coloured Dice, he can add a white dice if he want
 				cout << "type 1 for dice " << rod.theRoll[0] << " or type 2 for dice " << rod.theRoll[1] << endl;
 				cout << "or just type 0 to not add a white dice" << endl;
 				cout << endl;
@@ -131,7 +131,7 @@ void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
 			}
 			
 			else if (scoreType == "2" || !isActive()) {
-				lastRod = rod.pair(rod.theRoll[0], rod.theRoll[1]);
+				lastRod = rod.pair(rod.theRoll[0], rod.theRoll[1]);  // the inactive player can just score the white dices
 			}
 
 				if (sheet.score(lastRod, theColor))
@@ -148,8 +148,8 @@ void QwixxPlayer::inputAfterRoll(RollOfDice &rod) {
 		
 	}
 	string LockingInput; 
-	if (sheet.redEntriesTotal >= 5 && sheet.redRow[11]=="U") {
-		cout << "do you want to lock the red row ? type 'yes' or 'no'" << endl;
+	if (sheet.redEntriesTotal >= 5 && sheet.redRow[11]=="U") {                    // this verification is repeated 4 times, check if the entries of a row are 5 and more and ask the player
+		cout << "do you want to lock the red row ? type 'yes' or 'no'" << endl;   // if he wants to lock the row, if yes, lock the Row and delete the dice from the roll
 		cin >> LockingInput;
 		if (LockingInput == "yes") {
 			sheet.redRow[11] = "L";

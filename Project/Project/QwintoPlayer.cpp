@@ -110,6 +110,7 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 	Colour theColor = Colour::WHITE; 
 	int columnSelection=0; 
 
+	// boolean initialisation to check if the dice is added in the roll
 	for (auto &d : rod) {
 		switch (d.colour) {
 		case Colour::RED:
@@ -134,6 +135,7 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 			cout << "You can also enter 'fail' to fail the throw " << endl;
 		}
 
+		// take the input of the player, the color of the row or pass or fail
 		while (!rowSelection) {
 			cin >> inputFS;
 			if (inputFS == "pass" && !isActive())
@@ -163,6 +165,7 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 		inputFS = ""; 
 		cout << "in what row you column (1-10) you want to score the roll?" << endl;
 
+		// take the column where to score the roll
 		while (true) {
 			cin >> columnSelection;
 			if (columnSelection >= 1 && columnSelection <= 10) {
