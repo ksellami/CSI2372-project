@@ -2,6 +2,7 @@
 #define QWIXXPLAYER_H
 #pragma once
 #include <algorithm>  
+#include <limits>
 #include "Player.h"
 #include "RollOfDice.h"
 #include "QwixxScoreSheet.h"

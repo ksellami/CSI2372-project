@@ -20,6 +20,7 @@ public:
 	int roll();
 	Dice(const Colour& _col);
 	friend bool operator==(const Dice&,const Dice&); 
+	Dice& operator=(const Dice&); 
 	friend ostream& operator<<(ostream& os, Dice& d);
 };
 

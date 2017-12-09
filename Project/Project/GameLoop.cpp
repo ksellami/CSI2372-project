@@ -43,18 +43,25 @@ int main() {
 
 	cout << "For Qwinto tap 1, for Qwixx tap 2" << endl;
 
-	while (versionInput != 1 && versionInput != 2) {
+	while (true) {
 		cin >> versionInput;
-		if (versionInput != 1 && versionInput != 2)
+		if (versionInput == 1 || versionInput == 2)
 		{
+			break; 
+		}
+		else{
 			cout << "invalid selection" << endl;
+			versionInput = 0;
 		}
 	}
 
 	cout << "How many players (1-3) for this game ?" << endl;
-	while (!(numberOfPlayers >= 1 && numberOfPlayers <= 3)) {
+	while (true) {
 		cin >> numberOfPlayers;
-		if (numberOfPlayers < 1 || numberOfPlayers > 3) {
+		if (numberOfPlayers >= 1 && numberOfPlayers <= 3) {
+			break;
+		}
+		else {
 			cout << "Invalid number of players" << endl;
 			numberOfPlayers = 0;
 		}
@@ -172,4 +179,8 @@ int main() {
 			cout << player.sheet;
 		}
 	}
+
+	cout << endl; 
+	cout << "end of The game, tap anything to exit the game" << endl; 
+	cin >> versionInput; 
 }

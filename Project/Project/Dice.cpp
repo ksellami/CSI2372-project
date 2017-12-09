@@ -23,6 +23,13 @@ Dice::Dice(const Colour& _col) :
 {
 }
 
+Dice & Dice::operator=(const Dice & d)
+{
+	Dice result(d.colour); 
+	result.face = d.face; 
+	return result ; 
+}
+
 bool operator==(const Dice & d1,const Dice & d2)
 {
 	return d1.colour == d2.colour; 

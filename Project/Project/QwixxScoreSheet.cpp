@@ -35,13 +35,12 @@ int QwixxScoreSheet::calcTotal()
 
 bool QwixxScoreSheet::operator!()
 {
-	bool gameEnd = false;
+	
 	int lockedRows = 0;
 	//if failed throws is 4 or more
 	if (this->failedAttempts >= 4)
-		gameEnd=true;
-	else 
-		gameEnd = false;
+		return true;
+	
 
 	//see if two rows or more are locked if so return true: 
 	if (redRow[11] == "L")
@@ -58,13 +57,12 @@ bool QwixxScoreSheet::operator!()
 
 	if (lockedRows >= 2) {
 
-		gameEnd = true;;
+		return true;;
 	}
-	else 
-		gameEnd = false;
 	
 	
-	return gameEnd;
+
+	return false;
 }
 
 
@@ -131,7 +129,7 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 			switch (uColor) {
 			case(Colour::RED):
 
-				for (int it = roll - 1; it <= 10; ++it) {
+				for (int it = roll - 1; it <= 11; ++it) {
 
 					if (redRow[it] == "XX")
 					{
@@ -150,7 +148,7 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 				break;
 			case(Colour::YELLOW):
 
-				for (int it = roll - 1; it <= 10; ++it) {
+				for (int it = roll - 1; it <= 11; ++it) {
 
 					if (yellowRow[it] == "XX")
 					{
@@ -176,7 +174,7 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 
 			case(Colour::GREEN):
 
-				for (int it = 13 - roll; it <= 10; ++it) {
+				for (int it = 13 - roll; it <= 11; ++it) {
 
 					if (greenRow[it] == "XX")
 					{
@@ -192,7 +190,7 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 
 				break;
 			case(Colour::BLUE):
-				for (int it = 13 - roll; it <= 10; ++it) {
+				for (int it = 13 - roll; it <= 11; ++it) {
 
 					if (blueRow[it] == "XX")
 					{
@@ -222,12 +220,12 @@ ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 {   
 	os << "Player Name :" << dt.playerName << '\t' << '\t' << "Points: " << dt.overallScore << endl;
 	os << '\t' << "-------------------------------------" << endl;
-	os << "Red   "<<dt.redRow << endl;
+	os << "Red      "<<dt.redRow << endl;
 	os << "Yellow   "<<dt.yellowRow << endl;
-	os << "Green   " <<dt.greenRow << endl;
-	os <<"Blue   "<< dt.blueRow << endl;
-	os << "-------------------------------------" << endl;
-	os << "Failed Throw" << endl;
+	os << "Green    " <<dt.greenRow << endl;
+	os << "Blue     "<< dt.blueRow << endl;
+	os << "--------------------------------------" << endl;
+	os << "Failed Throw ";
 	for (int i = 1; i <= dt.failedAttempts; i++) {
 		os << i << " ";
 	}
