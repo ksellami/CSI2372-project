@@ -17,7 +17,7 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &rod) {
 		Colors.clear();
 		cout << endl;
 
-		cout << "Select the color of the dice you want to roll" << endl;
+		cout << sheet.playerName<< ", Select the color of the dice you want to roll" << endl;
 
 		cout << "Please choose either Red , Blue or Yellow" << endl;
 
@@ -161,11 +161,14 @@ void QwintoPlayer::inputAfterRoll(RollOfDice &rod) {
 
 		rowSelection = false; 
 		inputFS = ""; 
-		cout << "in what row you column (1-9) you want to score the roll?" << endl;
+		cout << "in what row you column (1-10) you want to score the roll?" << endl;
 
-		while (columnSelection < 1 || columnSelection>9) {
+		while (true) {
 			cin >> columnSelection;
-			if (columnSelection < 1 && columnSelection>9) {
+			if (columnSelection >= 1 && columnSelection <= 10) {
+				break;
+			}
+			else {
 				cout << "invalid Selection!" << endl;
 				columnSelection = 0;
 			}

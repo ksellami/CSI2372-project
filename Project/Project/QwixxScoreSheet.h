@@ -31,9 +31,6 @@ public:
 	int blueEntriesTotal = 0;
 	int greenEntriesTotal = 0;
 	
-	int failedAttempts = 0;
-
-
 protected :
 	bool validate(Colour&, int&);
 

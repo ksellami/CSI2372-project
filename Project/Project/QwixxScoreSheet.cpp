@@ -44,11 +44,18 @@ bool QwixxScoreSheet::operator!()
 {
 	
 	int lockedRows = 0;
+<<<<<<< HEAD
+	//if failed throws is 4 or more
+	if (this->failedAttempts >= 4)
+		return true;
+	
+=======
 
 	//if failed throws are 4 or more
 	if (failedAttempts >= 4)
 		return true;
 
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 
 	//see if two rows or more are locked if so return true: 
 	if (redRow[11] == "L")
@@ -66,11 +73,19 @@ bool QwixxScoreSheet::operator!()
 	//if two or more rows are locked return true
 	if (lockedRows >= 2) {
 
+<<<<<<< HEAD
+		return true;;
+	}
+	
+	
+
+=======
 		return true;
 	}
 	
 	
 	
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 	return false;
 }
 
@@ -151,7 +166,7 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 			switch (uColor) {
 			case(Colour::RED):
 
-				for (int it = roll - 1; it <= 10; ++it) {
+				for (int it = roll - 1; it <= 11; ++it) {
 
 					if (redRow[it] == "XX")
 					{
@@ -170,7 +185,7 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 				break;
 			case(Colour::YELLOW):
 
-				for (int it = roll - 1; it <= 10; ++it) {
+				for (int it = roll - 1; it <= 11; ++it) {
 
 					if (yellowRow[it] == "XX")
 					{
@@ -195,12 +210,17 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 			switch (uColor) {
 
 			case(Colour::GREEN):
+<<<<<<< HEAD
+
+				for (int it = 13 - roll; it <= 11; ++it) {
+=======
 				//for the green and the blue row the entries 
 				//are in the same order . Here we check if the entries 
 				//that are positioned after the roll position are recorded
 				//if so we cannot record the roll since we cannot go back in a row from right to left.
 				// the only difference is that the entries are backwards . 
 				for (int it = 13 - roll; it <= 10; ++it) {
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 
 					if (greenRow[it] == "XX")
 					{
@@ -216,7 +236,7 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 
 				break;
 			case(Colour::BLUE):
-				for (int it = 13 - roll; it <= 10; ++it) {
+				for (int it = 13 - roll; it <= 11; ++it) {
 
 					if (blueRow[it] == "XX")
 					{
@@ -246,14 +266,21 @@ ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 {   
 	os << "Player Name :" << dt.playerName << '\t' << '\t' << "Points: " << dt.overallScore << endl;
 	os << '\t' << "-------------------------------------" << endl;
-	os << "Red   "<<dt.redRow << endl;
+	os << "Red      "<<dt.redRow << endl;
 	os << "Yellow   "<<dt.yellowRow << endl;
+<<<<<<< HEAD
+	os << "Green    " <<dt.greenRow << endl;
+	os << "Blue     "<< dt.blueRow << endl;
+	os << "--------------------------------------" << endl;
+	os << "Failed Throw ";
+=======
 	os << "Green   " <<dt.greenRow << endl;
 	os <<"Blue   "<< dt.blueRow << endl;
 	os << "-------------------------------------" << endl;
 	os << "Failed Throw" << endl;
 	//print out the failed attempts each time
 	//there is a failed throw
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 	for (int i = 1; i <= dt.failedAttempts; i++) {
 		os << i << " ";
 	}
