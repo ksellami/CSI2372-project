@@ -6,6 +6,10 @@ QwixxScoreSheet::QwixxScoreSheet(string name) :ScoreSheet(name)
 	
 }
 
+//this function is to calculate the score with the number of entries of a row 
+//as a parameter . This follows the table given in the assignment
+//the points for a certain amount of entries is the sum of the numbers from
+//1 to the numbersofentries included .
 int QwixxScoreSheet::calcScore(int & entriesNum)
 {
 	int result = 0;
@@ -19,10 +23,12 @@ int QwixxScoreSheet::calcScore(int & entriesNum)
 	
 		return result;
 }
+
+//calculate the total score for a scoresheet
 int QwixxScoreSheet::calcTotal()
 {
 	int total = 0;
-
+	//calls function calcscore for each row
 	total += this->calcScore(redEntriesTotal);
 	total += this->calcScore(yellowEntriesTotal);
 	total += this->calcScore(greenEntriesTotal);
@@ -33,14 +39,23 @@ int QwixxScoreSheet::calcTotal()
 	return total;
 }
 
+//function returns true if the ending game conditions are met
 bool QwixxScoreSheet::operator!()
 {
 	
 	int lockedRows = 0;
+<<<<<<< HEAD
 	//if failed throws is 4 or more
 	if (this->failedAttempts >= 4)
 		return true;
 	
+=======
+
+	//if failed throws are 4 or more
+	if (failedAttempts >= 4)
+		return true;
+
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 
 	//see if two rows or more are locked if so return true: 
 	if (redRow[11] == "L")
@@ -55,23 +70,37 @@ bool QwixxScoreSheet::operator!()
 	if (blueRow[11] == "L")
 		lockedRows++;
 
+	//if two or more rows are locked return true
 	if (lockedRows >= 2) {
 
+<<<<<<< HEAD
 		return true;;
 	}
 	
 	
 
+=======
+		return true;
+	}
+	
+	
+	
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 	return false;
 }
 
-
+//this function is to validate a roll result before scoring it.
+//it checks if the roll is already recorded on the scoresheet
+//in that or if that row is locked . If so the player cannot record 
+//the roll .
  bool QwixxScoreSheet::validate(Colour &uColor, int &roll)
 {
-
+	 //if the roll is not within the row's boundaries
+	 //the roll is not valid
 	 if (roll < 2 || roll > 12)
 		 return false; 
-
+	 //check if the row is locked or if the roll is 
+	 //already recorded in that row
 	 else {
 		 switch (uColor) {
 		 case (Colour::RED):
@@ -116,6 +145,9 @@ bool QwixxScoreSheet::operator!()
 
 	return false;
 }
+
+//This is the main function that verifies if a roll is valid
+ //and records if it is on the scoresheet.
 bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 {
 	
@@ -124,8 +156,13 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 	bool valid = validate(uColor, result);
 
 	if (valid) {
+		
 		if (uColor == Colour::RED || uColor == Colour::YELLOW) {
-			
+			//for the red and the yellow row the entries 
+			//are in the same order . Here we check if the entries 
+			//that are positioned after the roll position are recorded
+			//if so we cannot record the roll since we cannot go back in a row from right to left.
+
 			switch (uColor) {
 			case(Colour::RED):
 
@@ -173,8 +210,17 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 			switch (uColor) {
 
 			case(Colour::GREEN):
+<<<<<<< HEAD
 
 				for (int it = 13 - roll; it <= 11; ++it) {
+=======
+				//for the green and the blue row the entries 
+				//are in the same order . Here we check if the entries 
+				//that are positioned after the roll position are recorded
+				//if so we cannot record the roll since we cannot go back in a row from right to left.
+				// the only difference is that the entries are backwards . 
+				for (int it = 13 - roll; it <= 10; ++it) {
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 
 					if (greenRow[it] == "XX")
 					{
@@ -215,17 +261,26 @@ bool QwixxScoreSheet::score(RollOfDice &roll, Colour uColor,int uPosition)
 	return scored;
 }
 
-
+//Prints ou the scoresheet
 ostream & operator<<(ostream & os, QwixxScoreSheet & dt)
 {   
 	os << "Player Name :" << dt.playerName << '\t' << '\t' << "Points: " << dt.overallScore << endl;
 	os << '\t' << "-------------------------------------" << endl;
 	os << "Red      "<<dt.redRow << endl;
 	os << "Yellow   "<<dt.yellowRow << endl;
+<<<<<<< HEAD
 	os << "Green    " <<dt.greenRow << endl;
 	os << "Blue     "<< dt.blueRow << endl;
 	os << "--------------------------------------" << endl;
 	os << "Failed Throw ";
+=======
+	os << "Green   " <<dt.greenRow << endl;
+	os <<"Blue   "<< dt.blueRow << endl;
+	os << "-------------------------------------" << endl;
+	os << "Failed Throw" << endl;
+	//print out the failed attempts each time
+	//there is a failed throw
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848
 	for (int i = 1; i <= dt.failedAttempts; i++) {
 		os << i << " ";
 	}

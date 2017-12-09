@@ -29,6 +29,7 @@ public:
 
 };
 #endif
+
 template<class T, Colour col>
 QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
 {
@@ -41,6 +42,7 @@ QwixxRow<T,col>& operator+=(QwixxRow<T,col>& rw,const RollOfDice & rod)
 template<class T, Colour col>
 string & QwixxRow<T, col>::operator[](int param){
 
+		
 		T::iterator iter = Row.begin();
 		std::advance(iter, param); 
 		return *iter;
@@ -51,6 +53,11 @@ string & QwixxRow<T, col>::operator[](int param){
 template<class T, Colour col>
 QwixxRow<T, col>::QwixxRow()
 {
+	//in the constructor we fill the rows
+	//depending on which type of container we have 
+	//for the row . This is simply because the entries
+	// for the green and blue rows are from 12 to 2 from 
+	//left to right and backwards for the red and yellow row
 	if (typeid(T) == typeid(std::vector<string>)) {
 		
 		for (int i = 2 ; i< 13 ;i++)
@@ -59,6 +66,7 @@ QwixxRow<T, col>::QwixxRow()
 			
 		}
 
+		//Set the row as unlocked for each row
 		Row.push_back("U");
 	}
 	else if (typeid(T) == typeid(std::list<string>)) {
@@ -68,7 +76,7 @@ QwixxRow<T, col>::QwixxRow()
 			Row.push_back(std::to_string(i));
 
 		}
-
+		//Set the row as unlocked for each row
 		Row.push_back("U");
 
 

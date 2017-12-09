@@ -1,3 +1,20 @@
+<<<<<<< HEAD
 ﻿  QwixxScoreSheet.cpp
   Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\SALLAMI\Desktop\automne 2017\CSI2372\github\Project\Debug\Project.pdb (Partial PDB)
+=======
+﻿  scoresheet.cpp
+  RollOfDice.cpp
+  RandomDice.cpp
+  QwixxScoreSheet.cpp
+  QwixxRow.cpp
+  QwixxPlayer.cpp
+  QwintoScoreSheet.cpp
+  QwintoRow.cpp
+  QwintoPlayer.cpp
+  Player.cpp
+  GameLoop.cpp
+  Dice.cpp
+  Generating Code...
+  Project.vcxproj -> Z:\AGABT077\Desktop\github c++ project\CSI2372-project\Project\Debug\Project.exe
+>>>>>>> 700111e16567b10f4d44194ac93ac294cc99b848

@@ -6,22 +6,26 @@ QwixxPlayer::QwixxPlayer(string name) : sheet(name)
 {
 }
 
-void QwixxPlayer::inputBeforeRoll(RollOfDice &rod) {
+void QwixxPlayer::inputBeforeRoll(RollOfDice &rod) 
+{
 
+	//the white dices are always rolled
 	rod.add(Dice(Colour::WHITE));
 	rod.add(Dice(Colour::WHITE));
 
+	// checks if the row is unlocked 
+	//to roll the corresponding dice's color. 
 	if (sheet.redRow[11]=="U")
-	rod.add(Dice(Colour::RED));
+		rod.add(Dice(Colour::RED));
 
 	if (sheet.yellowRow[11] == "U")
-	rod.add(Dice(Colour::YELLOW));
+		rod.add(Dice(Colour::YELLOW));
 
 	if (sheet.greenRow[11] == "U")
-    rod.add(Dice(Colour::GREEN));
+		rod.add(Dice(Colour::GREEN));
 
 	if (sheet.blueRow[11] == "U")
-	rod.add(Dice(Colour::BLUE));
+		rod.add(Dice(Colour::BLUE));
 }
 
 
