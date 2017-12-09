@@ -9,84 +9,96 @@ void QwintoPlayer::inputBeforeRoll(RollOfDice &rod) {
 	
 	vector<string> Colors;
 	
-	while (entry != "yes") {
+	int validColor = 0;
 
+	//if at least one color was entered 
+	//the player can proceed
+	while (validColor == 0) {
 		Colors.clear();
+		cout << endl;
 
 		cout << "Select the color of the dice you want to roll" << endl;
 
 		cout << "Please choose either Red , Blue or Yellow" << endl;
 
 		cout << "enter ok when you are done" << endl;
-
-		vector<string> entries;
+		
+		vector<string> playerInput;
 		vector<string>::iterator it;
-			
 
-		// to verify player input
 
-		int validColor = 0;
-		while (validColor == 0) {
+		// to verify player input and record it if ends with "ok" 
 
-			while (entry != "ok") {
-				cin >> entry;
-				entries.push_back(entry);
+		while (entry != "ok") {
+			cin >> entry;
+			playerInput.push_back(entry);
+		}
 
-			}
+		playerInput.pop_back();
+		for (vector<string>::iterator it = playerInput.begin(); it != playerInput.end(); it++) {
 
-			entries.pop_back();
-			for (vector<string>::iterator it = entries.begin(); it != entries.end(); it++) {
+			if (*it == "blue" || *it == "red" || *it == "yellow") {
 
-				if (*it == "blue" || *it == "red" || *it == "yellow") {
-
+				//Check if the color is not already entered 
+				//if not push it in the colors vector
+				if (std::find(Colors.begin(), Colors.end(), *it) == Colors.end()) {
+				
 					Colors.push_back(*it);
 					validColor++;
-
-
 				}
-				else {
+				
 
-
-					cout << *it << " is not a valid color" << endl;
-				}
 
 			}
-
-			if (validColor == 0) {
-
-
-				cout << "No valid color was entered \nChoose blue, red or yellow" << endl;
-				cout << endl;
-				entry = "";
+			else {
+				cout << *it << " is not a valid color" << endl;
 			}
 
 		}
-	
-	
-		cout << "You rolled the " << endl;
 
-		for (vector<string>::iterator i = Colors.begin(); i != Colors.end(); i++) {
-			cout << *i <<" dice"<< endl;
+		//if no valid colors entered by the player print out 
+		//a message to the user.
+		if (validColor == 0) {
+			cout << endl;
+			cout << "No valid color was entered \nChoose blue, red or yellow" << endl;
+			cout << endl;
+			entry = "";
 		}
-		cout << "type \"yes\" to confirm roll:" << endl;
-		entry = "";
-		cin >> entry;
+
 	}
 
-	if (std::find(Colors.begin(), Colors.end(), "red") != Colors.end()) {
-		Dice dice = Dice(Colour::RED);
-		rod.theRoll.push_back(dice);
+
+	//display the rolled dices to the user
+	cout << "You rolled the " << endl;
+	for (vector<string>::iterator i = Colors.begin(); i != Colors.end(); i++) {
+		cout << *i << " dice" << endl;
 	}
 
-	if (std::find(Colors.begin(), Colors.end(), "yellow") != Colors.end()) {
-		Dice dice = Dice(Colour::YELLOW);
-		rod.theRoll.push_back(dice);
-	}
+	
+	// a loop that gows throught the entered colors
+	// and roll a dice with the corresponding color 
+	//for each entered color
+	for (vector<string>::iterator i = Colors.begin(); i != Colors.end(); i++) {
 
-	if (std::find(Colors.begin(), Colors.end(), "blue") != Colors.end()) {
-		Dice dice = Dice(Colour::BLUE);
-		rod.theRoll.push_back(dice);
+		if (*i == "red") {
+			Dice dice = Dice(Colour::RED);
+			rod.theRoll.push_back(dice);
+
+		}
+
+		if (*i == "yellow") {
+			Dice dice = Dice(Colour::YELLOW);
+			rod.theRoll.push_back(dice);
+
+		}
+
+		if (*i == "blue") {
+			Dice dice = Dice(Colour::BLUE);
+			rod.theRoll.push_back(dice);
+		}
+
 	}
+	
 
 }
 
