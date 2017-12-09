@@ -1,9 +1,8 @@
-#include <stdio.h>
 #include "RollOfDice.h"
 #include "QwintoPlayer.h"
 #include "QwixxPlayer.h"
 #include <string>
-
+#include <iostream>
 void checkRows(std::vector<QwixxPlayer>& players ) {
 	for (auto &player : players) {
 		if (player.sheet.redRow[11] == "L") {
@@ -38,14 +37,14 @@ void checkRows(std::vector<QwixxPlayer>& players ) {
 }
 int main() {
 	bool done = false;
-	int versionInput = 0;
-	int numberOfPlayers = 0;
+	string versionInput, numberOfPlayers ;
+	
 
 	cout << "For Qwinto tap 1, for Qwixx tap 2" << endl;
 
 	while (true) {
 		cin >> versionInput;
-		if (versionInput == 1 || versionInput == 2)
+		if (versionInput == "1" || versionInput == "2")
 		{
 			break; 
 		}
@@ -58,7 +57,7 @@ int main() {
 	cout << "How many players (1-3) for this game ?" << endl;
 	while (true) {
 		cin >> numberOfPlayers;
-		if (numberOfPlayers >= 1 && numberOfPlayers <= 3) {
+		if (numberOfPlayers == "1" || numberOfPlayers == "3" || numberOfPlayers == "2") {
 			break;
 		}
 		else {
@@ -69,7 +68,7 @@ int main() {
 
 	vector<string> names;
 	cout << "Please enter the names of the players one by one" << endl;
-	for (int i = 0; i < numberOfPlayers; i++) {
+	for (int i = 0; i < std::stoi(numberOfPlayers); i++) {
 		string input = "";
 		while (input == "") {
 			cin >> input;
@@ -83,7 +82,7 @@ int main() {
 	cout << "-------------------" << endl;
 
 	
-	if (versionInput == 1)
+	if (versionInput == "1")
 	{
 		vector<QwintoPlayer> playersQwinto;
 
@@ -132,7 +131,7 @@ int main() {
 	}
 
 
-	else if (versionInput == 2)
+	else if (versionInput == "2")
 	{
 		vector<QwixxPlayer> playersQwixx;
 		for (int i = 0; i < static_cast<int>(names.size()); i++)
