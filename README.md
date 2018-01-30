@@ -5,3 +5,5 @@ Class Project
 An implementation of the games Qwinto and Qwixx.
 Qwinto rules : https://boardgamegeek.com/boardgame/183006/qwinto
 Qwixx rules  : https://boardgamegeek.com/boardgame/131260/qwixx
+
+By Abdelkarim Sellami and Ahmed Gabtni
