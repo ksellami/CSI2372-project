@@ -1,5 +1,5 @@
 # CSI2372-project
-Advanced Programming Concepts with C++.
+Advanced Programming Concepts with C++. Fall 2017
 Class Project
 
 An implementation of the games Qwinto and Qwixx.
